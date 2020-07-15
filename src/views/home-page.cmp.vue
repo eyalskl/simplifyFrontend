@@ -6,6 +6,7 @@
           <button @click.stop="$router.push('/editor')" class="start-btn">
              Build your website
           </button>
+          <h1>EYAL YA EFES</h1>
         </div>
       </div>
   </div>
