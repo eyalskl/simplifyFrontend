@@ -1,9 +1,6 @@
 <template>
   <div class="home-page">
-    <h1>Welcome to Simplify
-    </h1>
-    <button>Hey </button>
-    <input type="text">
+    <h1 class="flex justify-center">Welcome to Simplify </h1>
   </div>
 </template>
 
