@@ -1,6 +1,24 @@
 .nav-bar {
-    background-color: #fff;
+    font-family: 'Advent Pro', sans-serif;
+    padding: 0 1.5rem;
+    background-color: rgb(36, 37, 49);
+    color: white;
     height: 5rem;
     font-size: 1.5rem;
-    padding-inline-start: 1rem;
+    .logo {
+        color: $clr1;
+        cursor: default;
+    }
+    .main-nav {
+        height: 100%;
+        >* {
+            color: white;
+            text-transform: uppercase;
+            height: 100%;
+            width: 6rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
