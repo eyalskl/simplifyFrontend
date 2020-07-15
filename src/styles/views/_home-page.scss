@@ -1,0 +1,31 @@
+.home-page{
+    .hero{
+        background: url(~@/assets/imgs/hero-temp.jpg) no-repeat center center fixed;
+        background-size:cover ;
+        height: calc(90vh - 5rem);
+    }
+        .text-container{
+            padding-block-start: 4rem;
+    }
+    .tc-header{
+        text-shadow: 1px -1px 5px #000000;
+        color: #ffffff;
+        font-size: 4rem;
+        width: 60rem;
+        text-align: center;
+        cursor: default;
+        line-height: 5rem;
+    }
+        .start-btn{
+            border-radius: 1000px;
+            padding: 1rem;
+            margin: 1rem;
+            font-size: 1.3rem;
+            height: 5rem;
+            background-color: #ffffffe6;
+            transition: .3s;
+        &:hover{
+            box-shadow: 0 0 3px 1px black;
+        }
+    }
+}

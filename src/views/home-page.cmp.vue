@@ -1,6 +1,13 @@
 <template>
   <div class="home-page">
-    <h1 class="flex justify-center">Welcome to Simplify </h1>
+      <div class="hero">
+        <div class="text-container flex column justify-center align-center">
+          <h1 class="tc-header">Simplify , Create a Website You’re Proud Of</h1>
+          <button @click.stop="$router.push('/editor')" class="start-btn">
+             Build your website
+          </button>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -9,4 +16,6 @@
 export default {
   name: 'home-page',
 }
+
+
 </script>
