@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color: #202020;
+    line-height: 1.5;
+}
+
+body {
+    margin: 0;
+    background-color: complement(rgb(124, 255, 146));
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+input {
+    outline: none;
+    padding: 0.5rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background-color: blue;
+    color: white;
+}

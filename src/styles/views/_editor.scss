@@ -1,0 +1,10 @@
+.editor {
+    min-height: calc(100vh - 5rem);
+    .element-picker {
+        width: 20rem;
+        background-color: rgb(53, 247, 85);
+    }
+    .workspace {
+        flex: 1;
+    }
+}
