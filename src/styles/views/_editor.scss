@@ -2,7 +2,24 @@
     min-height: calc(100vh - 5rem);
     .element-picker {
         width: 20rem;
-        background-color: rgb(53, 247, 85);
+        background-color: rgb(255, 255, 255);
+        border-right: 3px solid $clr1;
+        box-shadow: 2px 0px 7px black;
+        >* {
+            font-family: 'Advent Pro', sans-serif;
+            width: 5rem;
+            height: 5rem;
+            margin: .75rem;
+            font-size: 1.5rem;
+            box-shadow: 1px 1px 4px #bbb;
+            background-color: $clr1;
+            color: #202204;
+            transition: .3s;
+            &:hover {
+                background-color: darken($clr1, 5);
+                box-shadow: 2px 2px 6px rgb(134, 134, 134);
+            }
+        }
     }
     .workspace {
         flex: 1;
