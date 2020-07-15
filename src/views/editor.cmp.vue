@@ -1,5 +1,5 @@
 <template>
-  <section class="editor flex">
+  <section class="editor flex animate__animated animate__fadeIn">
     <div class="elements-container">
       <div class="element-picker" :class="minimized">
         <div v-show="listShown" class="element-list">
