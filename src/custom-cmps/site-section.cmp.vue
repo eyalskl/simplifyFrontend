@@ -15,6 +15,7 @@
 import siteText from '@/custom-cmps/site-text.cmp.vue'
 import siteImage from '@/custom-cmps/site-image.cmp.vue';
 import siteButton from '@/custom-cmps/site-button.cmp.vue';
+import siteNav from '@/custom-cmps/site-nav.cmp.vue';
 
 export default {
   name: 'site-section',
@@ -23,6 +24,7 @@ export default {
       siteText,
       siteImage,
       siteButton,
+      siteNav
   }
 };
 </script>
