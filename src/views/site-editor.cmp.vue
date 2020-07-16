@@ -28,15 +28,15 @@
         </button>
       </div>
     </div>
-    <workspace />
+    <site-workspace :site="site"/>
   </section>
 </template>
 
 <script>
-import workspace from '../components/worksapce.cmp.vue';
+import siteWorkspace from '../components/site-worksapce.cmp.vue';
 
 export default {
-  name: 'editor',
+  name: 'site-editor',
   data() {
     return {
       listShown: false,
@@ -44,6 +44,9 @@ export default {
     };
   },
   computed: {
+    site() {
+      return _.cloneDeep(this.$store.getters.site);
+    },
     minimized() {
       if (this.minimize) return 'minimized';
     },
@@ -60,7 +63,7 @@ export default {
     }
   },
   components: {
-      workspace,
+      siteWorkspace,
   }
 };
 </script>
