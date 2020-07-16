@@ -1,5 +1,8 @@
+const _ = require("lodash")
+
 export const siteStore = {
   state: {
+    samples: { sections: ['nav', 'hero', 'paragraph', 'img with text', 'sharing'] },
     site: {
       _id: "5e28393890dd7201a06d4e44",
       name: "new site",

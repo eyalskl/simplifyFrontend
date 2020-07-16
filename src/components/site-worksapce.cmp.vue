@@ -6,6 +6,7 @@
       :cmp="cmp"
       :key="idx"
     >
+
     </component>
   </section>
 </template>
