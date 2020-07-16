@@ -1,38 +1,28 @@
 <template>
       <div class="elements-container flex column" :class="minimized">
           <div class="elements-header flex justify-center">
-              <button>Elemenets</button>
-              <button>Edit</button>
+              <button @clic="pickMode=true">Elemenets</button>
+              <button @clic="pickMode=false">Edit</button>
           </div>
-      <div class="element-picker" :class="minimized">
-        <button @click="toggleList('sections')">
-          Sections
-          </button>
-          <element-list
-          v-if="listShown" :samples="samples" :element="pickedElement">
-        </element-list>
-        <button v-if="!listShown" v-for="(btn, idx) in elementBtns" @click.stop="toggleList(btn)" :key="idx">
-          {{btn}}
-        </button>
-        <button
-          :title="minimize ? 'Unfold toolbox' : 'Fold toolbox'"
-          class="minimize"
-          :class="minimized"
-          @click="toggleMinimize"
-        >
-        </button>
+      <div v-show="pickMode" class="element-picker" :class="minimized">
+          <element-list v-if="listShown" :samples="samples" :element="pickedElement"/>
+          <element-picker v-else/>
       </div>
+          <element-edit v-show="!pickMode"/> 
     </div>
 </template>
 
 <script>
+import elementPicker from './element-picker.cmp.vue'
 import elementList from './element-list.cmp.vue'
+import elementEdit from './element-edit.cmp.vue'
 
 export default {
   data() {
     return {
       pickedElement: 'sections',
       elementBtns:['text','image','button'],
+      pickMode: true,
       listShown: false,
       minimize: false
     };
@@ -58,6 +48,11 @@ export default {
     },
 
   },
+  components:{
+    elementList,
+    elementPicker,
+    elementEdit
+  }
 }
 </script>
 

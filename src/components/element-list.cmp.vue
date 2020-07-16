@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="(sample,idx) in samples" :key="idx"></li>
+    <!-- <li v-for="(sample,idx) in samples" :key="idx"></li> -->
   </ul>
 </template>
 

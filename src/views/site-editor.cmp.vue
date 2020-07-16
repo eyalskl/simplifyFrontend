@@ -1,20 +1,20 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
-    <element-control/>
+    <element-dashboard/>
     <site-workspace :site="site"/>
   </section>
 </template>
 
 <script>
 import siteWorkspace from '../components/site-worksapce.cmp.vue';
-import elementControl from '@/components/element-control.cmp.vue';
+import elementDashboard from '@/components/element-dashboard.cmp.vue';
 const _ = require("lodash")
 
 export default {
-  name: 'editor',
+  name: 'site-editor',
   components: {
       siteWorkspace,
-      elementControl
+      elementDashboard
   },
     computed: {
     site() {
