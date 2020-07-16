@@ -1,5 +1,5 @@
 <template>
-  <section :style="cmp.style">
+  <section :style="cmp.style" >
     <component
       v-for="(cmp, idx) in cmp.cmps"
       :is="cmp.type"
@@ -7,6 +7,7 @@
       :key="idx"
     >
     </component>
+    
   </section>
 </template>
 
