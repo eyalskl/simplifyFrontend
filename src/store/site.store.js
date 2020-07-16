@@ -45,12 +45,13 @@ export const siteStore = {
 					style: {
 						backgroundColor: '#34bd98',
 						height: '500px',
-						padding: '10px 10px 10px 10px',
+                        padding: '10px 10px 10px 10px',
+                        
 					},
 					cmps: [
 						{
 							type: 'site-image',
-							content: 'https://i1.sndcdn.com/avatars-000214595785-kgx9qu-t500x500.jpg',
+							content: {src:'https://i1.sndcdn.com/avatars-000214595785-kgx9qu-t500x500.jpg'},
 							style: {
 								height: '200px',
 								objectFit: 'cover',
