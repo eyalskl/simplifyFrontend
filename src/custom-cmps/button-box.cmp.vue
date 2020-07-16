@@ -1,6 +1,6 @@
 <template>
     <span :class="cmpTree.attr.class">
-        <component :is="cmpTree.tagName" :style="cmpTree.attr.style"> {{ cmpTree.content }} </component>
+        <component :is="cmpTree.tagName" :style="cmpTree.attr.style" contenteditable="true"> {{ cmpTree.content }} </component>
     </span>
 </template>
 
