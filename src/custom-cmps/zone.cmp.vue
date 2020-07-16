@@ -14,6 +14,8 @@
 import textBox from './text-box.cmp.vue'
 import imageBox from '@/custom-cmps/image-box.cmp.vue';
 import buttonBox from '@/custom-cmps/button-box.cmp.vue';
+import siteNav from '@/custom-cmps/site-nav.cmp.vue';
+import siteFooter from '@/custom-cmps/site-footer.cmp.vue';
 import navBar from '@/components/nav-bar.cmp.vue';
 
 export default {
@@ -23,7 +25,9 @@ export default {
       textBox,
       imageBox,
       navBar,
-      buttonBox
+      buttonBox,
+      siteNav,
+      siteFooter
   }
 };
 </script>
