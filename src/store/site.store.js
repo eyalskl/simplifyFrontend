@@ -139,8 +139,7 @@ export const siteStore = {
                   textTransform: "uppercase",
                   textAlign:"center",
                   lineHeight:"2rem",
-                  fontSize:"1.5rem",
-                  width: "600px"      
+                  fontSize:"1.5rem",    
                   
                 },
               },
@@ -192,7 +191,6 @@ export const siteStore = {
                   textAlign:"center",
                   lineHeight:"2rem",
                   fontSize:"1.5rem",
-                  width:"600px",
                   marginInlineEnd:"8rem"
                 },
               },
