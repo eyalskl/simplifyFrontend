@@ -1,19 +1,20 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
-    <element-picker />
+    <element-control/>
     <site-workspace :site="site"/>
   </section>
 </template>
 
 <script>
 import siteWorkspace from '../components/site-worksapce.cmp.vue';
-import elementPicker from '@/components/element-picker.cmp.vue';
+import elementControl from '@/components/element-control.cmp.vue';
+const _ = require("lodash")
 
 export default {
   name: 'editor',
   components: {
       siteWorkspace,
-      elementPicker
+      elementControl
   },
     computed: {
     site() {

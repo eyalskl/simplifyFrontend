@@ -1,5 +1,8 @@
+const _ = require("lodash")
+
 export const siteStore = {
     state: {
+        samples: { sections: ['nav', 'hero', 'paragraph', 'img with text', 'sharing'] },
         site: {
             _id: '5e28393890dd7201a06d4e44',
             name: 'new site',
@@ -9,6 +12,7 @@ export const siteStore = {
                 _id: '5e26e0b718a0891d4c995527',
             },
             cmps: [{
+                    id: _.uniqueId(),
                     type: 'site-section',
                     style: {
                         backgroundColor: '#f53b76',
@@ -17,6 +21,7 @@ export const siteStore = {
                         display: 'flex'
                     },
                     cmps: [{
+                            id: _.uniqueId(),
                             type: 'site-text',
                             content: 'Hello World',
                             style: {
@@ -27,6 +32,7 @@ export const siteStore = {
                             },
                         },
                         {
+                            id: _.uniqueId(),
                             type: 'site-text',
                             content: 'Hello World',
                             style: {
@@ -39,13 +45,16 @@ export const siteStore = {
                     ],
                 },
                 {
+                    id: _.uniqueId(),
                     type: 'site-section',
                     style: {
                         backgroundColor: '#34bd98',
                         height: '500px',
                         padding: '10px 10px 10px 10px',
+
                     },
                     cmps: [{
+                            id: _.uniqueId(),
                             type: 'site-image',
                             content: 'https://i1.sndcdn.com/avatars-000214595785-kgx9qu-t500x500.jpg',
                             style: {
@@ -54,6 +63,7 @@ export const siteStore = {
                             },
                         },
                         {
+                            id: _.uniqueId(),
                             type: 'site-button',
                             content: { text: 'Button', href: '' },
                             style: {

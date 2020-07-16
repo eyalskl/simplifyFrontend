@@ -13,7 +13,6 @@
 
 <script>
 import siteSection from '@/custom-cmps/site-section.cmp.vue';
-const _ = require("lodash")
 
 export default {
   name: 'workspace',
