@@ -14,7 +14,6 @@ export const siteStore = {
 			cmps: [
 				{
 					cmpName: 'zone',
-					htmlTagName: 'section',
 					attr: {
 						class: "zone",
 						style: {
@@ -27,7 +26,6 @@ export const siteStore = {
 				},
 				{
 					cmpName: 'zone',
-					htmlTagName: 'section',
 					attr: {
 						class: "zone",
 						style: {
