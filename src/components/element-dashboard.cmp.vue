@@ -4,32 +4,39 @@
               <button @click="pickMode=true">Elemenets</button>
               <button @click="pickMode=false">Edit</button>
           </div>
-      <div v-show="pickMode" class="element-picker" :class="minimized">
-          <element-list v-if="listShown" :samples="samples" :element="pickedElement"/>
-          <element-picker v-else/>
-      </div>
-          <element-edit v-show="!pickMode"/> 
+          <div v-show="pickerMode" class="element-picker" :class="minimized">
+            <samples-list v-if="showSamples" :samples="samplesToShow"/>
+            <element-picker v-else @showList="showList"/>
+          </div>
+          <element-edit v-show="!pickerMode"/> 
+
+          <button
+          :title="minimize ? 'Unfold toolbox' : 'Fold toolbox'"
+          class="minimize"
+          :class="minimized"
+          @click="toggleMinimize"
+        >
+        </button>
     </div>
+    
 </template>
 
 <script>
 import elementPicker from './element-picker.cmp.vue'
-import elementList from './element-list.cmp.vue'
+import samplesList from './samples-list.cmp.vue'
 import elementEdit from './element-edit.cmp.vue'
 
 export default {
   data() {
     return {
-      pickedElement: 'sections',
-      elementBtns:['text','image','button'],
-      pickMode: true,
-      listShown: false,
+      pickerMode: true,
+      showSamples: false,
       minimize: false
     };
   },
   computed: {
-    samples(){
-      this.$store.getters.samples[this.pickedElement]
+    samplesToShow(){
+      return this.$store.getters.samples
     },
     minimized() {
       if (this.minimize) return 'minimized';
@@ -42,14 +49,14 @@ export default {
     toggleMinimize() {
       this.minimize = !this.minimize;
     },
-    toggleList(element) {
-      this.pickedElement = element;
-      this.listShown = !this.listShown;
+    showList(listName) {
+      this.$store.commit(({ type: "setSamplesList", listName: listName}))
+      this.showSamples = true
     },
 
   },
   components:{
-    elementList,
+    samplesList,
     elementPicker,
     elementEdit
   }
