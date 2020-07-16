@@ -1,8 +1,8 @@
 <template>
       <div class="elements-container flex column" :class="minimized">
           <div class="elements-header flex justify-center">
-              <button @clic="pickMode=true">Elemenets</button>
-              <button @clic="pickMode=false">Edit</button>
+              <button @click="pickMode=true">Elemenets</button>
+              <button @click="pickMode=false">Edit</button>
           </div>
       <div v-show="pickMode" class="element-picker" :class="minimized">
           <element-list v-if="listShown" :samples="samples" :element="pickedElement"/>
