@@ -1,7 +1,7 @@
 <template>
   <nav class="nav-bar flex space-between align-center">
     <div class="logo">
-      <h2>Simplify</h2>
+      <h2>SiMPLiFY</h2>
     </div>
     <div class="main-nav">
       <router-link to="/">Home</router-link>
