@@ -1,23 +1,38 @@
 <template>
-    <nav class="flex space-between" :style="cmp.style">
-        <div :style="cmp.style.logo">
-        logo
-        </div>
-        <div :style="cmp.style.main-nav">
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Contact</a>
+  <nav :style="cmp.style">
+    <component v-for="(cmp, idx) in cmp.cmps.logo"
+      :is="cmp.type"
+      :cmp="cmp"
+      :key="idx"
+    >
+    </component>
+    <component
+      v-for="(cmp, idx) in cmp.cmps.buttons"
+      :is="cmp.type"
+      :cmp="cmp"
+      :key="'btn'+idx"
+    >
+    </component>
 
-        </div>
-    </nav>
+  </nav>
 </template>
 
 <script>
+import siteText from '@/custom-cmps/site-text.cmp.vue'
+import siteImage from '@/custom-cmps/site-image.cmp.vue';
+import siteButton from '@/custom-cmps/site-button.cmp.vue';
+
 export default {
-    name:"siteNav",
-    props:['cmp'],
-    created() {
-        console.log(this.cmp);
-    }
-}
+  name: 'site-nav',
+  props: ['cmp'],
+  components:{
+      siteText,
+      siteImage,
+      siteButton,
+  },
+  created(){
+      console.log(this.cmp)
+  }
+
+};
 </script>
