@@ -1,16 +1,21 @@
 <template>
   <ul>
-    <!-- <li v-for="(sample,idx) in samples" :key="idx"></li> -->
+    <li v-for="(sample,idx) in samples" :key="idx">
+      {{sample}}
+    </li>
   </ul>
 </template>
 
 <script>
 export default {
+  props:['samples'],
   data() {
-    props:['samples']
     return {
 
     };
+  },
+  created(){
+    console.log(this.samples)
   },
   computed: {
 
