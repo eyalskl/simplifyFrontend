@@ -1,12 +1,12 @@
 <template>
-    <span :style="cmpTree.attr.style">
-        {{}}
+    <span :style="cmpTree.attr.style" contenteditable="true">
+        {{cmpTree.content}}
     </span>
 </template>
 
 <script>
 export default {
-    name:"zone",
+    name:"textBox",
     props:['cmpTree'],
 
 }

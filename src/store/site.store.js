@@ -25,15 +25,17 @@ export const siteStore = {
 					},
 					cmps: [
 						{
-							cmpName: 'text',
-							txt: 'Hello World',
+							cmpName: 'text-box',
+							content: 'Hello World',
 							attr: {
 								class: 'txt',
 								style: {
 									fontFamily:'Righteous',
 									fontSize: '3rem',
-									color:'#202204',
-									
+									color:'#FFF',
+									textShadow: '2px 2px 2px #000',
+									top: "50px",
+									left: "150px"
 								},
 							},
 						},

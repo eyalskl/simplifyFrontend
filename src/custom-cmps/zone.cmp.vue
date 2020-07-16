@@ -1,5 +1,5 @@
 <template>
-  <section :style="cmpTree.attr.style">
+  <section :style="cmpTree.attr.style" class="zone">
     <component
       v-for="(cmp, idx) in cmpTree.cmps"
       :is="cmp.cmpName"

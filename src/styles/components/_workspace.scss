@@ -1,0 +1,11 @@
+.workspace {
+	* {
+		outline: none;
+	}
+	.zone {
+        position: relative;
+        *{
+            position: absolute;
+        }
+	}
+}
