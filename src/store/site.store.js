@@ -1,5 +1,8 @@
+const _ = require("lodash")
+
 export const siteStore = {
 	state: {
+        samples:{sections:['nav','hero','paragraph','img with text','sharing']},
 		site: {
 			_id: '5e28393890dd7201a06d4e44',
 			name: 'new site',
@@ -10,6 +13,7 @@ export const siteStore = {
 			},
 			cmps: [
 				{
+                    id: _.uniqueId(),
 					type: 'site-section',
 					style: {
 						backgroundColor: '#f53b76',
@@ -19,6 +23,7 @@ export const siteStore = {
                     },
 					cmps: [
 						{
+                            id: _.uniqueId(),
 							type: 'site-text',
 							content: 'Hello World',
 							style: {
@@ -28,7 +33,8 @@ export const siteStore = {
 								textShadow: '2px 2px 2px #000',
 							},
 						},
-						{
+						{   
+                            id: _.uniqueId(),
 							type: 'site-text',
 							content: 'Hello World',
 							style: {
@@ -41,6 +47,7 @@ export const siteStore = {
 					],
 				},
 				{
+                    id: _.uniqueId(),
 					type: 'site-section',
 					style: {
 						backgroundColor: '#34bd98',
@@ -50,14 +57,16 @@ export const siteStore = {
 					},
 					cmps: [
 						{
+                            id: _.uniqueId(),
 							type: 'site-image',
-							content: {src:'https://i1.sndcdn.com/avatars-000214595785-kgx9qu-t500x500.jpg'},
+							content: 'https://i1.sndcdn.com/avatars-000214595785-kgx9qu-t500x500.jpg',
 							style: {
 								height: '200px',
 								objectFit: 'cover',
 							},
 						},
 						{
+                            id: _.uniqueId(),
 							type: 'site-button',
 							content: {text:'Button',href:''},
 							style: {
