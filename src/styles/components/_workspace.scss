@@ -1,11 +1,11 @@
-.workspace {
-	* {
-		outline: none;
-	}
-	.zone {
+* {
+    .workspace {
+        outline: none;
+    }
+    .site-section {
         position: relative;
-        *{
-            position: absolute;
-        }
-	}
+        // * {
+        //     position: absolute;
+        // }
+    }
 }
