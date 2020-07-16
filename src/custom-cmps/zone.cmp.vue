@@ -1,13 +1,22 @@
 <template>
-    <section :style="cmpTree.attr.style">
-
-    </section>
+  <section :style="cmpTree.attr.style">
+    <component
+      v-for="(cmp, idx) in cmpTree.cmps"
+      :is="cmp.cmpName"
+      :cmpTree="cmp"
+      :key="idx"
+    >
+    </component>
+  </section>
 </template>
 
 <script>
+import textBox from './textBox.cmp.vue'
 export default {
-    name:"zone",
-    props:['cmpTree'],
-
-}
+  name: 'zone',
+  props: ['cmpTree'],
+  components:{
+      textBox,
+  }
+};
 </script>

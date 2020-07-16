@@ -1,5 +1,5 @@
 <template>
-  <section class="workspace">
+  <section class="workspace flex column">
     <component
       v-for="(cmp, idx) in siteTree.cmps"
       :is="cmp.cmpName"

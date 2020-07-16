@@ -1,3 +1,5 @@
+// SETUP
+@import './setup/vars';
 // BASICS
 @import './basics/base';
 @import './basics/helpers';
@@ -5,3 +7,4 @@
 @import './components/nav-bar';
 // VIEWS
 @import './views/editor';
+@import './views/home-page';

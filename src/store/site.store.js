@@ -11,27 +11,41 @@ export const siteStore = {
 					_id: '5e26e0b718a0891d4c995527',
 				},
 			},
+
 			cmps: [
 				{
 					cmpName: 'zone',
 					attr: {
-						class: "zone",
+						class: 'zone',
 						style: {
-							backgroundColor: "red",
-							height: "500px",
-							width:"200px",
+							backgroundColor: '#f53b76',
+							height: '500px',
 							padding: '10px 10px 10px 10px',
 						},
 					},
+					cmps: [
+						{
+							cmpName: 'text',
+							txt: 'Hello World',
+							attr: {
+								class: 'txt',
+								style: {
+									fontFamily:'Righteous',
+									fontSize: '3rem',
+									color:'#202204',
+									
+								},
+							},
+						},
+					],
 				},
 				{
 					cmpName: 'zone',
 					attr: {
-						class: "zone",
+						class: 'zone',
 						style: {
-							backgroundColor: "green",
-							height: "500px",
-							width:"200px",
+							backgroundColor: '#34bd98',
+							height: '500px',
 							padding: '10px 10px 10px 10px',
 						},
 					},
