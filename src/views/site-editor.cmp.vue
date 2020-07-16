@@ -1,22 +1,24 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
     <element-picker />
-    <workspace />
+    <site-workspace :site="site"/>
   </section>
 </template>
 
 <script>
-import workspace from '../components/worksapce.cmp.vue';
+import siteWorkspace from '../components/site-worksapce.cmp.vue';
 import elementPicker from '@/components/element-picker.cmp.vue';
 
 export default {
   name: 'editor',
   components: {
-      workspace,
+      siteWorkspace,
       elementPicker
-  }
-};
+  },
+    computed: {
+    site() {
+      return _.cloneDeep(this.$store.getters.site);
+    }
+}
+}
 </script>
-
-<style>
-</style>
