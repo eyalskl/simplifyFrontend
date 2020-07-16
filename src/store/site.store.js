@@ -2,6 +2,7 @@ const _ = require("lodash")
 
 export const siteStore = {
     state: {
+        currSamplesList: 'sections',
         samples: { sections: ['nav', 'hero', 'paragraph', 'img with text', 'sharing'] },
         site: {
             _id: '5e28393890dd7201a06d4e44',
@@ -83,6 +84,9 @@ export const siteStore = {
         site(state) {
             return state.site;
         },
+        samples(state){
+            return state.samples[state.currSamplesList]
+        },
         isLoading(state) {
             return state.isLoading;
         },
@@ -90,6 +94,9 @@ export const siteStore = {
     mutations: {
         setIsLoading(state, { isLoading }) {
             state.isLoading = isLoading;
+        },
+        setSamplesList(state,{listName}){
+            state.currSamplesList = listName
         },
         setSite(state, { site }) {
             state.sites = site;

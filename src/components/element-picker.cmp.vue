@@ -1,35 +1,26 @@
 <template>
-  <ul>
-    <!-- <button @click="toggleList('sections')">
-          Sections
-          </button>
-        <button  v-for="(btn, idx) in elementBtns" @click.stop="toggleList(btn)" :key="idx">
-          {{btn}}
-        </button>
-        <button
-          :title="minimize ? 'Unfold toolbox' : 'Fold toolbox'"
-          class="minimize"
-          :class="minimized"
-          @click="toggleMinimize"
-        >
-        </button> -->
-  </ul>
+
+  <section>
+    <button v-for="(name , idx) in elementNames" @click="showList(name)" :key="idx">
+      {{ name }}
+    </button>
+  </section>
+
 </template>
 
 
 <script>
 export default {
   data() {
-    props:['samples']
     return {
-
+      elementNames: ['sections','text', 'image', 'button']
     };
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {
-
+    showList(listName){
+      this.$emit('showList',listName)
+    }
   }
 };
 </script>
