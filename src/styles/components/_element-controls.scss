@@ -1,0 +1,22 @@
+.element-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    padding: 0.15rem;
+    width: 9rem;
+    >* {
+        font-size: .75rem;
+        width: 20%;
+        background-color: inherit;
+        color: #777;
+        transition: .3s;
+        border-radius: 50%;
+        &:hover {
+            color: #202204;
+            background-color: rgb(235, 235, 235);
+        }
+    }
+}
