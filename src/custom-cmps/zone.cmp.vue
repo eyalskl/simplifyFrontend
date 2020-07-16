@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import textBox from './textBox.cmp.vue'
+import textBox from './text-box.cmp.vue'
 export default {
   name: 'zone',
   props: ['cmpTree'],

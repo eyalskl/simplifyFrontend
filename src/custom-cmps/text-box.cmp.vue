@@ -1,6 +1,6 @@
 <template>
     <span :style="cmpTree.attr.style">
-
+        {{}}
     </span>
 </template>
 
