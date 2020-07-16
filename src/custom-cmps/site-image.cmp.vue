@@ -1,5 +1,5 @@
 <template>
-        <img :src="cmp.content" style="cmp.style"/>
+        <img :src="cmp.content" :style="cmp.style"/>
 </template>
 
 <script>

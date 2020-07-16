@@ -13,12 +13,15 @@
 
 <script>
 import siteSection from '@/custom-cmps/site-section.cmp.vue';
+import siteNav from '@/custom-cmps/site-nav.cmp.vue';
+const _ = require("lodash")
 
 export default {
   name: 'workspace',
   props:['site'],
   components: {
     siteSection,
+    siteNav
   }
 };
 </script>
