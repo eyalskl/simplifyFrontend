@@ -10,7 +10,7 @@
           <i class="fas fa-arrow-left"></i>
         </button>
 
-        <samples-list :samples="samplesToShow" @addSample="addSample" />
+        <samples-list :samples="samplesToShow" :type="" @addSample="addSample" />
       </div>
       <element-picker v-else @showList="showList" />
     </div>
