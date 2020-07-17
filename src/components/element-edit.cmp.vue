@@ -1,31 +1,32 @@
 <template>
   <section class="element-edit">
-    <el-collapse v-model="activeName" accordion>
-      <el-collapse-item title="Element Name" name="1">
-        <el-input placeholder="Element's name..." v-model="cmpName"></el-input>
-      </el-collapse-item>
-      <el-collapse-item title="Text" name="2">
-        <el-input type="textarea" :rows="2" placeholder="Text..."></el-input>
-        <div class="flex justify-center align-center">
-          <label>Font size:</label>
-          <el-slider v-model="fontSize"> </el-slider>
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="Size" name="3"></el-collapse-item>
-      <el-collapse-item title="Layout" name="4"></el-collapse-item>
-    </el-collapse>
+    <!-- <input placeholder="Element's name..." v-model="cmpName" /> -->
+    <div class="flex space-between align-center">
+      <select-box :data="fonts"></select-box>
+      <el-color-picker show-alpha v-model="color"></el-color-picker>
+    </div>
+    <div class="flex space-between align-center">
+      <label>Font size:</label>
+      <el-slider v-model="fontSize"></el-slider>
+    </div>
   </section>
 </template>
 
 <script>
+import selectBox from '../custom-cmps/select-box.cmp';
+
 export default {
   name: 'element-edit',
   data() {
     return {
-      activeName: 1,
       cmpName: '',
-      fontSize: '20'
+      fontSize: 20,
+      fonts: ['Arial', 'Righteous', 'Advent Pro', 'Sans Serif', 'Tahoma'],
+      color: '#765fe5'
     };
+  },
+  components: {
+    selectBox
   }
 };
 </script>
