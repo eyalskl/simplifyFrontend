@@ -1,6 +1,6 @@
 <template>
         <ul class="clean-list" :style="cmp.style">
-        <li v-for="(cmp,idx) in cmp.list" :key="idx" v-text="cmp" contenteditable="true"/>
+        <li v-for="(cmp,idx) in cmp.list" :key="idx" v-text="cmp" contenteditable="true" @dragover.prevent/>
         </ul>
 </template>
 
