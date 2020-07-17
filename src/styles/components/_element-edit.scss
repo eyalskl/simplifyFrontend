@@ -1,21 +1,26 @@
 .element-edit {
-    .el-collapse-item {
-        .el-collapse-item__header {
-            font-family: 'Righteous';
-            background-color: $clr1;
-            font-size: 1.25rem;
-            padding: 0 .5rem;
+    font-family: 'Advent Pro';
+    font-size: 1.25rem;
+    padding: 0 2rem;
+    >* {
+        margin-block-end: .5rem;
+    }
+    input {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #bbb;
+        padding: 0.75rem;
+    }
+    .el-slider {
+        width: 65%;
+    }
+    .el-color-dropdown {
+        input {
+            display: none;
         }
-        font-size: 3rem;
-        .el-input {
-            input {
-                box-shadow: 1px 1px 2px #202204;
-            }
-            padding: 1rem;
-        }
-        .el-slider {
-            padding: 1rem;
-            width: 75%;
+        button {
+            display: none;
+            height: 0;
         }
     }
 }
