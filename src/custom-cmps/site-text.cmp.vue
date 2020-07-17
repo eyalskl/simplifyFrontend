@@ -6,6 +6,7 @@
     @blur="onEdit"
     @keydown.enter="endEdit"
     @click.stop="openEditor"
+    @dragover.prevent
   >
   </span>
 </template>
