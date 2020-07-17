@@ -1,7 +1,7 @@
 <template>
   <section class="site-section" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls">
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
-    <element-controls @clone="clone" v-show="showControls" />
+    <element-controls @clone="clone" v-show="showControls"  />
   </section>
 </template>
 

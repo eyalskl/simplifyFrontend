@@ -1,12 +1,12 @@
 <template>
-  <el-select @change="setFilter" v-model="value" clearable placeholder="Selece a font" :style="{fontFamily: value}">
+  <el-select @change="setFilter" v-model="value" clearable :placeholder="placeholder" :style="{fontFamily: value}">
     <el-option v-for="(option, idx) in options" :key="idx" :label="option" :value="option" :style="{fontFamily: option}"></el-option>
   </el-select>
 </template>
 
 <script>
 export default {
-  props: ['data'],
+  props: ['placeholder', 'data'],
   data() {
     return {
       options: this.data,

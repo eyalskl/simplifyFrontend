@@ -79,17 +79,16 @@
 .back-btn {
     background-color: transparent;
     border: none;
-    font-size: 1.5rem;
-    padding: .5rem .75rem;
-    position: absolute;
-    left: .33rem;
+    font-size: 1.25rem;
+    padding: .25rem .5rem;
+    // position: absolute;
+    align-self: flex-start;
+    left: 0;
+    top: 5px;
     color: #717171;
     transition: .3s;
 }
 
 .back-btn:hover {
     color: black;
-    border-radius: 50%;
-    padding: .5rem .75rem;
-    background-color: rgba(2, 2, 2, 0.123);
 }
