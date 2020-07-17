@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name:"image-box",
+    name:"site-image",
     props:['cmp'],
 }
 </script>
