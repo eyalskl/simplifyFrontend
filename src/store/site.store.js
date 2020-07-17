@@ -84,6 +84,84 @@ export const siteStore = {
                         }, ],
                     },
                 },
+                {
+                    name: 'card',
+                    img: 'https://i.ibb.co/2y5Fsvb/card1.png',
+                    tree: {
+                        type: 'site-section',
+                        style: {
+                            height: '500px',
+                            width: '100%',
+                            padding: '5rem',
+                            display: 'flex',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                        },
+                        cmps: [{
+                                type: 'site-text',
+                                content: `Lago di Braies :
+                    In summer, lake Lago di Braies in South Tyrol reflects colours in all shades from green to blue, in winter Lago di Braies is covered with ice and snow. In winter and summer this jewel is the starting point for hikes, ski tours, snowshoe hikes and walks. Book through us and let's explore it together!`,
+                                style: {
+                                    fontFamily: 'Righteous',
+                                    padding: '1rem',
+                                    textTransform: 'uppercase',
+                                    textAlign: 'center',
+                                    lineHeight: '2rem',
+                                    fontSize: '1.5rem',
+                                },
+                            },
+                            {
+                                type: 'site-image',
+                                content: 'https://images.unsplash.com/photo-1521102761523-b268f61473e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1549&q=80',
+                                style: {
+                                    height: '480px',
+                                    width: '580px',
+                                    objectFit: 'cover',
+                                },
+                            },
+                        ],
+                    },
+                },
+            ],
+        },
+        site: {
+            _id: '5e28393890dd7201a06d4e44',
+            name: 'new site',
+            previewImg: '',
+            createdBy: {
+                username: 'eni',
+                _id: '5e26e0b718a0891d4c995527',
+            },
+            cmps: [{
+                    type: 'site-nav',
+                    style: {
+                        height: '5rem',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                    },
+                    cmps: {
+                        logo: [{
+                            type: 'site-image',
+                            content: 'https://i1.sndcdn.com/avatars-000214595785-kgx9qu-t500x500.jpg',
+                            style: {
+                                height: '5rem',
+                                width: '5rem',
+                            },
+                        }, ],
+                        buttons: [{
+                            type: 'site-button',
+                            content: { text: 'Home', href: '' },
+                            style: {
+                                fontFamily: 'Righteous',
+                                height: '5rem',
+                                textTransform: 'uppercase',
+                                backgroundColor: 'black',
+                                color: '#fff',
+                            },
+                        }, ],
+                    },
+                },
 
                 {
                     type: 'site-section',
@@ -167,6 +245,7 @@ export const siteStore = {
                     },
                     cmps: [{
                             type: 'site-text',
+                            ordr: 1,
                             content: `Lago di Braies :
                 In summer, lake Lago di Braies in South Tyrol reflects colours in all shades from green to blue, in winter Lago di Braies is covered with ice and snow. In winter and summer this jewel is the starting point for hikes, ski tours, snowshoe hikes and walks. Book through us and let's explore it together!`,
                             style: {
