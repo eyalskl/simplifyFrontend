@@ -6,6 +6,7 @@
     :href="content.href"
     @blur="onEdit"
     @keydown.enter="endEdit"
+    @dragover.prevent
   >
   </button>
 </template>
@@ -16,7 +17,7 @@ export default {
   props: ['cmp'],
   data() {
     return {
-      content: ''
+      content:{ text:'', href:''}
     };
   },
   created() {
@@ -25,7 +26,7 @@ export default {
   methods: {
     onEdit(ev) {
       var txt = ev.target.innerText;
-      this.content = txt;
+      this.content.text = txt;
     },
     endEdit() {
       this.$store.dispatch({ type: 'saveSite', content: this.content });

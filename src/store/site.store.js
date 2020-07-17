@@ -294,35 +294,128 @@ export const siteStore = {
             justifyContent: "space-around",
             alignItems: "center",
             marginTop: "2rem",
-            backgroundColor: "black",
+            backgroundColor: '#435760ab',
             color: "white",
+
           },
           cmps: [
             {
               type: "site-div",
               style: {
                 height: "250px",
-                width:"100%"
               },
               cmps: [
                 {
-                  type: "site-list",
-                  list:["ABOUT","SHOP","FORUM","TRAVEL BOOKING"],
+                  type: "site-text",
+                  content: "ABOUT",
                   style: {
-                    display:"flex",
-                    justifyContent:"space-between",
-                    color: "#fff",
+                    width:'100px',
                     fontWeigt:"bold",
-                    fontSize:"1.5rem"
+                    fontSize:"1.5rem",
+                    
                   },
                 },
                 {
                   type: "site-list",
-                  list: ["do this" , "do that" , "do popo "],
+                  list:["DESTINATIONS","SHOP","FORUM","TRAVEL BOOKING"  ],
                   style: {
-                    height: "250px",
+                    display:"flex",
+                    flexDirection:"column",
+                    color: "#fff",
+                    marginTop:"1rem"
                   },
                 },
+
+
+              ],
+            },
+            {
+              type: "site-div",
+              style: {
+                height: "250px",
+              },
+              cmps: [
+                {
+                  type: "site-text",
+                  content: "ABOUT",
+                  style: {
+                    width:'100px',
+                    fontWeigt:"bold",
+                    fontSize:"1.5rem",
+                    
+                  },
+                },
+                {
+                  type: "site-list",
+                  list:["DESTINATIONS","SHOP","FORUM","TRAVEL BOOKING"  ],
+                  style: {
+                    display:"flex",
+                    flexDirection:"column",
+                    color: "#fff",
+                    marginTop:"1rem"
+                  },
+                },
+
+
+              ],
+            },
+            {
+              type: "site-div",
+              style: {
+                height: "250px",
+              },
+              cmps: [
+                {
+                  type: "site-text",
+                  content: "ABOUT",
+                  style: {
+                    width:'100px',
+                    fontWeigt:"bold",
+                    fontSize:"1.5rem",
+                    
+                  },
+                },
+                {
+                  type: "site-list",
+                  list:["DESTINATIONS","SHOP","FORUM","TRAVEL BOOKING"  ],
+                  style: {
+                    display:"flex",
+                    flexDirection:"column",
+                    color: "#fff",
+                    marginTop:"1rem"
+                  },
+                },
+
+
+              ],
+            },
+            {
+              type: "site-div",
+              style: {
+                height: "250px",
+              },
+              cmps: [
+                {
+                  type: "site-text",
+                  content: "ABOUT",
+                  style: {
+                    width:'100px',
+                    fontWeigt:"bold",
+                    fontSize:"1.5rem",
+                    
+                  },
+                },
+                {
+                  type: "site-list",
+                  list:["DESTINATIONS","SHOP","FORUM","TRAVEL BOOKING"  ],
+                  style: {
+                    display:"flex",
+                    flexDirection:"column",
+                    color: "#fff",
+                    marginTop:"1rem"
+                  },
+                },
+
 
               ],
             },

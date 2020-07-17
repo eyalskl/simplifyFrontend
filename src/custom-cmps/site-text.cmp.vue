@@ -5,6 +5,7 @@
     v-text="cmp.content"
     @blur="onEdit"
     @keydown.enter="endEdit"
+    @dragover.prevent
   >
   </span>
 </template>
