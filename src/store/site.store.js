@@ -218,7 +218,8 @@ export const siteStore = {
 					},
 					cmps: [
 						{
-							type: 'site-text',
+                            type: 'site-text',
+                            ordr: 1,
 							content: `Lago di Braies :
                 In summer, lake Lago di Braies in South Tyrol reflects colours in all shades from green to blue, in winter Lago di Braies is covered with ice and snow. In winter and summer this jewel is the starting point for hikes, ski tours, snowshoe hikes and walks. Book through us and let's explore it together!`,
 							style: {
