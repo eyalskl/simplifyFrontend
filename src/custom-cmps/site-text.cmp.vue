@@ -2,7 +2,7 @@
   <span
     :style="cmp.style"
     contenteditable="true"
-    v-text="content"
+    v-text="cmp.content"
     @blur="onEdit"
     @keydown.enter="endEdit"
   >
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'textBox',
+  name: 'site-text',
   props: ['cmp'],
   data() {
     return {
@@ -33,3 +33,4 @@ export default {
   }
 };
 </script>
+

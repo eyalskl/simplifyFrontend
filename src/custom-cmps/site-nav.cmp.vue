@@ -21,6 +21,7 @@
 import siteText from '@/custom-cmps/site-text.cmp.vue'
 import siteImage from '@/custom-cmps/site-image.cmp.vue';
 import siteButton from '@/custom-cmps/site-button.cmp.vue';
+import siteList from '@/custom-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
 
 
@@ -31,6 +32,7 @@ export default {
       siteText,
       siteImage,
       siteButton,
+      siteList,
       elementControls
   },
   data(){

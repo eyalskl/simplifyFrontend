@@ -1,19 +1,19 @@
 <template>
-  <section class="site-section" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls">
+  <div class="site-div" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls">
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls @clone="clone" v-show="showControls" />
-  </section>
+  </div>
 </template>
 
 <script>
-import siteDiv from '@/custom-cmps/site-div.cmp.vue';
 import siteText from '@/custom-cmps/site-text.cmp.vue';
 import siteImage from '@/custom-cmps/site-image.cmp.vue';
 import siteButton from '@/custom-cmps/site-button.cmp.vue';
+import siteList from '@/custom-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
 
 export default {
-  name: 'site-section',
+  name: 'site-div',
   props: ['cmp'],
   data() {
     return {
@@ -21,7 +21,7 @@ export default {
     };
   },
   created(){
-    console.log(this.cmp.type);
+      console.log(this.cmp)
   },
   methods: {
     displayControls() {
@@ -35,11 +35,11 @@ export default {
     }
   },
   components: {
-    siteDiv,
-    elementControls,
-        siteText,
+    siteText,
     siteImage,
     siteButton,
+    siteList,
+    elementControls
   }
 };
 </script>
