@@ -5,10 +5,10 @@
         <el-input placeholder="Element's name..." v-model="cmpName"></el-input>
       </el-collapse-item>
       <el-collapse-item title="Text" name="2">
-        <el-input type="textarea" :rows="2" placeholder="Text..." v-model="textarea"></el-input>
+        <el-input type="textarea" :rows="2" placeholder="Text..."></el-input>
         <div class="flex justify-center align-center">
           <label>Font size:</label>
-          <el-slider v-model="value2"></el-slider>
+          <el-slider v-model="fontSize"> </el-slider>
         </div>
       </el-collapse-item>
       <el-collapse-item title="Size" name="3"></el-collapse-item>
