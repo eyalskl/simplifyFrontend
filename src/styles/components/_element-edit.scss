@@ -23,4 +23,46 @@
             height: 0;
         }
     }
+    .align-controls,
+    .font-style-controls {
+        width: 100%;
+        justify-content: center;
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            padding: 1.25rem;
+            width: 2rem;
+            height: 2rem;
+            margin: 0 .5rem;
+            border-radius: 50%;
+            color: #717171;
+            transition: .3s;
+            &:hover {
+                color: black;
+                border-radius: 50%;
+                background-color: rgb(221, 221, 221);
+            }
+        }
+    }
+    .text-shadow {
+        >* {
+            width: 100%;
+        }
+    }
+    .advanced {
+        margin-block-start: 1rem;
+        font-family: 'Advent Pro';
+        font-weight: bold;
+        font-size: 1rem;
+        width: 100%;
+        background-color: $clr1;
+    }
+    .advanced-settings {
+        animation-duration: .8s;
+        .el-slider {
+            width: 50%;
+        }
+    }
 }
