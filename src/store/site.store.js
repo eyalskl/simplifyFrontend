@@ -46,7 +46,47 @@ export const siteStore = {
                             },
                         ],
                     },
-				},
+                },
+                {
+                    name: 'card',
+					img: 'https://i.ibb.co/2y5Fsvb/card1.png',
+					tree: {
+                        type: 'site-section',
+                        style: {
+                            height: '500px',
+                            width: '100%',
+                            padding: '5rem',
+                            display: 'flex',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                        },
+                        cmps: [
+                            {
+                                type: 'site-text',
+                                content: `Lago di Braies :
+                    In summer, lake Lago di Braies in South Tyrol reflects colours in all shades from green to blue, in winter Lago di Braies is covered with ice and snow. In winter and summer this jewel is the starting point for hikes, ski tours, snowshoe hikes and walks. Book through us and let's explore it together!`,
+                                style: {
+                                    fontFamily: 'Righteous',
+                                    padding: '1rem',
+                                    textTransform: 'uppercase',
+                                    textAlign: 'center',
+                                    lineHeight: '2rem',
+                                    fontSize: '1.5rem',
+                                },
+                            },
+                            {
+                                type: 'site-image',
+                                content:
+                                    'https://images.unsplash.com/photo-1521102761523-b268f61473e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1549&q=80',
+                                style: {
+                                    height: '480px',
+                                    width: '580px',
+                                    objectFit: 'cover',
+                                },
+                            },
+                        ],
+                    },
+                },
 			],
 		},
 		site: {
