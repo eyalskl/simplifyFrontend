@@ -1,12 +1,15 @@
+
 <template>
-  <ul>
-    <li v-for="(sample,idx) in samples" :key="idx">
-      {{sample}}
+  <ul class="clean-list">
+    <li v-for="(sample,idx) in samples" :key="idx" @click="addSample(sample.tree)">
+      {{sample.name}}
+      <img :src="sample.img" class="section-sample-img"/>
     </li>
   </ul>
 </template>
 
 <script>
+
 export default {
   props:['samples'],
   data() {
@@ -15,13 +18,14 @@ export default {
     };
   },
   created(){
-    console.log(this.samples)
   },
   computed: {
 
   },
   methods: {
-
+    addSample(sample){
+      this.$emit('addSample', sample)
+    }
   }
 };
 </script>

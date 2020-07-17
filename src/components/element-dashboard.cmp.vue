@@ -5,7 +5,7 @@
               <button @click="pickerMode=false">Edit</button>
           </div>
           <div v-show="pickerMode" class="element-picker" :class="minimized">
-            <samples-list v-if="showSamples" :samples="samplesToShow"/>
+            <samples-list v-if="showSamples" :samples="samplesToShow" @addSample="addSample"/>
             <element-picker v-else @showList="showList"/>
           </div>
           <element-edit v-show="!pickerMode"/> 
@@ -53,7 +53,9 @@ export default {
       this.$store.commit(({ type: "setSamplesList", listName: listName}))
       this.showSamples = true
     },
-
+    addSample(sample){
+      this.$emit('addSample', sample)
+    }
   },
   components:{
     samplesList,

@@ -1,6 +1,6 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
-    <element-dashboard/>
+    <element-dashboard @addSample="addSample"/>
     <site-workspace :site="site"/>
   </section>
 </template>
@@ -16,10 +16,24 @@ export default {
       siteWorkspace,
       elementDashboard
   },
-    computed: {
-    site() {
-      return _.cloneDeep(this.$store.getters.site);
+  data(){
+    return{
+      site: {}
     }
+  },
+  created(){
+    this.site = _.cloneDeep(this.$store.getters.site)
+  },
+    computed: {
+    // site() {
+    //   return _.cloneDeep(this.$store.getters.site);
+    // }
+},
+methods:{
+  addSample(sample){
+    this.site.cmps.push(sample)
+
+  }
 }
 }
 </script>
