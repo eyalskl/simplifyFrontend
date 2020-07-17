@@ -8,6 +8,7 @@
 <script>
 import siteWorkspace from '../components/site-worksapce.cmp.vue';
 import elementDashboard from '@/components/element-dashboard.cmp.vue';
+import {templateService} from '@/services/template-service.js';
 const _ = require("lodash")
 
 export default {
@@ -22,7 +23,7 @@ export default {
     }
   },
   created(){
-    this.site = _.cloneDeep(this.$store.getters.site)
+    this.site = templateService.getTemplateById(this.$route.params.id)
   },
     computed: {
     // site() {

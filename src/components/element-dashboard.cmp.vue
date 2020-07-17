@@ -10,7 +10,7 @@
           <i class="fas fa-arrow-left"></i>
         </button>
 
-        <samples-list :samples="samplesToShow" :type="" @addSample="addSample" />
+        <samples-list :samples="samplesToShow" :type="currSampList" @addSample="addSample" />
       </div>
       <element-picker v-else @showList="showList" />
     </div>
@@ -33,6 +33,7 @@ import elementEdit from './element-edit.cmp.vue';
 export default {
   data() {
     return {
+      currSampList:'sections',
       pickerMode: true,
       showSamples: false,
       minimize: false
@@ -54,7 +55,8 @@ export default {
       this.minimize = !this.minimize;
     },
     showList(listName) {
-      this.$store.commit({ type: 'setSamplesList', listName: listName });
+      this.$emit('setSamplesList', listName)
+      this.currSampList = listName
       this.showSamples = true;
     },
     addSample(sample) {

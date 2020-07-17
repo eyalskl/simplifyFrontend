@@ -1,10 +1,10 @@
 
 <template>
-  <component :is="`samp-sections-${type}`" :samples="samples"/>
+  <component :is="`sampel-sections-${type}`" :samples="samples"/>
 </template>
 
 <script>
-import sampSections from '../samples-cmps/samp-sections.cmp.vue'
+import sampelSections from '../samples-cmps/sampel-sections.cmp.vue'
 
 export default {
   props:['samples', 'type'],
@@ -24,7 +24,7 @@ export default {
     }
   },
   components:{
-    sampSections
+    sampelSections
   }
 };
 </script>
