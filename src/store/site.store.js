@@ -100,8 +100,7 @@ export const siteStore = {
               content:
               'On earth there is no heaven, but there are pieces of it and we will get you there',
               style: {
-                  fontSize:"3rem",
-                  width:"43rem",
+                  fontSize:"2rem",
                   fontWeight:"bold"
               },
             },
@@ -140,8 +139,7 @@ export const siteStore = {
                   textTransform: "uppercase",
                   textAlign:"center",
                   lineHeight:"2rem",
-                  fontSize:"1.5rem",
-                  width: "600px"      
+                  fontSize:"1rem",
                   
                 },
               },
@@ -150,9 +148,8 @@ export const siteStore = {
               content:
               'https://images.unsplash.com/photo-1521102761523-b268f61473e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1549&q=80',
               style: {
-                  height:"480px",
-                  width:"580px",
-                  objectFit:"cover"
+                  maxHeight:"240px",
+                  objectFit:"cover",
               },
             },
 
@@ -176,8 +173,7 @@ export const siteStore = {
                 content:
                 'https://images.unsplash.com/photo-1565609537938-14d88e26cdf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80',
                 style: {
-                    height:"480px",
-                    width:"580px",
+                    height:"240px",
                     objectFit:"cover"   
                 },
               },
@@ -192,8 +188,7 @@ export const siteStore = {
                   textTransform: "uppercase",
                   textAlign:"center",
                   lineHeight:"2rem",
-                  fontSize:"1.5rem",
-                  width:"600px",
+                  fontSize:"1rem",
                   marginInlineEnd:"8rem"
                 },
               },
