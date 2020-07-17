@@ -1,6 +1,6 @@
 <template>
   <section class="templates-page">
-      
+      <h1>💩 Kaki bePita 💩</h1>
   </section>
 </template>
 
@@ -10,6 +10,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  section {
+    text-align: center;
+  }
+  h1 {
+    font-size: 10rem;
+  }
 </style>
