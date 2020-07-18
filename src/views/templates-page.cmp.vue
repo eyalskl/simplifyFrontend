@@ -1,6 +1,6 @@
 <template>
   <section class="templates-page">
-      <h1>💩 חחחחחחחח 💩</h1>
+      <h1>💩 נדב הוא מלך הקקי הבלתי מעורער , כולם להשתחוות לו  💩</h1>
   </section>
 </template>
 

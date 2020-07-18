@@ -488,19 +488,19 @@ const templates = [{
         {
             type: "site-section",
             style: {
-                height: "300px",
+                height: "250px",
                 width: "100%",
-                padding: "4rem",
                 display: "flex",
                 justifyContent: "space-around",
                 alignItems: "center",
                 backgroundColor: "#5ba8b3cc",
                 color: "white",
+                paddingBlockStart:"2rem"
             },
             cmps: [{
                     type: "site-div",
                     style: {
-                        height: "250px",
+                        height: "100%"
                     },
                     cmps: [{
                             type: "site-text",
@@ -539,7 +539,7 @@ const templates = [{
                 {
                     type: "site-div",
                     style: {
-                        height: "250px",
+                        height: "100%"
                     },
                     cmps: [{
                             type: "site-text",
@@ -576,7 +576,7 @@ const templates = [{
                 }, {
                     type: "site-div",
                     style: {
-                        height: "250px",
+                        height: "100%",
                     },
                     cmps: [{
                             type: "site-text",
@@ -613,7 +613,7 @@ const templates = [{
                 }, {
                     type: "site-div",
                     style: {
-                        height: "250px",
+                        height: "100%"
                     },
                     cmps: [{
                             type: "site-text",
