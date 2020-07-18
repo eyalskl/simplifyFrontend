@@ -597,12 +597,20 @@ export const templateService = {
 };
 
 function getTemplateById(id) {
-  
-  return _.cloneDeep(templates.find(template => template._id === id))
+  let template = templates.find(template => template._id === id)
+  return _.cloneDeep(addIds(template))
 }
 
 function getSamplesOf(element){
   return samples[element]
+}
+
+function addIds(template){
+  template.cmps.forEach(cmp=> {
+    cmp.id = _.uniqueId('cmp_')
+    if (cmp.cmps && cmp.cmps.length>0) addIds(cmp)
+  })
+  return template
 }
 
 
