@@ -32,10 +32,10 @@ export default {
   },
   components: {
     siteDiv,
-    elementControls,
-        siteText,
+    siteText,
     siteImage,
     siteButton,
+    elementControls,
   }
 };
 </script>
