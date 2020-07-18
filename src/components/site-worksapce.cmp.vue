@@ -14,6 +14,8 @@
 <script>
 import siteSection from '@/custom-cmps/site-section.cmp.vue';
 import siteNav from '@/custom-cmps/site-nav.cmp.vue';
+import { eventBus, MINIMIZE_DASHBOARD } from "@/services/event-bus.service.js";
+
 const _ = require("lodash")
 
 export default {
@@ -34,7 +36,10 @@ export default {
     siteNav
   },
   created() {
-
+    eventBus.$on(MINIMIZE_DASHBOARD, isMinimized => {
+      console.log('isMinimized', isMinimized)
+      this.minimize = isMinimized
+      })
   }
 };
 </script>

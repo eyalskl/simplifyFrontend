@@ -2,8 +2,8 @@
   <div class="element-dashboard flex column" :class="minimized">
 
     <div class="element-header flex justify-center">
-      <button @click="pickerMode=true">Elemenets</button>
-      <button @click="pickerMode=false">Edit</button>
+      <button @click="pickerMode=true" :class="{selected: pickerMode === true}"> Elements </button>
+      <button @click="pickerMode=false" :class="{selected: pickerMode === false}"> Edit </button>
     </div>
 
     <div v-show="pickerMode" class="element-picker">
@@ -17,14 +17,16 @@
 
     </div>
 
-    <element-edit v-show="!pickerMode" />
+    <element-edit v-if="!pickerMode" />
 
     <button
       :title="minimize ? 'Unfold toolbox' : 'Fold toolbox'"
       class="minimize"
       :class="minimized"
       @click="toggleMinimize"
-    ></button>
+    >
+    <div></div>
+    </button>
 
   </div>
 </template>

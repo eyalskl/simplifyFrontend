@@ -11,6 +11,8 @@ export const MOVE_ELEMENT = 'move-element';
 export const CLONE_ELEMENT = 'clone-element';
 export const REMOVE_ELEMENT = 'remove-element';
 
+export const MINIMIZE_DASHBOARD = 'minimize-dashboard';
+
 
 
 
