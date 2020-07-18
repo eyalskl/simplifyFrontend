@@ -2,8 +2,6 @@
   <section class="element-edit">
     <h2 v-show="!elementPicked"> Please pick an element on the workspace to enter edit mode.</h2>
     <div v-show="elementPicked">
-      <!-- <edit-site-text v-if="cmpToEdit.type === 'site-text'" :cmp="cmpToEdit" />
-      <edit-site-section v-if="cmpToEdit.type === 'site-section'" :cmp="cmpToEdit" /> -->
       <component v-if="cmpToEdit.type" :is="'edit-' + cmpToEdit.type" :cmp="cmpToEdit"> </component>
     </div>
   </section>

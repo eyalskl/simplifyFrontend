@@ -24,5 +24,10 @@
             justify-content: center;
             align-items: center;
         }
+        >*.router-link-exact-active {
+            color: $clr1;
+            font-weight: bold;
+            box-shadow: inset 0 -6px $clr1;
+        }
     }
 }
