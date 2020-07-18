@@ -16,7 +16,7 @@ export default {
     data() {
         return {
             startFrom: 0,
-            colors: _.flatten(colors).slice(this.startFrom, 19),
+            colors: _.flatten(colors).slice(this.startFrom, 17),
             pickedColor: '69d2e7'
         }
     },
@@ -27,8 +27,8 @@ export default {
         },
         showMore() {
             if (this.startFrom > 981) this.startFrom = 0;
-            else this.startFrom += 19;
-            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 19)
+            else this.startFrom += 17;
+            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 17)
         }
     },
 }
@@ -39,8 +39,7 @@ export default {
         background-color: #fff;
         border-radius: .33rem;
         border: 1px solid #717171;
-        padding: 1rem;
-        width: 15rem;
+        padding: .5rem;
     }
     .color-picker span {
         display: flex;
@@ -54,6 +53,9 @@ export default {
         border-radius: 50%;
         width: 2rem;
         height: 2rem;
+    }
+    .color-picker span:hover {
+        opacity: .9;
     }
     .color-picker span.show-more {
         color: #717171;
