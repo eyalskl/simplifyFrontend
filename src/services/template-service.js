@@ -1,6 +1,6 @@
 const _ = require("lodash");
 const samples = {
-  sections: [
+  section: [
     {
       name: "hero",
       img: "https://i.ibb.co/7KkcVG7/hero-sample-image.png",
@@ -593,15 +593,22 @@ export const templateService = {
   save,
   remove,
   getTemplateById,
-  getEmptyTemplate,
+  getSamplesOf,
 };
 
-function _getUrl(id = "") {
-  const BASE_URL =
-    process.env.NODE_ENV !== "development"
-      ? "/api/template"
-      : "//localhost:3030/api/template";
-  return `${BASE_URL}/${id}`;
+function getTemplateById(id) {
+  
+  return _.cloneDeep(templates.find(template => template._id === id))
+}
+
+function getSamplesOf(element){
+  return samples[element]
+}
+
+
+function _getUrl(id = '') {
+	const BASE_URL = process.env.NODE_ENV !== 'development' ? '/api/template' : '//localhost:3030/api/template';
+	return `${BASE_URL}/${id}`;
 }
 
 function query(filterBy) {
@@ -615,16 +622,6 @@ function query(filterBy) {
     .then((res) => res.data);
 }
 
-function getEmptyTemplate() {
-  return {
-    txt: "",
-    isDone: false,
-  };
-}
-
-function getTemplateById(id) {
-  return templates.find((template) => template._id === id);
-}
 
 function remove(id) {
   return axios.delete(_getUrl(id)).then((res) => res.data);

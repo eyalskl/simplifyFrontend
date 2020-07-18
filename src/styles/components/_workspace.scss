@@ -1,14 +1,15 @@
-* {
-    .workspace {
-        outline: none;
-    }
+.workspace {
+    width: calc(100vw - 20rem);
+    margin-block-start: 5rem;
+    margin-inline-start: 20rem;
+    outline: none;
     .site-section {
         position: relative;
         // * {
         //     position: absolute;
         // }
     }
-    .site-nav{
+    .site-nav {
         position: relative;
     }
 }

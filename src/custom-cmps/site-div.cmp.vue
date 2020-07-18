@@ -21,7 +21,6 @@ export default {
     };
   },
   created(){
-      console.log(this.cmp)
   },
   methods: {
     displayControls() {

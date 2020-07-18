@@ -5,12 +5,15 @@
     v-text="cmp.content"
     @blur="onEdit"
     @keydown.enter="endEdit"
+    @click.stop="openEditor"
     @dragover.prevent
   >
   </span>
 </template>
 
 <script>
+import { eventBus, EDIT_ELEMENT } from "@/services/event-bus.service.js";
+
 export default {
   name: 'site-text',
   props: ['cmp'],
@@ -30,6 +33,9 @@ export default {
     endEdit() {
       this.$store.dispatch({ type: 'saveSite', content: this.content });
       this.$el.blur();
+    },
+    openEditor() {
+      eventBus.$emit(EDIT_ELEMENT, this.cmp);
     }
   }
 };
