@@ -632,28 +632,33 @@ const templates = [{
                         }
                     ],
                 },
-                {
-                    type: "site-section",
-                    style: {
-                        height: "500px",
-                        width: "100%",
-                        padding: "5rem",
-                        display: "flex",
-                        justifyContent: "space-around",
-                        alignItems: "center",
-                        marginBlockStart: "3rem"
-                    },
-        
-                    cmps: [{
-                        type:"site-map",
-                        style:{
-                        height:"200px"
-                        }
-                    }
-                ]
-                }
             ],
         },
+                    {
+                        type: "site-section",
+                        style: {
+                            height: "500px",
+                            width: "100%",
+                            padding: "5rem",
+                            display: "flex",
+                            justifyContent: "space-around",
+                            alignItems: "center",
+                            backgroundColor:"grey"
+                        },
+                        cmps:[{
+                            type:"site-div",
+                            style:{
+                                height:"400px",
+                                width:"400px"
+                            },
+            
+                        cmps: [{
+                            type:"site-map",
+
+                        }
+                    ]
+                }]
+                    }
     ],
 }, ];
 

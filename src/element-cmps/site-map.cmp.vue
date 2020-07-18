@@ -1,7 +1,5 @@
 <template>
-  <div>
-  <google-map/>
-  </div>
+  <google-map class="g-map"/>
 </template>
 
 <script>
@@ -15,5 +13,8 @@ export default {
 </script>
 
 <style>
-
+.g-map{
+    width: 100%;
+    height: 100%;
+}
 </style>
