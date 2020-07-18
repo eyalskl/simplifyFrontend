@@ -61,7 +61,11 @@ export default {
       }
     },
     clone(element){
-
+      const cmps = this.site.cmps;
+      const idx = cmps.findIndex(cmp => cmp.id === element.id);
+      const clone = _.cloneDeep(element)
+      clone.id = templateService.
+      cmps.splice(idx,0,)
     },
     remove(elementId){
       console.log('elementId:', elementId)
