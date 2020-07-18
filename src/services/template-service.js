@@ -659,6 +659,7 @@ export const templateService = {
     save,
     remove,
     makeId,
+    addIds,
     getTemplateById,
     getSamplesOf,
 };

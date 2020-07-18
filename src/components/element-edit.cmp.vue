@@ -14,6 +14,7 @@ import selectBox from '@/custom-cmps/select-box.cmp';
 import editSiteText from '@/editor-cmps/edit-site-text.cmp';
 import editSiteButton from '@/editor-cmps/edit-site-text.cmp';
 import editSiteSection from '@/editor-cmps/edit-site-section.cmp';
+import editSiteDiv from '@/editor-cmps/edit-site-section.cmp';
 import { eventBus, EDIT_ELEMENT } from "@/services/event-bus.service.js";
 
 export default {
@@ -42,7 +43,8 @@ export default {
     selectBox,
     editSiteText,
     editSiteButton,
-    editSiteSection
+    editSiteSection,
+    editSiteDiv
   },
   destroyed() {
     this.elementPicked = false;
