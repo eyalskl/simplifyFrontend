@@ -1,7 +1,7 @@
 <template>
-  <div class="elements-container flex column" :class="minimized">
+  <div class="element-dashboard flex column" :class="minimized">
 
-    <div class="elements-header flex justify-center">
+    <div class="element-header flex justify-center">
       <button @click="pickerMode=true">Elemenets</button>
       <button @click="pickerMode=false">Edit</button>
     </div>
@@ -33,8 +33,11 @@
 import elementPicker from './element-picker.cmp.vue';
 import samplesList from './samples-list.cmp.vue';
 import elementEdit from './element-edit.cmp.vue';
+import { eventBus, MINIMIZE_DASHBOARD } from "@/services/event-bus.service.js";
+
 
 export default {
+  name: 'element-dahsboard',
   props:['samples'],
   data() {
     return {
@@ -55,6 +58,7 @@ export default {
   methods: {
     toggleMinimize() {
       this.minimize = !this.minimize;
+      eventBus.$emit(MINIMIZE_DASHBOARD, this.minimize);
     },
     showList(listName) {
       this.$emit('setSamplesList', listName)
