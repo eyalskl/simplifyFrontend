@@ -19,7 +19,7 @@
 
     </div>
 
-    <element-edit v-if="!pickerMode" />
+    <element-edit v-show="!pickerMode" :isType="type" />
 
     <button
       :title="minimize ? 'Unfold toolbox' : 'Fold toolbox'"
@@ -37,7 +37,7 @@
 import elementPicker from './element-picker.cmp.vue';
 import samplesList from './samples-list.cmp.vue';
 import elementEdit from './element-edit.cmp.vue';
-import { eventBus, MINIMIZE_DASHBOARD } from "@/services/event-bus.service.js";
+import { eventBus, MINIMIZE_DASHBOARD, OPEN_EDITOR } from "@/services/event-bus.service.js";
 
 
 export default {
@@ -48,7 +48,8 @@ export default {
       currSampList:'sections',
       pickerMode: true,
       showSamples: false,
-      minimize: false
+      minimize: false,
+      type: null
     };
   },
   computed: {
@@ -69,6 +70,12 @@ export default {
       this.currSampList = listName
       this.showSamples = true;
     },
+  },
+  created() {
+    eventBus.$on(OPEN_EDITOR, (type) => {
+      this.pickerMode = false;
+      this.type = type;
+      });
   },
   components: {
     samplesList,

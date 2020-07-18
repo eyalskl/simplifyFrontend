@@ -15,6 +15,7 @@ export const MINIMIZE_DASHBOARD = 'minimize-dashboard';
 
 export const FORCE_UPDATE = 'force-update';
 
+export const OPEN_EDITOR = 'open-editor';
 
 
 export const eventBus = new Vue();

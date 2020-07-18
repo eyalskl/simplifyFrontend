@@ -46,14 +46,15 @@ props: ['cmp'],
   data() {
     return {
       showAdvanced: false,
+      fontSize: 16,
       fonts: ['Arial', 'Righteous', 'Advent Pro', 'Sans Serif', 'Tahoma', 'Cursive', 'Fantasy', 'Impact'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
   },
   computed: {
-    fontSize() {
-      return (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
-    }
+    // fontSize() {
+    //   return (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
+    // }
   },
   methods: {
     openAdvanced() {
