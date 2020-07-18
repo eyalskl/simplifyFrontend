@@ -6,7 +6,14 @@ import store from './store'
 import '@/styles/style.scss'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import * as VueGoogleMaps from 'vue2-google-maps'
 
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyB6VnvgD2vcWlBcPoKJUvF1bAdMbdQo25M',
+        libraries: 'places',
+    },
+})
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

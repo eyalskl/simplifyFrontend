@@ -9,6 +9,7 @@
 import siteText from '@/element-cmps/site-text.cmp.vue';
 import siteImage from '@/element-cmps/site-image.cmp.vue';
 import siteButton from '@/element-cmps/site-button.cmp.vue';
+import siteMap from '@/element-cmps/site-map.cmp.vue'
 import siteForm from '@/element-cmps/site-form.cmp.vue';
 import siteList from '@/element-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
@@ -39,6 +40,7 @@ export default {
     siteButton,
     siteList,
     siteForm,
+    siteMap,
     elementControls
   }
 };

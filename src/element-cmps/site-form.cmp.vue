@@ -3,7 +3,10 @@
       <label v-for="(item,idx) in content" :key="idx" contenteditable="true" @click.prevent>{{item.tag}}
       <input :type="item.type" :style="item.style"/>
       </label>
+      <label for="txt-area">Add Something
+      <textarea  id="txt-area" cols="24" rows="7"></textarea>
       <button :style="cmp.btnStyle">Submit</button>
+      </label>
   </form>
 </template>
 

@@ -10,11 +10,12 @@ import siteDiv from '@/element-cmps/site-div.cmp.vue';
 import siteText from '@/element-cmps/site-text.cmp.vue';
 import siteImage from '@/element-cmps/site-image.cmp.vue';
 import siteButton from '@/element-cmps/site-button.cmp.vue';
+import siteMap from '@/element-cmps/site-map.cmp.vue'
 import siteList from '@/element-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
 
 export default {
-  name: '',
+  name: 'site-section',
   props: ['cmp'],
   data() {
     return {
@@ -36,6 +37,7 @@ export default {
     siteText,
     siteImage,
     siteButton,
+    siteMap,
     elementControls,
   }
 };

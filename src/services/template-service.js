@@ -459,17 +459,8 @@ const templates = [{
                                 tag: "Email"
                             },
                             {
-                                type: "number",
+                                type: "tel",
                                 tag: "Phone"
-                            },
-                            {
-                                type: "text",
-                                tag: "Add something",
-                                style: {
-                                    width: "190px",
-                                    height: "120px",
-
-                                }
                             }
                         ]
 
@@ -641,6 +632,26 @@ const templates = [{
                         }
                     ],
                 },
+                {
+                    type: "site-section",
+                    style: {
+                        height: "500px",
+                        width: "100%",
+                        padding: "5rem",
+                        display: "flex",
+                        justifyContent: "space-around",
+                        alignItems: "center",
+                        marginBlockStart: "3rem"
+                    },
+        
+                    cmps: [{
+                        type:"site-map",
+                        style:{
+                        height:"200px"
+                        }
+                    }
+                ]
+                }
             ],
         },
     ],

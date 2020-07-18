@@ -11,6 +11,7 @@
 import siteText from '@/element-cmps/site-text.cmp.vue';
 import siteImage from '@/element-cmps/site-image.cmp.vue';
 import siteButton from '@/element-cmps/site-button.cmp.vue';
+import siteMap from '@/element-cmps/site-map.cmp.vue'
 
 
 export default {
@@ -20,6 +21,7 @@ export default {
         siteText,
         siteImage,
         siteButton,
+        siteMap
 
 
     }

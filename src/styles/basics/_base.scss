@@ -42,6 +42,11 @@ h6 {
     padding: 0;
 }
 
+textarea{
+    outline: none;
+    resize: none;
+}
+
 ::selection {
     background-color: blue;
     color: white;
