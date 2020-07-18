@@ -1,6 +1,6 @@
 
 <template>
-  <component v-if="samples" :is="`sample-${type}`" :samples="samples"/>
+  <component v-if="samples" :is="`sample-${type}`" :samples="samples" />
 </template>
 
 <script>
@@ -14,9 +14,7 @@ export default {
     };
   },
   methods: {
-    addSample(sample){
-      this.$emit('addSample', sample)
-    }
+
   },
   components:{
     sampleSection
