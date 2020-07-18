@@ -666,6 +666,7 @@ export const templateService = {
     query,
     save,
     remove,
+    makeId,
     getTemplateById,
     getSamplesOf,
 };
@@ -681,13 +682,13 @@ function getSamplesOf(element) {
 
 function addIds(template){
     template.cmps.forEach(cmp=>{
-        if (!cmp.id) cmp.id = _makeId()
+        if (!cmp.id) cmp.id = makeId()
         if (cmp.cmps && cmp.cmps.length >0 ) addIds(cmp)
     })
     return template
 }
 
-function _makeId(length = 10) {
+function makeId(length = 10) {
 	var txt = '';
 	var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 	for (var i = 0; i < length; i++) {

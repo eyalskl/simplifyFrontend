@@ -19,10 +19,12 @@ export default {
     eventBus.$emit(MOVE_ELEMENT, this.element.id, direction)
     },
     clone() {
-    },
+        },
     edit() {
-    },
+        eventBus.$emit(CLONE_ELEMENT, this.element)
+        },
     remove() {
+    eventBus.$emit(REMOVE_ELEMENT, this.element.id)
     }
   }
 };
