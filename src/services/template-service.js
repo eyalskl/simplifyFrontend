@@ -1,3 +1,5 @@
+//660:web 2
+
 const _ = require("lodash");
 const samples = {
     section: [{
@@ -652,7 +654,151 @@ const templates = [{
         },
                     
     ],
-}, ];
+},
+
+
+{
+_id: "5e28393890dd7201a06d4e45",
+name: "new site",
+previewImg: "",
+createdBy: {
+    username: "eni",
+    _id: "5e26e0b718a0891d4c995527",
+},
+cmps: [{
+        type: "site-section",
+        style: {
+            background: "url(https://images.unsplash.com/photo-1551439237-dd457099b104?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) no-repeat center center scroll",
+            backgroundSize: "cover",
+            height: "700px",
+            padding: "10px 10px 10px 10px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+        },
+        cmps: [{
+                type: "site-div",
+                style: {
+                    height: "6rem",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    backgroundColor: "#d9ccc959",
+                    alignItems: "center",
+                },
+                cmps: [{
+                        type: "site-image",
+                        content: require("../assets/imgs/dog-logo.png"),
+                        style: {
+                            height: "5rem",
+                            objectFit: "cover",
+                            borderRadius: "16px",
+                            paddingInlineStart: ".1rem"
+                        },
+                    },
+                    {
+                        type: "site-list",
+                        cmps: [{
+                                type: "site-text",
+                                content: "HOME",
+                                style: {
+                                    marginInlineEnd: "1rem",
+                                    color: "#000000",
+                                },
+                            },
+                            {
+                                type: "site-text",
+                                content: "ABOUT",
+                                style: {
+                                    marginInlineEnd: "1rem",
+                                    color: "#000000",
+                                },
+                            },
+                            {
+                                type: "site-text",
+                                content: "SERVICES",
+                                style: {
+                                    marginInlineEnd: "1rem",
+                                    color: "#000000",
+                                },
+                            },
+                            {
+                                type: "site-text",
+                                content: "DESTINATIONS",
+                                style: {
+                                    marginInlineEnd: "1rem",
+                                    color: "#000000",
+                                },
+                            },
+                            {
+                                type: "site-text",
+                                content: "CONTACT US",
+                                style: {
+                                    marginInlineEnd: "1rem",
+                                    color: "#000000",
+                                },
+                            },
+                        ],
+
+                        style: {
+                            fontFamily: "Righteous",
+                            color: "#FFF",
+                            display: "flex",
+                        },
+                    },
+                ],
+            },
+            {
+                type: "site-div",
+                style: {
+                    height: "500px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent:"center",
+                    flexDirection: "column",
+                },
+                cmps: [{
+                        type: "site-text",
+                        content: "ANIMAL GEOGRAPHIC",
+                        style: {
+                            fontSize: "5rem",
+                            fontFamily: "Righteous",
+                            color: "white",
+                            textShadow: "0 0 2px black"
+                        },
+                    },
+                    {
+                        type: "site-text",
+                        content: "We Bring You The Best Articles",
+                        style: {
+                            fontSize: "3rem",
+                            fontFamily: "Righteous",
+                            color: "white",
+                            textShadow: "0 0 1px black"
+                        },
+                    },
+                    {
+                        type: "site-button",
+                        content: { text: "SUBSCRIBE", href: "" },
+                        style: {
+                            fontFamily: "Righteous",
+                            backgroundColor: "#cb965b",
+                            padding: "1rem",
+                            textTransform: "uppercase",
+                            boxShadow: "4px 4px #000",
+                            width: "9rem",
+                            boxShadow: "#0000008c",
+                            color: "white",
+                            borderRadius: "20px",
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+
+
+]}]
 
 export const templateService = {
     query,
