@@ -33,7 +33,7 @@ export default {
     this.site = templateService.getTemplateById(this.$route.params.id);
     this.samples = templateService.getSamplesOf('section');
     eventBus.$on(ADD_SAMPLE, sample => this.addSample(sample));
-    eventBus.$on(CLONE_ELEMENT, elementId => this.clone(element));
+    eventBus.$on(CLONE_ELEMENT, element => this.clone(element));
     eventBus.$on(REMOVE_ELEMENT, elementId => this.remove(elementId));
     eventBus.$on(MOVE_ELEMENT, (elementId, direction) =>
       this.moveElement(elementId, direction)
@@ -63,9 +63,10 @@ export default {
     clone(element){
       const cmps = this.site.cmps;
       const idx = cmps.findIndex(cmp => cmp.id === element.id);
-      const clone = _.cloneDeep(element)
-      clone.id = templateService.
-      cmps.splice(idx,0,)
+      let clone = _.cloneDeep(element)
+      clone.id = templateService.makeId()
+      clone = templateService.addIds(clone)
+      cmps.splice(idx,0,clone)
     },
     remove(elementId){
       console.log('elementId:', elementId)
