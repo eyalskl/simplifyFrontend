@@ -1,23 +1,23 @@
 <template>
-    <div>
+    <div class="edit-site-text">
       <div class="flex space-between align-center">
-      <select-box :data="fonts" @input="setFont" :placeholder="fontFamily"></select-box>
-      <el-color-picker show-alpha @change="setColor" v-model="color"></el-color-picker>
-    </div>
-    <div class="flex space-between align-center">
-      <label>Font size:</label>
-      <el-slider @input="setFontSize" v-model="fontSize"> </el-slider>
-    </div>
-    <div class="align-controls flex">
-      <button> <i class="fas fa-align-left"></i> </button>
-      <button> <i class="fas fa-align-center"></i> </button>
-      <button> <i class="fas fa-align-right"></i> </button>
-    </div>
-    <div class="font-style-controls flex">
-      <button> <i class="fas fa-bold"></i> </button>
-      <button> <i class="fas fa-italic"></i> </button>
-      <button> <i class="fas fa-underline"></i> </button>
-    </div>
+        <select-box :data="fonts" @input="setFont" :placeholder="fontFamily"></select-box>
+        <el-color-picker show-alpha @change="setColor" v-model="color"></el-color-picker>
+      </div>
+      <div class="flex space-between align-center">
+        <label>Font size:</label>
+        <el-slider @input="setFontSize" v-model="fontSize"> </el-slider>
+      </div>
+      <div class="align-controls flex">
+        <button> <i class="fas fa-align-left"></i> </button>
+        <button> <i class="fas fa-align-center"></i> </button>
+        <button> <i class="fas fa-align-right"></i> </button>
+      </div>
+      <div class="font-style-controls flex">
+        <button> <i class="fas fa-bold"></i> </button>
+        <button> <i class="fas fa-italic"></i> </button>
+        <button> <i class="fas fa-underline"></i> </button>
+      </div>
     <div class="text-shadow">
       <select-box :data="shadows" placeholder="Add text shadow...">  </select-box>
     </div>
