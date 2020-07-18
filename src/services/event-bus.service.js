@@ -7,10 +7,9 @@ export const ADD_SAMPLE = 'add-samples';
 // ELEMENT EDIT
 export const EDIT_ELEMENT = 'edit-element';
 //  ELEMENT CONTROLS
-export const MOVE_ELEMENT = 'edit-element';
-export const CLONE_ELEMENT = 'edit-element';
-export const EDIT_ELEMENT = 'edit-element';
-export const REMOVE_ELEMENT = 'edit-element';
+export const MOVE_ELEMENT = 'move-element';
+export const CLONE_ELEMENT = 'clone-element';
+export const REMOVE_ELEMENT = 'remove-element';
 
 
 export const eventBus = new Vue();

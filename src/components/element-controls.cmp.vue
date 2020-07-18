@@ -14,11 +14,8 @@
 export default {
 methods: {
     move(direction) {
-        this.$emit('moveUp')
-    },
-    moveDown() {
-        this.$emit('moveDown')
-    },
+
+},
     clone() {
         this.$emit('clone')
     },
