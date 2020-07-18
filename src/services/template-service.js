@@ -8,7 +8,7 @@ const samples = {
         type: "site-section",
         style: {
           background:
-            "url(https://images.unsplash.com/photo-1506104489822-562ca25152fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80) no-repeat center center fixed",
+            "url(https://images.unsplash.com/photo-1506104489822-562ca25152fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80) no-repeat center center scroll",
           backgroundSize: "cover",
           height: "620px",
           padding: "10px 10px 10px 10px",
@@ -99,7 +99,7 @@ const templates = [
         type: "site-section",
         style: {
           background:
-            "url(https://images.unsplash.com/photo-1506104489822-562ca25152fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80) no-repeat center center fixed",
+            "url(https://images.unsplash.com/photo-1506104489822-562ca25152fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80) no-repeat center center scroll",
           backgroundSize: "cover",
           height: "620px",
           padding: "10px 10px 10px 10px",
