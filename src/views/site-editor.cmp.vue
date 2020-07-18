@@ -1,7 +1,7 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
 
-    <element-dashboard @addSample="addSample" :samples="samples"/>
+    <element-dashboard :samples="samples"/>
     <site-workspace :site="site"/>
 
   </section>
@@ -11,6 +11,8 @@
 import siteWorkspace from '../components/site-worksapce.cmp.vue';
 import elementDashboard from '@/components/element-dashboard.cmp.vue';
 import {templateService} from '@/services/template-service.js';
+import { eventBus, ADD_SAMPLE } from "@/services/event-bus.service.js";
+
 const _ = require("lodash")
 
 export default {
@@ -29,6 +31,7 @@ export default {
   created(){
     this.site = templateService.getTemplateById(this.$route.params.id)
     this.samples = templateService.getSamplesOf('section')
+    eventBus.$on(ADD_SAMPLE, sample => this.addSample(sample))
   },
     computed: {
     // site() {
@@ -37,7 +40,8 @@ export default {
 },
 methods:{
   addSample(sample){
-    this.site.cmps.push(sample)
+    console.log('sample:', sample)
+    this.site.cmps.unshift(sample)
   },
   getElementSamples(element){
     this.samples = templateService.getSamplesOf(element)

@@ -8,12 +8,15 @@
 </template>
 
 <script>
+import { eventBus, ADD_SAMPLE } from "@/services/event-bus.service.js";
+
 export default {
 name:'sample-section',
-props:['samples']
+props:['samples'],
+methods:{
+  addSample(sample){
+    eventBus.$emit(ADD_SAMPLE, sample)
+  }
+}
 }
 </script>
-
-<style>
-
-</style>

@@ -12,7 +12,7 @@
 
       <div v-else>
         <button class="back-btn" @click="showSamples = false"><i class="fas fa-arrow-left"></i> </button>
-        <samples-list :samples="samples" :type="currSampList" @addSample="addSample"/>
+        <samples-list :samples="samples" :type="currSampList"/>
       </div>
 
     </div>
@@ -61,9 +61,6 @@ export default {
       this.currSampList = listName
       this.showSamples = true;
     },
-    addSample(sample) {
-      this.$emit('addSample', sample);
-    }
   },
   components: {
     samplesList,
