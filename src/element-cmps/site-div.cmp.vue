@@ -1,5 +1,5 @@
 <template>
-  <div class="site-div" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls">
+  <div class="site-div" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor">
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls @clone="clone" v-show="showControls" />
   </div>
@@ -13,6 +13,8 @@ import siteMap from '@/element-cmps/site-map.cmp.vue'
 import siteForm from '@/element-cmps/site-form.cmp.vue';
 import siteList from '@/element-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
+import { eventBus, EDIT_ELEMENT, FORCE_UPDATE } from "@/services/event-bus.service.js";
+
 export default {
   name: 'site-div',
   props: ['cmp'],
@@ -22,6 +24,9 @@ export default {
     };
   },
   created(){
+      eventBus.$on(FORCE_UPDATE, () => {
+        this.$forceUpdate();
+      })
   },
   methods: {
     displayControls() {
@@ -30,8 +35,8 @@ export default {
     hideControls() {
       this.showControls = false;
     },
-    clone() {
-      this.$store.commit({type: 'cloneCmp', cmp: _.cloneDeep(this.cmp)})
+    openEditor() {
+      eventBus.$emit(EDIT_ELEMENT, this.cmp);
     }
   },
   components: {
