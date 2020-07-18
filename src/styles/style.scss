@@ -4,6 +4,7 @@
 // BASICS
 @import './basics/base';
 @import './basics/helpers';
+@import './basics/layout';
 // COMPONENTS
 @import './components/nav-bar';
 @import './components/workspace';
@@ -11,9 +12,11 @@
 @import './components/element-controls';
 @import './components/element-edit';
 @import './components/samples-list';
-@import './components/dashboard';
+@import './components/element-dashboard';
 // SITE COMPONENTS
 @import './site-cmps/site-section';
 // VIEWS
 @import './views/editor';
 @import './views/home-page';
+@import './views/about-page';
+@import './views/templates-page';

@@ -12,10 +12,7 @@
 </template>
 
 <script>
-import siteSection from '@/custom-cmps/site-section.cmp.vue';
-import siteNav from '@/custom-cmps/site-nav.cmp.vue';
-import { eventBus, MINIMIZE_DASHBOARD } from "@/services/event-bus.service.js";
-
+import siteSection from '@/custom-cmps/element-cmps/site-section.cmp.vue';
 const _ = require("lodash")
 
 export default {
@@ -33,7 +30,7 @@ export default {
   },
   components: {
     siteSection,
-    siteNav
+    
   },
   created() {
     eventBus.$on(MINIMIZE_DASHBOARD, isMinimized => {

@@ -8,9 +8,9 @@
 
 <script>
 
-    import siteText from '@/custom-cmps/site-text.cmp.vue';
-    import siteImage from '@/custom-cmps/site-image.cmp.vue';
-    import siteButton from '@/custom-cmps/site-button.cmp.vue';
+import siteText from '@/custom-cmps/element-cmps/site-text.cmp.vue';
+import siteImage from '@/custom-cmps/element-cmps/site-image.cmp.vue';
+import siteButton from '@/custom-cmps/element-cmps/site-button.cmp.vue';
 
 
 export default {

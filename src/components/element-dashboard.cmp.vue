@@ -6,10 +6,12 @@
       <button @click="pickerMode=false" :class="{selected: pickerMode === false}"> Edit </button>
     </div>
 
-    <div v-show="pickerMode" class="element-picker">
+    <div v-show="pickerMode">
 
-      <element-picker v-if="!showSamples" @showList="showList"/>
-
+      <div class="element-picker-container" v-if="!showSamples">
+        <h4> Pick an Element</h4>
+        <element-picker @showList="showList"/>
+      </div>
       <div v-else>
         <button class="back-btn" @click="showSamples = false"><i class="fas fa-arrow-left"></i> </button>
         <samples-list :samples="samples" :type="currSampList"/>

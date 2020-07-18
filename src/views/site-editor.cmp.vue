@@ -9,16 +9,19 @@
 import siteWorkspace from '../components/site-worksapce.cmp.vue';
 import elementDashboard from '@/components/element-dashboard.cmp.vue';
 import { templateService } from '@/services/template-service.js';
-import { eventBus,ADD_SAMPLE, EDIT_ELEMENT, CLONE_ELEMENT, REMOVE_ELEMENT , MOVE_ELEMENT} from "@/services/event-bus.service.js";
+import {
+  eventBus,
+  ADD_SAMPLE,
+  EDIT_ELEMENT,
+  CLONE_ELEMENT,
+  REMOVE_ELEMENT,
+  MOVE_ELEMENT
+} from '@/services/event-bus.service.js';
 
 const _ = require('lodash');
 
 export default {
   name: 'site-editor',
-  components: {
-    siteWorkspace,
-    elementDashboard
-  },
   data() {
     return {
       site: {},
@@ -32,7 +35,9 @@ export default {
     eventBus.$on(ADD_SAMPLE, sample => this.addSample(sample));
     // eventBus.$on(CLONE_ELEMENT, sample => this.addSample(element,sample));
     // eventBus.$on(REMOVE_ELEMENT, sample => this.addSample(elementId,sample));
-    eventBus.$on(MOVE_ELEMENT, (elementId,direction) => this.moveElement(elementId,direction));
+    eventBus.$on(MOVE_ELEMENT, (elementId, direction) =>
+      this.moveElement(elementId, direction)
+    );
   },
   computed: {},
   methods: {
@@ -42,19 +47,23 @@ export default {
     getElementSamples(element) {
       this.samples = templateService.getSamplesOf(element);
     },
-    moveElement(elementId,direction){
-      const cmps = this.site.cmps
-      const idx = cmps.findIndex(cmp => cmp.id === elementId)
-      if (direction === 'down' && idx+1 < cmps.length){
-        const cmp = cmps[idx]
-        cmps.splice(idx,1,cmps[idx+1])
-        cmps.splice(idx+1,1,cmp)
-      } else if (direction === 'up' && idx !== 0){
-        const cmp = cmps[idx]
-        cmps.splice(idx,1,cmps[idx-1])
-        cmps.splice(idx-1,1,cmp)
+    moveElement(elementId, direction) {
+      const cmps = this.site.cmps;
+      const idx = cmps.findIndex(cmp => cmp.id === elementId);
+      if (direction === 'down' && idx + 1 < cmps.length) {
+        const cmp = cmps[idx];
+        cmps.splice(idx, 1, cmps[idx + 1]);
+        cmps.splice(idx + 1, 1, cmp);
+      } else if (direction === 'up' && idx !== 0) {
+        const cmp = cmps[idx];
+        cmps.splice(idx, 1, cmps[idx - 1]);
+        cmps.splice(idx - 1, 1, cmp);
+      }
     }
+  },
+  components: {
+    siteWorkspace,
+    elementDashboard
   }
-}
-}
+};
 </script>

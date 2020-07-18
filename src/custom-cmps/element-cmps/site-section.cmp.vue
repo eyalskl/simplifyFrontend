@@ -6,10 +6,11 @@
 </template>
 
 <script>
-import siteDiv from '@/custom-cmps/site-div.cmp.vue';
-import siteText from '@/custom-cmps/site-text.cmp.vue';
-import siteImage from '@/custom-cmps/site-image.cmp.vue';
-import siteButton from '@/custom-cmps/site-button.cmp.vue';
+import siteDiv from '@/custom-cmps/element-cmps/site-div.cmp.vue';
+import siteText from '@/custom-cmps/element-cmps/site-text.cmp.vue';
+import siteImage from '@/custom-cmps/element-cmps/site-image.cmp.vue';
+import siteButton from '@/custom-cmps/element-cmps/site-button.cmp.vue';
+import siteList from '@/custom-cmps/element-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
 
 export default {
@@ -32,10 +33,18 @@ export default {
   },
   components: {
     siteDiv,
+<<<<<<< HEAD:src/custom-cmps/site-section.cmp.vue
     siteText,
     siteImage,
     siteButton,
     elementControls,
+=======
+    elementControls,
+    siteText,
+    siteImage,
+    siteButton,
+    siteList,
+>>>>>>> c8e6465e84a1f27899d82dce5c1f2f21022f2987:src/custom-cmps/element-cmps/site-section.cmp.vue
   }
 };
 </script>
