@@ -45,7 +45,6 @@ name: 'edit-site-text',
 props: ['cmp'],
   data() {
     return {
-      fontSize: 16 ,
       showAdvanced: false,
       fonts: ['Arial', 'Righteous', 'Advent Pro', 'Sans Serif', 'Tahoma', 'Cursive', 'Fantasy', 'Impact'],
       shadows: ['Light', 'Medium', 'Heavy'],
