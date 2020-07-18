@@ -33,8 +33,8 @@ export default {
     this.site = templateService.getTemplateById(this.$route.params.id);
     this.samples = templateService.getSamplesOf('section');
     eventBus.$on(ADD_SAMPLE, sample => this.addSample(sample));
-    // eventBus.$on(CLONE_ELEMENT, sample => this.addSample(element,sample));
-    // eventBus.$on(REMOVE_ELEMENT, sample => this.addSample(elementId,sample));
+    eventBus.$on(CLONE_ELEMENT, elementId => this.clone(element));
+    eventBus.$on(REMOVE_ELEMENT, elementId => this.remove(elementId));
     eventBus.$on(MOVE_ELEMENT, (elementId, direction) =>
       this.moveElement(elementId, direction)
     );
@@ -48,8 +48,6 @@ export default {
       this.samples = templateService.getSamplesOf(element);
     },
     moveElement(elementId, direction) {
-      console.log('elementId:', elementId)
-      console.log('direction:', direction)
       const cmps = this.site.cmps;
       const idx = cmps.findIndex(cmp => cmp.id === elementId);
       if (direction === 'down' && idx + 1 < cmps.length) {
@@ -61,6 +59,15 @@ export default {
         cmps.splice(idx, 1, cmps[idx - 1]);
         cmps.splice(idx - 1, 1, cmp);
       }
+    },
+    clone(element){
+
+    },
+    remove(elementId){
+      console.log('elementId:', elementId)
+      const cmps = this.site.cmps;
+      const idx = cmps.findIndex(cmp => cmp.id === elementId);
+      cmps.splice(idx, 1);
     }
   },
   components: {
