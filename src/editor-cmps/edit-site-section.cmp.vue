@@ -6,23 +6,33 @@
 
 <script>
 import colorPicker from '@/custom-cmps/color-picker.cmp';
+import { eventBus, FORCE_UPDATE } from "@/services/event-bus.service.js";
 
 export default {
   name: 'edit-site-section',
   props: ['cmp'],
-  components: {
-    colorPicker
+  data() {
+    return {
+      cmpToEdit: {
+        style: {
+          backgroundColor: '#000'
+        }
+      }
+    }
+  },
+  methods: {
+    setBgc(bgc) {
+        this.cmpToEdit.style.backgroundColor = bgc;
+        eventBus.$emit(FORCE_UPDATE);
+    }
   },
   watch: {
     cmp() {
       this.cmpToEdit = this.cmp;
-      this.fontSize = parseInt(this.cmp.style.fontSize) * 16;
-      this.fontFamily = this.cmp.style.fontFamily;
-      this.color = this.cmp.style.color;
     }
+  },
+    components: {
+    colorPicker
   }
 };
 </script>
-
-<style>
-</style>

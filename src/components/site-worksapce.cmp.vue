@@ -13,7 +13,7 @@
 
 <script>
 import siteSection from '@/element-cmps/site-section.cmp.vue';
-import { eventBus, MINIMIZE_DASHBOARD } from '@/services/event-bus.service.js';
+import { eventBus, MINIMIZE_DASHBOARD, FORCE_UPDATE } from '@/services/event-bus.service.js';
 const _ = require("lodash")
 
 export default {
@@ -35,8 +35,10 @@ export default {
   },
   created() {
     eventBus.$on(MINIMIZE_DASHBOARD, isMinimized => {
-      console.log('isMinimized', isMinimized)
       this.minimize = isMinimized
+      })
+    eventBus.$on(FORCE_UPDATE, () => {
+        this.$forceUpdate();
       })
   }
 };

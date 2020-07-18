@@ -13,6 +13,7 @@ export const REMOVE_ELEMENT = 'remove-element';
 
 export const MINIMIZE_DASHBOARD = 'minimize-dashboard';
 
+export const FORCE_UPDATE = 'force-update';
 
 
 

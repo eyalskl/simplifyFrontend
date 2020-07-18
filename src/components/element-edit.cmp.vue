@@ -4,7 +4,7 @@
     <div v-show="elementPicked">
       <!-- <edit-site-text v-if="cmpToEdit.type === 'site-text'" :cmp="cmpToEdit" />
       <edit-site-section v-if="cmpToEdit.type === 'site-section'" :cmp="cmpToEdit" /> -->
-      <component :is="'edit-' + cmpToEdit.type" :cmp="cmpToEdit"> </component>
+      <component v-if="cmpToEdit.type" :is="'edit-' + cmpToEdit.type" :cmp="cmpToEdit"> </component>
     </div>
   </section>
 </template>
@@ -12,6 +12,7 @@
 <script>
 import selectBox from '@/custom-cmps/select-box.cmp';
 import editSiteText from '@/editor-cmps/edit-site-text.cmp';
+import editSiteButton from '@/editor-cmps/edit-site-text.cmp';
 import editSiteSection from '@/editor-cmps/edit-site-section.cmp';
 import { eventBus, EDIT_ELEMENT } from "@/services/event-bus.service.js";
 
@@ -40,6 +41,7 @@ export default {
   components: {
     selectBox,
     editSiteText,
+    editSiteButton,
     editSiteSection
   },
   destroyed() {
