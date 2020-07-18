@@ -1,6 +1,7 @@
 <template>
   <div class="color-picker flex column">
       <div class="colors-container flex wrap justify-center">
+        <span @click.stop="setColor('transparent')" title="Transparent" class="show-more"> <i class="far fa-times-circle"></i> </span>
         <span :class="{picked : color === pickedColor}" v-for="(color, idx) in colors" :key="idx" @click.stop="setColor(color)" :style="{backgroundColor : color}"> </span>
         <span @click.stop="showMore" title="More colors..." class="show-more"> <i class="fas fa-plus"></i> </span>
       </div>
@@ -16,7 +17,7 @@ export default {
     data() {
         return {
             startFrom: 0,
-            colors: _.flatten(colors).slice(this.startFrom, 17),
+            colors: _.flatten(colors).slice(this.startFrom, 16),
             pickedColor: '69d2e7'
         }
     },
@@ -27,8 +28,8 @@ export default {
         },
         showMore() {
             if (this.startFrom > 981) this.startFrom = 0;
-            else this.startFrom += 17;
-            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 17)
+            else this.startFrom += 16;
+            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 16)
         }
     },
 }

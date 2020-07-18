@@ -15,7 +15,7 @@ import siteButton from '@/element-cmps/site-button.cmp.vue';
 import siteMap from '@/element-cmps/site-map.cmp.vue'
 import siteList from '@/element-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
-import { eventBus, EDIT_ELEMENT } from "@/services/event-bus.service.js";
+import { eventBus, EDIT_ELEMENT, FORCE_UPDATE } from "@/services/event-bus.service.js";
 
 
 export default {
@@ -36,6 +36,11 @@ export default {
     openEditor() {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
     }
+  },
+  created() {
+    eventBus.$on(FORCE_UPDATE, () => {
+        this.$forceUpdate();
+      })
   },
   components: {
     siteDiv,

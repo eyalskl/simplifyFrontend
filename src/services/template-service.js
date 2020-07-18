@@ -218,6 +218,7 @@ const templates = [{
                 flexDirection: "column",
                 textAlign: "center",
                 alignItems: "center",
+                
             },
             cmps: [{
                 type: "site-div",
@@ -227,6 +228,7 @@ const templates = [{
                     flexDirection: "column",
                     alignItems: "center",
                     padding: "3rem",
+
                 },
                 cmps: [{
                         type: "site-text",
@@ -343,7 +345,6 @@ const templates = [{
                 display: "flex",
                 justifyContent: "space-around",
                 alignItems: "center",
-                marginBlockStart: "3rem"
             },
 
             cmps: [{
@@ -408,7 +409,6 @@ const templates = [{
                 display: "flex",
                 justifyContent: "space-around",
                 alignItems: "center",
-                marginBlockStart: "3rem"
             },
             cmps: [{
                 type: "site-div",
@@ -417,8 +417,8 @@ const templates = [{
                     flexDirection: "column",
                     alignItems: "center",
                     backgroundColor: "#ffffc47d",
-                    padding: "2rem",
-                    width: "100%"
+                    width: "100%",
+                    height:"100%"
                 },
                 cmps: [{
                         type: "site-text",
@@ -632,28 +632,33 @@ const templates = [{
                         }
                     ],
                 },
-                {
-                    type: "site-section",
-                    style: {
-                        height: "500px",
-                        width: "100%",
-                        padding: "5rem",
-                        display: "flex",
-                        justifyContent: "space-around",
-                        alignItems: "center",
-                        marginBlockStart: "3rem"
-                    },
-        
-                    cmps: [{
-                        type:"site-map",
-                        style:{
-                        height:"200px"
-                        }
-                    }
-                ]
-                }
             ],
         },
+                    {
+                        type: "site-section",
+                        style: {
+                            height: "500px",
+                            width: "100%",
+                            padding: "5rem",
+                            display: "flex",
+                            justifyContent: "space-around",
+                            alignItems: "center",
+                            backgroundColor:"grey"
+                        },
+                        cmps:[{
+                            type:"site-div",
+                            style:{
+                                height:"400px",
+                                width:"400px"
+                            },
+            
+                        cmps: [{
+                            type:"site-map",
+
+                        }
+                    ]
+                }]
+                    }
     ],
 }, ];
 
