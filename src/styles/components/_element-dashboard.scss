@@ -7,14 +7,12 @@
     position: fixed;
     z-index: 2;
     background-color: rgb(231, 231, 231);
-    margin-block-start: 5rem;
     &.minimized {
         transform: translateX(-100%);
         box-shadow: none;
     }
     .element-header {
         height: 5rem;
-        margin-block-end: 1rem;
         >* {
             background-color: darken($clr1, 10);
             text-transform: uppercase;

@@ -1,7 +1,7 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
-    <element-dashboard :samples="samples" />
-    <site-workspace :site="site" />
+      <element-dashboard :samples="samples" />
+      <site-workspace :site="site" />
   </section>
 </template>
 
@@ -15,15 +15,11 @@ const _ = require('lodash');
 
 export default {
   name: 'site-editor',
-  components: {
-    siteWorkspace,
-    elementDashboard
-  },
   data() {
     return {
       site: {},
       elements: [],
-      samples: {}
+      samples: {},
     };
   },
   created() {
@@ -45,6 +41,10 @@ export default {
     moveElement(elementId,direction){
 
     }
-  }
+  },
+    components: {
+    siteWorkspace,
+    elementDashboard
+  },
 };
 </script>

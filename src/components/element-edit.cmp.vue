@@ -1,7 +1,7 @@
 <template>
   <section class="element-edit">
-    <h2 v-if="!elementPicked"> Please pick an element on the workspace to enter edit mode.</h2>
-    <div v-else class="editor">
+    <h2 v-show="!elementPicked"> Please pick an element on the workspace to enter edit mode.</h2>
+    <div v-show="elementPicked">
       <edit-site-text :cmp="cmpToEdit" />
     </div>
   </section>
