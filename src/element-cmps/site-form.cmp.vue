@@ -1,9 +1,9 @@
 <template>
-  <form :style="cmp.style">
+  <form :style="cmp.style" @submit.prevent>
       <label v-for="(item,idx) in content" :key="idx" contenteditable="true" @click.prevent>{{item.tag}}
-      <input v-if="item.type!=textarea" :type="item.type" :style="item.style"/>
+      <input :type="item.type" :style="item.style"/>
       </label>
-      <button :style="cmp.btnStyle">Sumbit</button>
+      <button :style="cmp.btnStyle">Submit</button>
   </form>
 </template>
 
