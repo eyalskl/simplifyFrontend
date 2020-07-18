@@ -655,14 +655,30 @@ export const templateService = {
 };
 
 function getTemplateById(id) {
-
-    return _.cloneDeep(templates.find(template => template._id === id))
+    const template = _.cloneDeep(templates.find(template => template._id === id))
+    return addIds(template)
 }
 
 function getSamplesOf(element) {
     return samples[element]
 }
 
+function addIds(template){
+    template.cmps.forEach(cmp=>{
+        if (!cmp.id) cmp.id = _makeId()
+        if (cmp.cmps && cmp.cmps.length >0 ) addIds(cmp)
+    })
+    return template
+}
+
+function _makeId(length = 10) {
+	var txt = '';
+	var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (var i = 0; i < length; i++) {
+		txt += possible.charAt(Math.floor(Math.random() * possible.length));
+	}
+	return txt;
+}
 
 function _getUrl(id = '') {
     const BASE_URL = process.env.NODE_ENV !== 'development' ? '/api/template' : '//localhost:3030/api/template';

@@ -1,3 +1,7 @@
 .site-section{
     transition: .8s;
 }
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
