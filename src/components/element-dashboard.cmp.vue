@@ -1,19 +1,22 @@
 <template>
   <div class="elements-container flex column" :class="minimized">
+
     <div class="elements-header flex justify-center">
       <button @click="pickerMode=true">Elemenets</button>
       <button @click="pickerMode=false">Edit</button>
     </div>
-    <div v-show="pickerMode" class="element-picker" :class="minimized">
-      <div v-if="showSamples">
-        <button class="back-btn" @click="showSamples = false">
-          <i class="fas fa-arrow-left"></i>
-        </button>
 
-        <samples-list :samples="samplesToShow" :type="currSampList" @addSample="addSample" />
+    <div v-show="pickerMode" class="element-picker">
+
+      <element-picker v-if="showSamples" @showList="showList"/>
+
+      <div v-else>
+        <button class="back-btn" @click="showSamples = false"><i class="fas fa-arrow-left"></i> </button>
+        <samples-list :samples="elementSamples" :type="currSampList" @addSample="addSample"/>
       </div>
-      <element-picker v-else @showList="showList" />
+
     </div>
+
     <element-edit v-show="!pickerMode" />
 
     <button
@@ -22,6 +25,7 @@
       :class="minimized"
       @click="toggleMinimize"
     ></button>
+
   </div>
 </template>
 
@@ -31,6 +35,7 @@ import samplesList from './samples-list.cmp.vue';
 import elementEdit from './element-edit.cmp.vue';
 
 export default {
+  props:['elementSamples'],
   data() {
     return {
       currSampList:'sections',
@@ -40,9 +45,6 @@ export default {
     };
   },
   computed: {
-    samplesToShow() {
-      return this.$store.getters.samples;
-    },
     minimized() {
       if (this.minimize) return 'minimized';
     },
