@@ -1,6 +1,6 @@
 <template>
   <section class="templates-page">
-      <h1>💩 Kaki bePita 💩</h1>
+      <h1>💩 חחחחחחחח 💩</h1>
   </section>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="element-controls flex">
-    <button @click.stop="move(up)"><i class="fas fa-arrow-up"></i></button>
-    <button @click.stop="move(down)"><i class="fas fa-arrow-down"></i></button>
+    <button @click.stop="move('up')"><i class="fas fa-arrow-up"></i></button>
+    <button @click.stop="move('down')"><i class="fas fa-arrow-down"></i></button>
     <button @click.stop="clone"><i class="fas fa-clone"></i></button>
     <button @click.stop="edit"><i class="fas fa-edit"></i></button>
     <button @click.stop="remove"><i class="fas fa-trash"></i></button>
@@ -16,17 +16,13 @@ export default {
     props:['element'],
     methods: {
     move(direction) {
-        this.$emit('clone');
-
+    eventBus.$emit(MOVE_ELEMENT, this.element.id, direction)
     },
     clone() {
-      this.$emit('clone');
     },
     edit() {
-      this.$emit('edit');
     },
     remove() {
-      this.$emit('remove');
     }
   }
 };
