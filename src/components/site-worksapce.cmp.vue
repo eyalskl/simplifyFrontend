@@ -1,5 +1,5 @@
 <template>
-  <section class="workspace flex column">
+  <section class="site-workspace flex column" :class="minimized">
     <component
       v-for="(cmp, idx) in site.cmps"
       :is="cmp.type"
@@ -14,14 +14,32 @@
 <script>
 import siteSection from '@/custom-cmps/site-section.cmp.vue';
 import siteNav from '@/custom-cmps/site-nav.cmp.vue';
+import { eventBus, MINIMIZE_DASHBOARD } from "@/services/event-bus.service.js";
+
 const _ = require("lodash")
 
 export default {
-  name: 'workspace',
+  name: 'site-workspace',
   props:['site'],
+  data() {
+    return {
+      minimize: false,
+    }
+  },
+  computed: {
+    minimized() {
+      if (this.minimize) return 'minimized';
+    }
+  },
   components: {
     siteSection,
     siteNav
+  },
+  created() {
+    eventBus.$on(MINIMIZE_DASHBOARD, isMinimized => {
+      console.log('isMinimized', isMinimized)
+      this.minimize = isMinimized
+      })
   }
 };
 </script>

@@ -1,7 +1,9 @@
 <template>
   <section class="element-edit">
-    <!-- <input placeholder="Element's name..." v-model="cmpToEdit.cmpName" /> -->
-    <edit-site-text :cmp="cmpToEdit" />
+    <h2 v-if="!elementPicked"> Please pick an element on the workspace to enter edit mode.</h2>
+    <div v-else class="editor">
+      <edit-site-text :cmp="cmpToEdit" />
+    </div>
   </section>
 </template>
 
@@ -14,6 +16,7 @@ export default {
   name: 'element-edit',
   data() {
     return {
+      elementPicked: false,
       cmpToEdit: {
         style: {
           cmpName: '',
@@ -23,22 +26,20 @@ export default {
           color: '#765fe5'
         }
       },
-      showAdvanced: false,
-      fonts: ['Arial', 'Righteous', 'Advent Pro', 'Sans Serif', 'Tahoma'],
-      shadows: ['Light', 'Medium', 'Heavy'],
-    };
-  },
-  methods: {
-    openAdvanced() {
-      this.showAdvanced = !this.showAdvanced
-    },
+    }
   },
   created() {
-    eventBus.$on(EDIT_ELEMENT, cmp => {this.cmpToEdit = cmp})
+    eventBus.$on(EDIT_ELEMENT, cmp => {
+      this.elementPicked = true;
+      this.cmpToEdit = cmp;
+      })
   },
   components: {
     selectBox,
     editSiteText
+  },
+  destroyed() {
+    this.elementPicked = false;
   }
 };
 </script>

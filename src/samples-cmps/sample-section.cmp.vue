@@ -1,7 +1,7 @@
 <template>
-   <ul class="clean-list flex column">
-    <li v-for="(sample,idx) in samples" :key="idx" @click="addSample(sample.tree)">
-      {{sample.name}}
+   <ul class="sample-section clean-list flex column">
+    <li class="flex column align-center" v-for="(sample,idx) in samples" :key="idx" @click="addSample(sample.tree)">
+      <h3> {{sample.name}} </h3>
       <img :src="sample.img" class="section-sample-img"/>
     </li>
   </ul>

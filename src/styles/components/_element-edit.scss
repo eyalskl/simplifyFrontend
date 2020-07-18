@@ -2,6 +2,21 @@
     font-family: 'Advent Pro';
     font-size: 1.25rem;
     padding: 0 2rem;
+    h2 {
+        cursor: default;
+        text-align: center;
+        line-height: 2;
+        font-size: 1.25rem;
+        background-color: #fff;
+        padding: 1rem;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        transition: .3s;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
     >* {
         margin-block-end: .5rem;
     }

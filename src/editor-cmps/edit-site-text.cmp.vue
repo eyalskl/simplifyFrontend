@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="flex space-between align-center">
-      <select-box :data="fonts" @input="setFont" placeholder="Choose your font..." v-model="cmpToEdit.fontFamily"></select-box>
+      <select-box :data="fonts" @input="setFont" :placeholder="fontFamily"></select-box>
       <!-- <el-color-picker show-alpha v-model="cmpToEdit.color"></el-color-picker> -->
     </div>
     <div class="flex space-between align-center">
@@ -53,6 +53,7 @@ props: ['cmp'],
           color: '#765fe5'
         }
       },
+      fontFamily: 'Choose your font...',
       fontSize: 0,
       showAdvanced: false,
       fonts: ['Arial', 'Righteous', 'Advent Pro', 'Sans Serif', 'Tahoma'],
@@ -77,7 +78,8 @@ props: ['cmp'],
   watch: {
     cmp() {
       this.cmpToEdit = this.cmp; 
-      this.fontSize = parseInt(this.cmpToEdit.style.fontSize) * 16;
+      this.fontSize = parseInt(this.cmp.style.fontSize) * 16;
+      this.fontFamily = this.cmp.style.fontFamily
     }
   }
 };
