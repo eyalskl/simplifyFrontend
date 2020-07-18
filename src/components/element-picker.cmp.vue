@@ -1,7 +1,6 @@
 <template>
-
-  <section>
-    <button v-for="(name , idx) in elementNames" @click="showList(name)" :key="idx">
+  <section class="element-picker">
+    <button class="element-name" v-for="(name , idx) in elementNames" @click="showList(name)" :key="idx">
       {{ name }}
     </button>
   </section>
@@ -10,6 +9,7 @@
 
 <script>
 export default {
+  name: 'element-picker',
   data() {
     return {
       elementNames: ['section','text', 'image', 'button']

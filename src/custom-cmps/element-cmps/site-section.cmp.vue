@@ -1,7 +1,7 @@
 <template>
   <section class="site-section" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls">
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
-    <element-controls @clone="clone" v-show="showControls"  />
+    <element-controls v-show="showControls" :element="cmp" />
   </section>
 </template>
 
@@ -30,9 +30,6 @@ export default {
     hideControls() {
       this.showControls = false;
     },
-    clone() {
-      this.$store.commit({type: 'cloneCmp', cmp: _.cloneDeep(this.cmp)})
-    }
   },
   components: {
     siteDiv,

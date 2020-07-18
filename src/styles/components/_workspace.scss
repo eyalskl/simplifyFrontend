@@ -1,13 +1,15 @@
-.workspace {
+.site-workspace {
     width: calc(100vw - 20rem);
     margin-block-start: 5rem;
     margin-inline-start: 20rem;
     outline: none;
+    transition: .8s;
+    &.minimized {
+        width: 100vw;
+        margin-inline-start: 0;
+    }
     .site-section {
         position: relative;
-        // * {
-        //     position: absolute;
-        // }
     }
 
 }

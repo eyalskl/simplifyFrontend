@@ -1,9 +1,9 @@
 <template>
-  <div class="elements-container flex column" :class="minimized">
+  <div class="element-dashboard flex column" :class="minimized">
 
-    <div class="elements-header flex justify-center">
-      <button @click="pickerMode=true">Elemenets</button>
-      <button @click="pickerMode=false">Edit</button>
+    <div class="element-header flex justify-center">
+      <button @click="pickerMode=true" :class="{selected: pickerMode === true}"> Elements </button>
+      <button @click="pickerMode=false" :class="{selected: pickerMode === false}"> Edit </button>
     </div>
 
     <div v-show="pickerMode" class="element-picker">
@@ -17,14 +17,16 @@
 
     </div>
 
-    <element-edit v-show="!pickerMode" />
+    <element-edit v-if="!pickerMode" />
 
     <button
       :title="minimize ? 'Unfold toolbox' : 'Fold toolbox'"
       class="minimize"
       :class="minimized"
       @click="toggleMinimize"
-    ></button>
+    >
+    <div></div>
+    </button>
 
   </div>
 </template>
@@ -33,8 +35,11 @@
 import elementPicker from './element-picker.cmp.vue';
 import samplesList from './samples-list.cmp.vue';
 import elementEdit from './element-edit.cmp.vue';
+import { eventBus, MINIMIZE_DASHBOARD } from "@/services/event-bus.service.js";
+
 
 export default {
+  name: 'element-dahsboard',
   props:['samples'],
   data() {
     return {
@@ -55,6 +60,7 @@ export default {
   methods: {
     toggleMinimize() {
       this.minimize = !this.minimize;
+      eventBus.$emit(MINIMIZE_DASHBOARD, this.minimize);
     },
     showList(listName) {
       this.$emit('setSamplesList', listName)
