@@ -1,13 +1,13 @@
 <template>
   <section class="element-edit">
     <!-- <input placeholder="Element's name..." v-model="cmpToEdit.cmpName" /> -->
-    <site-text-edit :cmp="cmpToEdit" />
+    <edit-site-text :cmp="cmpToEdit" />
   </section>
 </template>
 
 <script>
-import selectBox from '../custom-cmps/select-box.cmp';
-import siteTextEdit from '../custom-cmps/site-text-edit.cmp';
+import selectBox from '@/custom-cmps/select-box.cmp';
+import editSiteText from '@/editor-cmps/edit-site-text.cmp';
 import { eventBus, EDIT_ELEMENT } from "@/services/event-bus.service.js";
 
 export default {
@@ -38,7 +38,7 @@ export default {
   },
   components: {
     selectBox,
-    siteTextEdit
+    editSiteText
   }
 };
 </script>

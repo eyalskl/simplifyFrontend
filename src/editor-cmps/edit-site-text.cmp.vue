@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="flex space-between align-center">
-      <select-box :data="fonts" @input="setFont" placeholder="Choose your font..."></select-box>
+      <select-box :data="fonts" @input="setFont" placeholder="Choose your font..." v-model="cmpToEdit.fontFamily"></select-box>
       <!-- <el-color-picker show-alpha v-model="cmpToEdit.color"></el-color-picker> -->
     </div>
     <div class="flex space-between align-center">
@@ -40,7 +40,7 @@ import selectBox from '../custom-cmps/select-box.cmp';
 
 
 export default {
-name: 'site-text-edit',
+name: 'edit-site-text',
 props: ['cmp'],
   data() {
     return {
@@ -68,7 +68,7 @@ props: ['cmp'],
     },
     setFontSize(fontSize) {
       this.fontSize = fontSize
-      this.cmpToEdit.style.fontSize = fontSize + 'px';
+      this.cmpToEdit.style.fontSize = fontSize / 16 + 'rem';
     }
   },
   components: {
@@ -77,7 +77,7 @@ props: ['cmp'],
   watch: {
     cmp() {
       this.cmpToEdit = this.cmp; 
-      this.fontSize = parseInt(this.cmpToEdit.style.fontSize)
+      this.fontSize = parseInt(this.cmpToEdit.style.fontSize) * 16;
     }
   }
 };
