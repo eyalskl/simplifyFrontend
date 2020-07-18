@@ -48,6 +48,8 @@ export default {
       this.samples = templateService.getSamplesOf(element);
     },
     moveElement(elementId, direction) {
+      console.log('elementId:', elementId)
+      console.log('direction:', direction)
       const cmps = this.site.cmps;
       const idx = cmps.findIndex(cmp => cmp.id === elementId);
       if (direction === 'down' && idx + 1 < cmps.length) {
