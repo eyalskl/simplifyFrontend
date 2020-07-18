@@ -1,7 +1,9 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
-    <element-dashboard @addSample="addSample"/>
+
+    <element-dashboard @addSample="addSample" :samples="samples"/>
     <site-workspace :site="site"/>
+
   </section>
 </template>
 
@@ -19,11 +21,14 @@ export default {
   },
   data(){
     return{
-      site: {}
+      site: {},
+      elements: [],
+      samples: {}
     }
   },
   created(){
     this.site = templateService.getTemplateById(this.$route.params.id)
+    this.samples = templateService.getSamplesOf('section')
   },
     computed: {
     // site() {
@@ -33,7 +38,9 @@ export default {
 methods:{
   addSample(sample){
     this.site.cmps.push(sample)
-
+  },
+  getElementSamples(element){
+    this.samples = templateService.getSamplesOf(element)
   }
 }
 }

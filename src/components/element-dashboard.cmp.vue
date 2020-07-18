@@ -8,11 +8,11 @@
 
     <div v-show="pickerMode" class="element-picker">
 
-      <element-picker v-if="showSamples" @showList="showList"/>
+      <element-picker v-if="!showSamples" @showList="showList"/>
 
       <div v-else>
         <button class="back-btn" @click="showSamples = false"><i class="fas fa-arrow-left"></i> </button>
-        <samples-list :samples="elementSamples" :type="currSampList" @addSample="addSample"/>
+        <samples-list :samples="samples" :type="currSampList" @addSample="addSample"/>
       </div>
 
     </div>
@@ -35,7 +35,7 @@ import samplesList from './samples-list.cmp.vue';
 import elementEdit from './element-edit.cmp.vue';
 
 export default {
-  props:['elementSamples'],
+  props:['samples'],
   data() {
     return {
       currSampList:'sections',

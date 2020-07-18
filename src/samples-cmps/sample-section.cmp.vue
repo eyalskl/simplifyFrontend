@@ -9,7 +9,8 @@
 
 <script>
 export default {
-
+name:'sample-section',
+props:['samples']
 }
 </script>
 

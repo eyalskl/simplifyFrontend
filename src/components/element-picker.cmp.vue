@@ -8,12 +8,11 @@
 
 </template>
 
-
 <script>
 export default {
   data() {
     return {
-      elementNames: ['sections','text', 'image', 'button']
+      elementNames: ['section','text', 'image', 'button']
     };
   },
   computed: {},
