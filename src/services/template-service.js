@@ -127,7 +127,7 @@ const templates = [
                   height: "5rem",
                   objectFit: "cover",
                   borderRadius:"16px",
-                  paddingInlineStart:"1rem"
+                  paddingInlineStart:".1rem"
                 },
               },
               {
@@ -247,7 +247,7 @@ const templates = [
                 type: "site-text",
                 content: "About Us",
                 style: {
-                  // fontSize: "rem",
+                  fontSize: "1rem",
                   fontWeight: "bold",
                 },
               },
@@ -349,6 +349,11 @@ const templates = [
           }
         ],
       },
+
+
+
+
+
       {
         type: "site-section",
         style: {
@@ -417,6 +422,89 @@ const templates = [
         
         ],
       },
+
+      {
+        type: "site-section",
+          style: {
+            height: "500px",
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            marginBlockStart:"3rem"
+          },
+          cmps:[
+            {
+              type:"site-div",
+              style:{
+              display:"flex",
+              flexDirection:"column",
+              alignItems:"center",
+              backgroundColor:"#ffffc47d",
+              padding:"2rem",
+              width:"100%"
+              },
+              cmps:[
+                {
+                  type:"site-text",
+                  content:"CONTACT US",
+                  style:{
+                    fontSize:"3rem",
+                    fontFamily:"Righteous",
+                    textShadow: "0 0 1px black"
+
+                  }
+                },
+                {
+                  type:"site-form",
+                  style:{
+                    display:"flex",
+                    flexDirection:"column",
+                    width:"180px",
+                    color:"#313b3f",
+                    paddingBlockStart:"2rem"
+
+
+                  },
+                  btnStyle:{
+                    marginBlockStart:"1rem",
+                    backgroundColor:"#202020",
+                    width:"190px",
+                    fontSize:"1.1rem",
+                    color:"white",
+                    borderRadius:"8px"
+
+                  },
+                  content:[
+                    {
+                      type:"text" ,
+                      tag:"Full Name"
+                    },
+                    {
+                    type:"email",
+                    tag:"Email"
+                    },
+                    {
+                    type:"number",
+                    tag:"Phone"
+                    },
+                    {
+                      type:"text",
+                      tag:"Add something",
+                      style:{
+                        width:"190px",
+                        height:"120px",
+
+                      }
+                    }
+                  ]
+
+                  
+                }
+              ]
+            }
+          ]
+        },
       {
         type: "site-section",
         style: {
@@ -426,7 +514,6 @@ const templates = [
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
-          marginTop: "2rem",
           backgroundColor: "#5ba8b3cc",
           color: "white",
         },
