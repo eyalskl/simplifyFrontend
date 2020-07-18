@@ -1,5 +1,5 @@
 <template>
-  <div class="about-page">
+  <div class="about-page app-main">
     <h1>This is an about page</h1>
     </div>
 </template>
@@ -12,3 +12,6 @@ export default {
   }
 }
 </script>
+
+<style>
+</style>
