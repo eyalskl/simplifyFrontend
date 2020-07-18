@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import selectBox from '@/custom-cmps/select-box.cmp';
 import editSiteText from '@/editor-cmps/edit-site-text.cmp';
 import editSiteButton from '@/editor-cmps/edit-site-text.cmp';
 import editSiteSection from '@/editor-cmps/edit-site-section.cmp';
@@ -38,7 +37,6 @@ export default {
       })
   },
   components: {
-    selectBox,
     editSiteText,
     editSiteButton,
     editSiteSection,

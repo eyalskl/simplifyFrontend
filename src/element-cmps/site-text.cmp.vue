@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { eventBus, EDIT_ELEMENT } from "@/services/event-bus.service.js";
+import { eventBus, EDIT_ELEMENT, FORCE_UPDATE } from "@/services/event-bus.service.js";
 
 export default {
   name: 'site-text',
@@ -24,6 +24,7 @@ export default {
   },
   created() {
     this.content = this.cmp.content;
+    eventBus.$on(FORCE_UPDATE, () => this.$forceUpdate());
   },
   methods: {
     onEdit(ev) {
@@ -35,7 +36,7 @@ export default {
       this.$el.blur();
     },
     openEditor() {
-      eventBus.$emit(EDIT_ELEMENT, this.cmp);
+        eventBus.$emit(EDIT_ELEMENT, this.cmp);
     }
   }
 };
