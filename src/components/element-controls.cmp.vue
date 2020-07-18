@@ -1,7 +1,7 @@
 <template>
     <div class="element-controls flex">
-        <button @click.stop="moveUp"> <i class="fas fa-arrow-up"></i> </button>
-        <button @click.stop="moveDown"> <i class="fas fa-arrow-down"></i> </button>
+        <button @click.stop="move(up)"> <i class="fas fa-arrow-up"></i> </button>
+        <button @click.stop="move(down)"> <i class="fas fa-arrow-down"></i> </button>
         <button @click.stop="clone"> <i class="fas fa-clone"></i> </button>
         <button @click.stop="edit"> <i class="fas fa-edit"></i> </button>
         <button @click.stop="remove"> <i class="fas fa-trash"></i> </button>
@@ -9,9 +9,11 @@
 </template>
 
 <script>
+
+
 export default {
 methods: {
-    moveUp() {
+    move(direction) {
         this.$emit('moveUp')
     },
     moveDown() {

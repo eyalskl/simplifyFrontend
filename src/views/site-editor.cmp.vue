@@ -1,51 +1,45 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
-
-    <element-dashboard :samples="samples"/>
-    <site-workspace :site="site"/>
-
+    <element-dashboard :samples="samples" />
+    <site-workspace :site="site" />
   </section>
 </template>
 
 <script>
 import siteWorkspace from '../components/site-worksapce.cmp.vue';
 import elementDashboard from '@/components/element-dashboard.cmp.vue';
-import {templateService} from '@/services/template-service.js';
-import { eventBus, ADD_SAMPLE } from "@/services/event-bus.service.js";
+import { templateService } from '@/services/template-service.js';
+import { eventBus, ADD_SAMPLE } from '@/services/event-bus.service.js';
 
-const _ = require("lodash")
+const _ = require('lodash');
 
 export default {
   name: 'site-editor',
   components: {
-      siteWorkspace,
-      elementDashboard
+    siteWorkspace,
+    elementDashboard
   },
-  data(){
-    return{
+  data() {
+    return {
       site: {},
       elements: [],
       samples: {}
+    };
+  },
+  created() {
+    this.site = templateService.getTemplateById(this.$route.params.id);
+    this.samples = templateService.getSamplesOf('section');
+    eventBus.$on(ADD_SAMPLE, sample => this.addSample(sample));
+  },
+  computed: {},
+  methods: {
+    addSample(sample) {
+      console.log('sample:', sample);
+      this.site.cmps.unshift(sample);
+    },
+    getElementSamples(element) {
+      this.samples = templateService.getSamplesOf(element);
     }
-  },
-  created(){
-    this.site = templateService.getTemplateById(this.$route.params.id)
-    this.samples = templateService.getSamplesOf('section')
-    eventBus.$on(ADD_SAMPLE, sample => this.addSample(sample))
-  },
-    computed: {
-    // site() {
-    //   return _.cloneDeep(this.$store.getters.site);
-    // }
-},
-methods:{
-  addSample(sample){
-    console.log('sample:', sample)
-    this.site.cmps.unshift(sample)
-  },
-  getElementSamples(element){
-    this.samples = templateService.getSamplesOf(element)
   }
-}
-}
+};
 </script>
