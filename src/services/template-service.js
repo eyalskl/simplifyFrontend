@@ -218,7 +218,7 @@ const templates = [{
                 flexDirection: "column",
                 textAlign: "center",
                 alignItems: "center",
-                
+
             },
             cmps: [{
                 type: "site-div",
@@ -272,7 +272,7 @@ const templates = [{
             style: {
                 height: "500px",
                 width: "100%",
-                padding: "5rem",
+                padding: "2rem",
                 display: "flex",
                 justifyContent: "space-around",
                 alignItems: "center",
@@ -283,8 +283,9 @@ const templates = [{
                         display: "flex",
                         flexDirection: "column",
                         padding: "1rem",
-                        height: "400px",
-                        paddingInlineStart: "120px"
+                        height: "450px",
+                        width:"55%",
+                        marginInlineStart: "100px"
                     },
                     cmps: [{
                             type: "site-text",
@@ -317,15 +318,17 @@ const templates = [{
                     type: "site-div",
                     style: {
                         height: "450px",
-                        paddingInlineEnd: "100px"
+                        width:"45%"
+
 
                     },
                     cmps: [{
                         type: "site-image",
                         content: "https://images.unsplash.com/photo-1521102761523-b268f61473e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1549&q=80",
                         style: {
-                            height: "100%",
-                            width: "600px"
+                            height:"100%",
+                            width:"100%"
+                            
                         }
                     }]
                 }
@@ -341,7 +344,7 @@ const templates = [{
             style: {
                 height: "500px",
                 width: "100%",
-                padding: "5rem",
+                padding: "2rem",
                 display: "flex",
                 justifyContent: "space-around",
                 alignItems: "center",
@@ -351,14 +354,15 @@ const templates = [{
                     type: "site-div",
                     style: {
                         height: "450px",
-                        paddingInlineStart: "120px"
+                        width:"50%",
+                        marginInlineStart: "120px"
                     },
                     cmps: [{
                         type: "site-image",
                         content: "https://images.unsplash.com/photo-1565609537938-14d88e26cdf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
                         style: {
-                            height: "100%",
-                            width: "100%"
+                            width:"100%",
+                            height:"100%"
                         }
                     }]
                 },
@@ -368,8 +372,8 @@ const templates = [{
                         display: "flex",
                         flexDirection: "column",
                         padding: "1rem",
-                        height: "400px",
-                        paddingInlineEnd: "100px"
+                        width:"50%",
+                        height: "450px",
                     },
                     cmps: [{
                             type: "site-text",
@@ -407,7 +411,7 @@ const templates = [{
                 height: "500px",
                 width: "100%",
                 display: "flex",
-                justifyContent: "space-around",
+                justifyContent: "space-between",
                 alignItems: "center",
             },
             cmps: [{
@@ -417,8 +421,8 @@ const templates = [{
                     flexDirection: "column",
                     alignItems: "center",
                     backgroundColor: "#ffffc47d",
-                    width: "100%",
-                    height:"100%"
+                    height:"100%",
+                    width:"50%"
                 },
                 cmps: [{
                         type: "site-text",
@@ -467,8 +471,20 @@ const templates = [{
 
                     }
                 ]
-            }]
-        },
+            },
+            {
+            type:"site-div",
+            style:{
+                height:"100%",
+                width:"50%"
+            },
+
+        cmps: [{
+            type:"site-map",
+
+        }]
+        }]
+    },
         {
             type: "site-section",
             style: {
@@ -634,31 +650,7 @@ const templates = [{
                 },
             ],
         },
-                    {
-                        type: "site-section",
-                        style: {
-                            height: "500px",
-                            width: "100%",
-                            padding: "5rem",
-                            display: "flex",
-                            justifyContent: "space-around",
-                            alignItems: "center",
-                            backgroundColor:"grey"
-                        },
-                        cmps:[{
-                            type:"site-div",
-                            style:{
-                                height:"400px",
-                                width:"400px"
-                            },
-            
-                        cmps: [{
-                            type:"site-map",
-
-                        }
-                    ]
-                }]
-                    }
+                    
     ],
 }, ];
 
