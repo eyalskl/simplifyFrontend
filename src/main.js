@@ -6,6 +6,7 @@ import store from './store'
 import '@/styles/style.scss'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/en'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.use(VueGoogleMaps, {
@@ -14,7 +15,7 @@ Vue.use(VueGoogleMaps, {
         libraries: 'places',
     },
 })
-Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
 Vue.config.productionTip = false
 
 new Vue({

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { eventBus, EDIT_ELEMENT, FORCE_UPDATE } from "@/services/event-bus.service.js";
+import { eventBus, EDIT_ELEMENT, FORCE_UPDATE, OPEN_EDITOR } from "@/services/event-bus.service.js";
 
 export default {
     name:"site-image",
@@ -11,6 +11,7 @@ export default {
     methods: {
         openEditor() {
             eventBus.$emit(EDIT_ELEMENT, this.cmp);
+            eventBus.$emit(OPEN_EDITOR, this.cmp.type);
         }
     }
 }
