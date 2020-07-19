@@ -12,27 +12,13 @@ import { eventBus, FORCE_UPDATE } from "@/services/event-bus.service.js";
 export default {
   name: 'edit-site-section',
   props: ['cmp'],
-  data() {
-    return {
-      cmpToEdit: {
-        style: {
-          backgroundColor: '#000'
-        }
-      }
-    }
-  },
   methods: {
     setBgc(bgc) {
-        this.cmpToEdit.style.backgroundColor = bgc;
+        this.cmp.style.backgroundColor = bgc;
         eventBus.$emit(FORCE_UPDATE);
     }
   },
-  watch: {
-    cmp() {
-      this.cmpToEdit = this.cmp;
-    }
-  },
-    components: {
+  components: {
     colorPicker
   }
 };

@@ -33,9 +33,6 @@ export default {
       this.$store.dispatch({ type: 'saveSite', content: this.content });
       this.$el.blur();
     },
-    openEditor() {
-      eventBus.$emit(EDIT_ELEMENT, this.cmp);
-    }
   }
 };
 </script>
