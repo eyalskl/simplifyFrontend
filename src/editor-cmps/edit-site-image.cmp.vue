@@ -1,6 +1,10 @@
 <template>
   <div class="edit-site-image">
-    <input v-if="!isUploading" type="file" @change="onUploadImg" />
+    <label class="img-upload flex column" v-if="!isUploading">
+    <img :src="cmp.content">
+     <p> <i class="fas fa-upload"></i> Upload Your Own </p>
+    <input type="file" @change="onUploadImg" />
+    </label>
     <img
       class="uploading"
       v-else
