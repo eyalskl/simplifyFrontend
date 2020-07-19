@@ -28,7 +28,6 @@ export default {
     this.templates = this.templates.map(template => {
         return { _id: template._id, name: template.name, previewImg: template.previewImg }
     })
-    console.log(this.templates);
   },
   methods: {
     editTemplate(id){
