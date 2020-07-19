@@ -1,9 +1,9 @@
 <template>
 
-    <section class="site-section" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor">
+    <draggable class="site-section" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor">
       <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
       <element-controls v-show="showControls" :element="cmp" />
-    </section>
+    </draggable>
 
 </template>
 
@@ -16,7 +16,8 @@ import siteMap from '@/element-cmps/site-map.cmp.vue'
 import siteList from '@/element-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
 import { eventBus, EDIT_ELEMENT, FORCE_UPDATE, OPEN_EDITOR } from "@/services/event-bus.service.js";
-
+import { Container, Draggable } from "vue-smooth-dnd";
+import { applyDrag, generateItems } from "@/assets/drag-test.js";
 
 export default {
   name: 'site-section',
@@ -50,6 +51,9 @@ export default {
     siteButton,
     siteMap,
     elementControls,
+    Container,
+    Draggable
+    
   }
 };
 </script>

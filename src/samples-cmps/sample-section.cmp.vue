@@ -1,8 +1,8 @@
 <template>
    <ul class="sample-section clean-list flex align-center column">
-     <container class="flex column align-center" @drop="onDrop">
-    <draggable v-for="(sample,idx) in samples" :key="idx" @click="addSample(sample.tree)" >
-      <li class="sample-sectio-preview flex column align-center">
+     <container behavior="copy" group-name="1" class="flex column align-center" :get-child-payload="getSample">
+    <draggable v-for="(sample,idx) in samples" :key="idx">
+      <li class="sample-section-preview flex column align-center" @click.prevent="addSample(sample.tree)">
       <h3> {{sample.name}} </h3>
       <img :src="sample.img" class="section-sample-img"/>
       </li>
@@ -23,6 +23,9 @@ methods:{
   addSample(sample){
     eventBus.$emit(ADD_SAMPLE, sample)
   },
+  getSample(index){
+    return this.samples[index].tree
+  }
 
 //     onDropReady(dropResult) {
 //       const { removedIndex, addedIndex, payload, element } = dropResult;
@@ -34,9 +37,7 @@ methods:{
 //   const { isSource, payload, willAcceptDrop } = dragResult
 // }
 
-    onDrop (dropResult) {
-      this.samples = applyDrag(this.samples, dropResult)
-    },
+
 },
 components:{
    Container,
