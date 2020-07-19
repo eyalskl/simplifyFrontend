@@ -857,19 +857,18 @@ const templates = [{
                                 }
                             },
                             {
-                                type: "site-button",
-                                content: " ",
+                                type: "site-image",
+                                content: "https://images.unsplash.com/photo-1566903026052-36e4e1bd803a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80",
                                 style: {
                                     height: "100px",
                                     width: "100px",
                                     position: "absolute",
-                                    background: `url(https://images.unsplash.com/photo-1566903026052-36e4e1bd803a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80) no-repeat center center scroll`,
-                                    backgroundSize: "cover",
                                     border: "6px white solid",
                                     borderRadius: "50%",
                                     bottom: "38%",
                                     zIndex: "1",
                                     left: "calc(50% - 50px)",
+                                    objectFit:"cover"
                                 }
                             },
                             {
@@ -932,19 +931,18 @@ const templates = [{
                                 }
                             },
                             {
-                                type: "site-button",
-                                content: " ",
+                                type: "site-image",
+                                content: "https://images.unsplash.com/photo-1517649281203-dad836b4abe5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
                                 style: {
                                     height: "100px",
                                     width: "100px",
                                     position: "absolute",
-                                    background: `url(https://images.unsplash.com/photo-1517649281203-dad836b4abe5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) no-repeat center center scroll`,
-                                    backgroundSize: "cover",
                                     border: "6px white solid",
                                     borderRadius: "50%",
                                     bottom: "38%",
                                     zIndex: "1",
                                     left: "calc(50% - 50px)",
+                                    objectFit:"cover"
                                 }
                             },
                             {
@@ -1007,19 +1005,19 @@ const templates = [{
                                 }
                             },
                             {
-                                type: "site-button",
-                                content: " ",
+                                type: "site-image",
+                                content: "https://images.unsplash.com/photo-1547801939-d3ac28994d19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
                                 style: {
                                     height: "100px",
                                     width: "100px",
                                     position: "absolute",
-                                    background: `url(https://images.unsplash.com/photo-1547801939-d3ac28994d19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80) no-repeat center center scroll`,
                                     backgroundSize: "cover",
                                     border: "6px white solid",
                                     borderRadius: "50%",
                                     bottom: "38%",
                                     zIndex: "1",
                                     left: "calc(50% - 50px)",
+                                    objectFit:"cover"
                                 }
                             },
                             {
@@ -1084,19 +1082,18 @@ const templates = [{
                                 }
                             },
                             {
-                                type: "site-button",
-                                content: " ",
+                                type: "site-image",
+                                content: "https://d17fnq9dkz9hgj.cloudfront.net/uploads/2017/10/PF2015_267_Kittens_Shelter-630.jpg",
                                 style: {
                                     height: "100px",
                                     width: "100px",
                                     position: "absolute",
-                                    background: `url(https://d17fnq9dkz9hgj.cloudfront.net/uploads/2017/10/PF2015_267_Kittens_Shelter-630.jpg) no-repeat center center scroll`,
-                                    backgroundSize: "cover",
                                     border: "6px white solid",
                                     borderRadius: "50%",
                                     bottom: "38%",
                                     zIndex: "1",
                                     left: "calc(50% - 50px)",
+                                    objectFit:"cover"
                                 }
                             },
                             {
