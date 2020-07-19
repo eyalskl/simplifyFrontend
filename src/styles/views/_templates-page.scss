@@ -1,4 +1,13 @@
 .templates-page {
     margin-block-start: 5rem;
+
+    .template-list{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        img{
+            height: 300px;
+            cursor: pointer;
+        }
+    }
 }
 
