@@ -85,7 +85,7 @@ const samples = {
 const templates = [{
         _id: "5e28393890dd7201a06d4e44",
         name: "new site",
-        previewImg: "",
+        previewImg: "https://i.ibb.co/7WNJ84F/travel.png",
         createdBy: {
             username: "eni",
             _id: "5e26e0b718a0891d4c995527",
@@ -661,7 +661,7 @@ const templates = [{
     {
         _id: "5e28393890dd7201a06d4e45",
         name: "new site",
-        previewImg: "",
+        previewImg: "https://i.ibb.co/0QCRYzb/nathional.png",
         createdBy: {
             username: "eni",
             _id: "5e26e0b718a0891d4c995527",
@@ -1330,9 +1330,16 @@ export const templateService = {
     remove,
     makeId,
     addIds,
+    getTemplates,
     getTemplateById,
     getSamplesOf,
 };
+
+function getTemplates(){
+    return templates.map(template => {
+        return {_id:template._id,name:template.name,previewImg:template.previewImg}
+    })
+}
 
 function getTemplateById(id) {
     const template = _.cloneDeep(templates.find(template => template._id === id))
