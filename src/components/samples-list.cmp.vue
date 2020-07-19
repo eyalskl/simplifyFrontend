@@ -1,6 +1,8 @@
 
 <template>
-  <component v-if="samples" :is="`sample-${type}`" :samples="samples" />
+  <div class="samples-list">
+    <component v-if="samples" :is="`sample-${type}`" :samples="samples" />
+  </div>
 </template>
 
 <script>
