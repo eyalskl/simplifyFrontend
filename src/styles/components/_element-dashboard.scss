@@ -12,20 +12,20 @@
         box-shadow: none;
     }
     .element-header {
-        height: 4.5rem;
         >* {
-            background-color: darken($clr1, 10);
+            padding: 1rem 0;
+            background-color: $clr1;
             font-size: 1.5rem;
             font-family: 'Nunito Sans', sans-serif;
-            color: rgb(255, 255, 255);
-            opacity: 0.6;
+            color: #fff;
+            opacity: 1;
             box-shadow: inset 0 -3px rgba(255, 255, 255, 0.253);
             flex: 1;
             border-radius: 0;
             border-bottom: 1px solid rgb(119, 119, 119);
             transition: .3s;
             &:first-child {
-                border-right: 1px solid rgb(119, 119, 119);
+                border-right: 1px solid rgba(255, 255, 255, 0.253);
             }
             &:hover {
                 background-color: $clr1;
@@ -42,7 +42,7 @@
         position: absolute;
         right: -2rem;
         top: calc(50vh - 5rem);
-        background-color: rgb(26, 26, 48);
+        background-color: $clr1;
         border: 1px solid rgb(182, 182, 182);
         color: rgb(255, 255, 255);
         font-size: 1rem;
