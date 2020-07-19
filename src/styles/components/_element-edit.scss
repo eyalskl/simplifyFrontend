@@ -1,90 +1,105 @@
 .element-edit {
-    font-family: 'Advent Pro';
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.25rem;
-    padding: 0 2rem;
+    padding: 0 .75rem;
     margin-top: 1rem;
     h2 {
         cursor: default;
         text-align: center;
         line-height: 2;
         font-size: 1.25rem;
-        background-color: #fff;
+        background-color: $clr1;
+        color: white;
         padding: 1rem;
         border: 1px solid #bbb;
         border-radius: 5px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: normal;
         transition: .3s;
         &:hover {
             opacity: 0.9;
         }
     }
-    >* {
-        margin-block-end: .5rem;
+    h3 {
+        text-transform: capitalize;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #000;
+        margin-block-end: 1rem;
     }
-    input {
-        width: 100%;
-        border-radius: 5px;
-        border: 1px solid #bbb;
-        padding: 0.75rem;
-    }
-    .el-slider {
-        width: 65%;
-    }
-    .el-color-dropdown {
-        input {
-            display: none;
-        }
-        button {
-            display: none;
-            height: 0;
-        }
-    }
-    .align-controls,
-    .font-style-controls {
-        width: 100%;
-        justify-content: center;
-        margin-block-end: .5rem;
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.25rem;
-            padding: 1.25rem;
-            width: 2rem;
-            height: 2rem;
-            margin: .25rem .5rem;
-            border-radius: 12.5px;
-            background-color: inherit;
-            color: #717171;
-            transition: .3s;
-            &:hover {
-                color: rgb(255, 255, 255);
-                background-color: rgb(79, 155, 255);
-                font-weight: bold;
-            }
-            .selected {
-                color: rgb(255, 255, 255);
-                background-color: rgb(79, 155, 255);
-            }
-        }
-    }
-    .text-shadow {
+    .edit-site-text {
         >* {
-            width: 100%;
+            &:nth-child(2) {
+                margin-block-start: 1rem;
+            }
+            margin-block-end: .5rem;
         }
-    }
-    .advanced {
-        margin-block-start: 1rem;
-        font-family: 'Advent Pro';
-        font-weight: bold;
-        font-size: 1rem;
-        width: 100%;
-        background-color: $clr1;
-    }
-    .advanced-settings {
-        animation-duration: .8s;
+        input {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #bbb;
+            padding: 0.75rem;
+        }
         .el-slider {
-            width: 50%;
+            width: 65%;
+        }
+        .el-color-dropdown {
+            input {
+                display: none;
+            }
+            button {
+                display: none;
+                height: 0;
+            }
+        }
+        .align-controls,
+        .font-style-controls {
+            width: 100%;
+            justify-content: center;
+            margin-block-end: .5rem;
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.25rem;
+                padding: 1.25rem;
+                width: 2rem;
+                height: 2rem;
+                margin: .25rem .5rem;
+                border-radius: 12.5px;
+                background-color: inherit;
+                color: #717171;
+                transition: .3s;
+                &:hover {
+                    color: rgb(255, 255, 255);
+                    background-color: rgb(79, 155, 255);
+                    font-weight: bold;
+                }
+                .selected {
+                    color: rgb(255, 255, 255);
+                    background-color: rgb(79, 155, 255);
+                }
+            }
+        }
+        .text-shadow {
+            >* {
+                width: 100%;
+            }
+        }
+        .advanced {
+            margin-block-start: 1rem;
+            font-family: 'Nunito Sans', sans-serif;
+            color: white;
+            font-size: 1rem;
+            height: 3rem;
+            width: 100%;
+            background-color: $clr1;
+        }
+        .advanced-settings {
+            animation-duration: .8s;
+            .el-slider {
+                width: 50%;
+            }
         }
     }
     .edit-site-image {
@@ -103,6 +118,10 @@
             input[type="file"] {
                 display: none;
             }
+        }
+        .upload {
+            height: 2rem;
+            margin: 0 auto;
         }
     }
 }

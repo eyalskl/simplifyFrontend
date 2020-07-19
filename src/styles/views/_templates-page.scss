@@ -1,22 +1,19 @@
 .templates-page {
     margin-block-start: 5rem;
-
-    h1{
+    height: calc(100vh - 5rem);
+    background-color: lighten($clr1, 50);
+    h1 {
         padding: 10px 24px;
-        font-family: 'Trebuchet MS';
-        background-color: lightgray;
-        border-bottom: 1px solid #1a1a31;
+        text-align: center;
     }
-    .template-list{
+    .template-list {
         padding: 20px 0;
         display: grid;
         grid-template-columns: repeat(10, minmax(250px, 1fr));
         justify-items: center;
-        img{
-            height: 300px;
+        img {
+            height: 350px;
             cursor: pointer;
-
         }
     }
 }
-

@@ -23,8 +23,11 @@ export default {
       templates: []
     };
   },
-  created() {
-    this.templates = templateService.getTemplates();
+  async created() {
+    this.templates = await templateService.query();
+    this.templates = this.templates.map(template => {
+        return { _id: template._id, name: template.name, previewImg: template.previewImg }
+    })
   },
   methods: {
     editTemplate(id){

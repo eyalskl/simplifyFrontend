@@ -17,7 +17,7 @@ export default {
     data() {
         return {
             startFrom: 0,
-            colors: _.flatten(colors).slice(this.startFrom, 16),
+            colors: _.flatten(colors).slice(this.startFrom, 22),
             pickedColor: '69d2e7'
         }
     },
@@ -28,8 +28,8 @@ export default {
         },
         showMore() {
             if (this.startFrom > 981) this.startFrom = 0;
-            else this.startFrom += 16;
-            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 16)
+            else this.startFrom += 22;
+            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 22)
         }
     },
 }
@@ -40,7 +40,7 @@ export default {
         background-color: #fff;
         border-radius: .33rem;
         border: 1px solid #717171;
-        padding: .5rem;
+        padding: .75rem .25rem;
     }
     .color-picker span {
         display: flex;

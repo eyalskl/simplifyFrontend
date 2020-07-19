@@ -1,5 +1,6 @@
 <template>
   <div class="edit-site-image">
+    <h3> Image Editor </h3>
     <label class="img-upload flex column" v-if="!isUploading">
     <img :src="cmp.content">
      <p> <i class="fas fa-upload"></i> Upload Your Own </p>

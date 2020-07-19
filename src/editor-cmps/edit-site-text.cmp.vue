@@ -1,8 +1,9 @@
 <template>
     <div class="edit-site-text">
+      <h3> {{ (cmp.type  === 'site-text') ? 'Text' : 'Button' }} editor </h3>
       <div class="flex space-between align-center">
         <select-box :data="fonts" v-model="cmp.style.fontFamily" placeholder="Pick a font..."></select-box>
-        <el-color-picker show-alpha v-model="cmp.style.color"></el-color-picker>
+        <el-color-picker show-alpha @active-change="setColor" v-model="cmp.style.color"></el-color-picker>
       </div>
       <div class="flex space-between align-center">
         <label>Font size:</label>
@@ -51,11 +52,6 @@ props: ['cmp'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
   },
-  computed: {
-    // fontSize() {
-    //   return (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
-    // }
-  },
   methods: {
     openAdvanced() {
       this.showAdvanced = !this.showAdvanced
@@ -65,13 +61,15 @@ props: ['cmp'],
       this.cmp.style.fontSize = (fontSize / 16) + 'rem';
       eventBus.$emit(FORCE_UPDATE);
     },
+    setColor(color) {
+      this.cmp.style.color = color
+    }
   },
   components: {
     selectBox
   },
   created() {
       this.fontSize = (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
-      
   },
   watch: {
     cmp(newVal , oldVal) {
