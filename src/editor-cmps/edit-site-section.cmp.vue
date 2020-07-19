@@ -1,5 +1,6 @@
 <template>
   <div class="edit-site-section">
+    <h3> Section Editor </h3>
     <color-picker @input="setBgc"/>
   </div>
 </template>
