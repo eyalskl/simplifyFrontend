@@ -3,7 +3,7 @@
       <div class="colors-container flex wrap justify-center">
         <span @click.stop="setColor('transparent')" title="Transparent" class="show-more"> <i class="far fa-times-circle"></i> </span>
         <span :class="{picked : color === pickedColor}" v-for="(color, idx) in colors" :key="idx" @click.stop="setColor(color)" :style="{backgroundColor : color}"> </span>
-        <span @click.stop="showMore" title="More colors..." class="show-more"> <i class="fas fa-plus"></i> </span>
+        <span @click.stop="showMore" title="More colors..." class="show-more"> <i class="far fa-arrow-alt-circle-right"></i> </span>
       </div>
   </div>
 </template>
@@ -37,9 +37,6 @@ export default {
 
 <style scoped>
     .color-picker {
-        background-color: #fff;
-        border-radius: .33rem;
-        border: 1px solid #717171;
         padding: .75rem .25rem;
     }
     .color-picker span {
@@ -59,9 +56,9 @@ export default {
         opacity: .9;
     }
     .color-picker span.show-more {
-        color: #717171;
-        border: 1px solid #717171;
-        font-size: 1.25rem;
+        color: #0076DF;
+        /* border: 1px solid #717171; */
+        font-size: 2.1rem;
     }
     .picked::after {
         content: '✔';

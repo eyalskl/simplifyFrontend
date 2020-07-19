@@ -1,10 +1,10 @@
 .templates-page {
     margin-block-start: 5rem;
     height: calc(100vh - 5rem);
-    background-color: lighten($clr1, 50);
+    background-color: rgb(241, 241, 241);
     h1 {
         padding: 10px 24px;
-        text-align: center;
+        color: $clr1;
     }
     .template-list {
         padding: 20px 0;

@@ -48,7 +48,7 @@ props: ['cmp'],
     return {
       showAdvanced: false,
       fontSize: 16,
-      fonts: ['Arial', 'Righteous', 'Advent Pro', 'Sans Serif', 'Tahoma', 'Cursive', 'Fantasy', 'Impact'],
+      fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
   },
