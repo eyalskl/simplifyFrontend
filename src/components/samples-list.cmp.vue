@@ -4,9 +4,10 @@
 </template>
 
 <script>
-import sampleSection from '../samples-cmps/sample-section.cmp.vue'
+import sampleSection from '@/samples-cmps/sample-section.cmp.vue'
 
 export default {
+  name: 'samples-list',
   props:['samples', 'type'],
   data() {
     return {

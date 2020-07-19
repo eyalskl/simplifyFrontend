@@ -1,8 +1,8 @@
 <template>
     <div class="edit-site-text">
       <div class="flex space-between align-center">
-        <select-box :data="fonts" @input="setFont" :placeholder="fontFamily"></select-box>
-        <el-color-picker show-alpha @change="setColor" v-model="color"></el-color-picker>
+        <select-box :data="fonts" v-model="cmp.style.fontFamily" placeholder="Pick a font..."></select-box>
+        <el-color-picker show-alpha v-model="cmp.style.color"></el-color-picker>
       </div>
       <div class="flex space-between align-center">
         <label>Font size:</label>
@@ -37,56 +37,47 @@
 
 <script>
 import selectBox from '../custom-cmps/select-box.cmp';
+import { eventBus, FORCE_UPDATE } from "@/services/event-bus.service.js";
 
 
-export default {
+export default {  
 name: 'edit-site-text',
 props: ['cmp'],
   data() {
     return {
-      cmpToEdit: {
-        style: {
-          fontFamily: '',
-          fontSize: 20,
-          lineHeight: 1,
-          letterSpacing: 0,
-          fontWeight: 'normal',
-          color: '#765fe5'
-        }
-      },
-      fontFamily: 'Choose your font...',
-      fontSize: 0,
-      color: '#000',
       showAdvanced: false,
+      fontSize: 16,
       fonts: ['Arial', 'Righteous', 'Advent Pro', 'Sans Serif', 'Tahoma', 'Cursive', 'Fantasy', 'Impact'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
+  },
+  computed: {
+    // fontSize() {
+    //   return (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
+    // }
   },
   methods: {
     openAdvanced() {
       this.showAdvanced = !this.showAdvanced
     },
-    setFont(font) {
-      this.cmpToEdit.style.fontFamily = font;
-    },
     setFontSize(fontSize) {
       this.fontSize = fontSize
-      this.cmpToEdit.style.fontSize = fontSize / 16 + 'rem';
+      this.cmp.style.fontSize = (fontSize / 16) + 'rem';
+      eventBus.$emit(FORCE_UPDATE);
     },
-    setColor(color) {
-      this.color = color
-      this.cmpToEdit.style.color = color;
-    }
   },
   components: {
     selectBox
   },
+  created() {
+      this.fontSize = (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
+      
+  },
   watch: {
-    cmp() {
-      this.cmpToEdit = this.cmp; 
-      this.fontSize = parseInt(this.cmp.style.fontSize) * 16;
-      this.fontFamily = this.cmp.style.fontFamily;
-      this.color = this.cmp.style.color;
+    cmp(newVal , oldVal) {
+      deep: true,
+      this.fontSize = (newVal.style.fontSize) ? parseFloat(newVal.style.fontSize) * 16 : 16;
+      
     }
   }
 };
