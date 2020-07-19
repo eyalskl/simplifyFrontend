@@ -20,7 +20,7 @@ export default {
   props: ['cmp'],
   data() {
     return {
-      content:{ text:'', href:''}
+      content:{ text:' ', href:''}
     };
   },
   created() {
