@@ -24,10 +24,12 @@ export default {
   name: 'site-editor',
   data() {
     return {
-      site: {},
-      elements: [],
-      samples: {}
+      samples: {},
+      site: {}
     };
+  },
+  computed:{
+
   },
   async created() {
     this.loadSite();
@@ -39,10 +41,9 @@ export default {
       this.moveElement(elementId, direction)
     );
   },
-  computed: {},
   methods: {
     async loadSite() {
-      const site = await templateService.getTemplateById(this.$route.params.id);
+      const site = await this.$store.dispatch({ type: 'loadSite', id: this.$route.params.id })
       this.site = _.cloneDeep(site)
     },
     addSample(sample) {

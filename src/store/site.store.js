@@ -1,66 +1,50 @@
-const _ = require("lodash");
-
+const _ = require('lodash');
+import { templateService } from '@/services/template-service.js';
 
 export const siteStore = {
-  state: {
-    currSamplesList: "sections",
-  },
-  getters: {
-    site(state) {
-      return state.site;
+	state: {
+		currSamplesList: 'sections',
+    isLoading: false,
+		templates: [],
+    site: {},
+	},
+	getters: {
+		site(state) {
+			return state.site;
+		},
+		templates(state) {
+			return state.templates;
+		},
+		isLoading(state) {
+		  return state.isLoading;
+		},
+	},
+	mutations: {
+		setIsLoading(state, { isLoading }) {
+			state.isLoading = isLoading;
     },
-    samples(state) {
-      return state.samples[state.currSamplesList];
+    setTemplates(state, {templates}){
+      state.templates = templates
     },
-    isLoading(state) {
-      return state.isLoading;
-    },
-  },
-  mutations: {
-    setIsLoading(state, { isLoading }) {
-      state.isLoading = isLoading;
-    },
-    setSite(state, { site }) {
-      state.sites = site;
-    },
-    removeSite(state, { id }) {
-      const siteIdx = state.sites.findIndex((site) => site._id === id);
-      state.sites.splice(siteIdx, 1);
-    },
-    addSite(state, { savedSite }) {
-      state.sites.push(savedSite);
-    },
-    updateSite(state, { savedSite }) {
-      const idx = state.sites.findIndex((site) => site._id === savedSite._id);
-      state.sites.splice(idx, 1, savedSite);
-    },
-    cloneCmp(state, { cmp }) {
-      state.site.cmps.unshift(cmp);
-    },
-  },
-  actions: {
-    loadSite({ commit, state }) {
-      commit({ type: "setIsLoading", isLoading: true });
-      return siteService
-        .query(state.filterBy)
-        .then((sites) => {
-          commit({ type: "setSite", sites });
-          commit({ type: "setIsLoading", isLoading: false });
-          return sites;
-        })
-        .catch((err) => err);
-    },
-    saveSite({ commit }, { site }) {
-      // return siteService.save(site).then(savedSite => {
-      commit({ type, savedSite });
-      // return savedSite;
-      // });
-    },
-    removeSite({ commit }, { id }) {
-      return siteService.remove(id).then(() => {
-        commit({ type: "removeSite", id });
-      });
-    },
-  },
-  modules: {},
+		setSite(state, { site }) {
+			state.site = site;
+		},
+	},
+	actions: {
+		async loadTemplates({ commit }) {
+			commit({ type: 'setIsLoading', isLoading: true });
+			let templates = await templateService.query();
+			templates = templates.map(template => ({ _id:template._id, name:template.name, previewImg:template.previewImg}));
+			commit({ type: 'setTemplates', templates });
+			commit({ type: 'setIsLoading', isLoading: false });
+		},
+		async loadSite({ commit} ,{id }) {
+			commit({ type: 'setIsLoading', isLoading: true });
+			let site = await templateService.getTemplateById(id);
+			commit({ type: 'setSite', site });
+      commit({ type: 'setIsLoading', isLoading: false });
+      return site
+		},
+	},
+	modules: {},
 };

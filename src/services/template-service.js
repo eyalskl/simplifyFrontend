@@ -1,6 +1,5 @@
 import httpService from './http.service'
 
-
 const _ = require("lodash");
 const samples = {
     section: [{
