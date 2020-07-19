@@ -128,7 +128,7 @@ const templates = [{
                                         content: "HOME",
                                         style: {
                                             marginInlineEnd: "1rem",
-                                            color: "#000000",
+                                            color: "#0eabee",
                                         },
                                     },
                                     {
@@ -710,7 +710,7 @@ const templates = [{
                                         content: "ARTICLES",
                                         style: {
                                             marginInlineEnd: "1rem",
-                                            color: "#000000",
+                                            color: "#fff",
                                         },
                                     },
                                     {
@@ -718,7 +718,7 @@ const templates = [{
                                         content: "MEMBERS",
                                         style: {
                                             marginInlineEnd: "1rem",
-                                            color: "#000000",
+                                            color: "#fff",
                                         },
                                     },
                                     {
@@ -726,7 +726,7 @@ const templates = [{
                                         content: "ABOUT",
                                         style: {
                                             marginInlineEnd: "1rem",
-                                            color: "#000000",
+                                            color: "#fff",
                                         },
                                     },
                                     {
@@ -734,7 +734,7 @@ const templates = [{
                                         content: "CONTACT US",
                                         style: {
                                             marginInlineEnd: "1rem",
-                                            color: "#000000",
+                                            color: "#fff",
                                         },
                                     },
                                 ],
