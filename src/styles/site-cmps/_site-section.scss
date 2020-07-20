@@ -1,7 +1,24 @@
 .site-section {
-    transition: width .8s, outline 0s;
+    transition: width .8s, outline 0s, transform 2s;
     &:hover {
         outline: 2px #717171 dashed;
         z-index: 1;
+        cursor: grab;
     }
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.smooth-dnd-ghost {
+    transform: scale(2);
+    border: 1px dashed $clr1;
+    h3 {
+        display: none;
+    }
+}
+
+.site-workspace .smooth-dnd-ghost {
+    transform: scale(0.6);
+    border: 3px dashed $clr1;
 }

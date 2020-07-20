@@ -1,9 +1,7 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
       <element-dashboard :samples="samples" @shouldAcceptDrop="false"/>
-    <Container @drop="onDrop($event)">
       <site-workspace :site="site" @shouldAcceptDrop="true" />
-    </Container>
   </section>
 </template>
 
@@ -84,9 +82,6 @@ export default {
       const cmps = this.site.cmps;
       const idx = cmps.findIndex(cmp => cmp.id === elementId);
       cmps.splice(idx, 1);
-    },
-    onDrop(ev){
-      console.log(ev)
     }
   },
   watch: {

@@ -1,5 +1,5 @@
 <template>
-  <container :get-child-payload="getCmp" @drop="onDrop($event)" group-name="1" class="site-workspace flex column" :class="minimized">
+  <container :get-child-payload="getCmp" @drop="onDrop" group-name="1" class="site-workspace flex column" :class="minimized">
     <component
       v-for="(cmp, idx) in site.cmps"
       :is="cmp.type"
@@ -33,7 +33,8 @@ export default {
 
   methods:{
     onDrop(dropResult){
-      this.site.cmps=applyDrag(this.site.cmps,dropResult)
+      console.log('dropResult:', dropResult)
+      this.site.cmps = applyDrag(this.site.cmps,dropResult)
     },
     getCmp(index){
       return this.site.cmps[index]
@@ -53,7 +54,9 @@ export default {
     eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
-
+      // setInterval(() => {
+      //   console.log(this.site);
+      // }, 5000);
   }
 };
 </script>
