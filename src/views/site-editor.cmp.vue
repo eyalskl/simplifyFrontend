@@ -1,8 +1,8 @@
 <template>
-  <section class="editor flex animate__animated animate__fadeIn">
+  <container  class="editor flex animate__animated animate__fadeIn">
       <element-dashboard :samples="samples" @shouldAcceptDrop="false"/>
       <site-workspace :site="site" @shouldAcceptDrop="true" />
-  </section>
+  </container>
 </template>
 
 <script>
@@ -29,7 +29,8 @@ export default {
     return {
       site: {},
       elements: [],
-      samples: {}
+      samples: {},
+
     };
   },
   async created() {

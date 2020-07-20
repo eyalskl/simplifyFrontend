@@ -1,12 +1,14 @@
 <template>
-  <container :get-child-payload="getCmp" auto-scroll-enabled :drop-placeholder="placeHolderOptions" drag-class="section-drag" @drop="onDrop" group-name="1" lock-axis="y" class="site-workspace flex column" :class="minimized">
-    <component
-      v-for="(cmp, idx) in site.cmps"
-      :is="cmp.type"
-      :cmp="cmp"
-      :key="idx"
-    >
-    </component>
+  <container class="site-container"> 
+    <container :get-child-payload="getCmp"  :drop-placeholder="placeHolderOptions" drag-class="section-drag" auto-scroll-enabled  @drop="onDrop" group-name="1" lock-axis="y" class="site-workspace flex column" :class="minimized">
+      <component
+        v-for="(cmp, idx) in site.cmps"
+        :is="cmp.type"
+        :cmp="cmp"
+        :key="idx"
+      >
+      </component>
+    </container>
   </container>
 </template>
 
@@ -23,10 +25,10 @@ export default {
   data() {
     return {
       minimize: false,
-      placeHolderOptions: {
-        className: 'drop-preview',
-        animationDuration: '150',
-        showOnTop: true
+        placeHolderOptions: {
+          className: 'drop-preview',
+          animationDuration: '50',
+          showOnTop: true
       }
     }
   },
