@@ -77,9 +77,6 @@ props: ['cmp'],
   },
   created() {
       this.fontSize = (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
-      setInterval(() => {
-       console.log(this.cmp);
-      }, 5000);
   },
   watch: {
     cmp(newVal , oldVal) {

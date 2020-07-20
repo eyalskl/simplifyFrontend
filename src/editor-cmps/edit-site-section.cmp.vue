@@ -33,10 +33,19 @@ export default {
   props: ['cmp'],
   data() {
     return {
-      isUploading: false
+      isUploading: false,
+      keyword: '',
+      imgKey: '',
+      showImgs: false
     };
   },
   methods: {
+    searchOnline() {
+      if (this.imgKey) this.imgKey = ''
+      this.showImgs = true;
+      this.imgKey = this.keyword;
+      this.keyword = ''
+    },
     setBgc(bgc) {
       this.cmp.style.background = bgc;
       eventBus.$emit(FORCE_UPDATE);
