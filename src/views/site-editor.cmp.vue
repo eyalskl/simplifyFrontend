@@ -1,14 +1,19 @@
 <template>
   <section class="editor flex animate__animated animate__fadeIn">
-    <element-dashboard :samples="samples" />
-    <site-workspace :site="site" />
+      <element-dashboard :samples="samples" @shouldAcceptDrop="false"/>
+    <Container @drop="onDrop($event)">
+      <site-workspace :site="site" @shouldAcceptDrop="true" />
+    </Container>
   </section>
 </template>
 
 <script>
-import siteWorkspace from '../components/site-worksapce.cmp.vue';
+import siteWorkspace from '../components/site-workspace.cmp.vue';
 import elementDashboard from '@/components/element-dashboard.cmp.vue';
 import { templateService } from '@/services/template-service.js';
+import { Container, Draggable } from "vue-smooth-dnd";
+import { applyDrag, generateItems } from "@/assets/drag-test.js";
+
 import {
   eventBus,
   ADD_SAMPLE,
@@ -38,12 +43,14 @@ export default {
     eventBus.$on(MOVE_ELEMENT, (elementId, direction) =>
       this.moveElement(elementId, direction)
     );
+    
   },
   computed: {},
   methods: {
     async loadSite() {
       const site = await templateService.getTemplateById(this.$route.params.id);
       this.site = _.cloneDeep(site)
+  
     },
     addSample(sample) {
       this.site.cmps.unshift(sample);
@@ -77,6 +84,9 @@ export default {
       const cmps = this.site.cmps;
       const idx = cmps.findIndex(cmp => cmp.id === elementId);
       cmps.splice(idx, 1);
+    },
+    onDrop(ev){
+      console.log(ev)
     }
   },
   watch: {
@@ -86,7 +96,10 @@ export default {
   },
   components: {
     siteWorkspace,
-    elementDashboard
+    elementDashboard,
+    Container,
+    Draggable
+
   }
 };
 </script>
