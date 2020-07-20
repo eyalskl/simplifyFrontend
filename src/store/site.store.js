@@ -4,9 +4,9 @@ import { templateService } from '@/services/template-service.js';
 export const siteStore = {
 	state: {
 		currSamplesList: 'sections',
-    isLoading: false,
+    	isLoading: false,
 		templates: [],
-    site: {},
+    	site: {},
 	},
 	getters: {
 		site(state) {
@@ -16,19 +16,19 @@ export const siteStore = {
 			return state.templates;
 		},
 		isLoading(state) {
-		  return state.isLoading;
+		  	return state.isLoading;
 		},
 	},
 	mutations: {
-		setIsLoading(state, { isLoading }) {
-			state.isLoading = isLoading;
+	setIsLoading(state, { isLoading }) {
+		state.isLoading = isLoading;
     },
     setTemplates(state, {templates}){
       state.templates = templates
     },
-		setSite(state, { site }) {
-			state.site = site;
-		},
+	setSite(state, { site }) {
+		state.site = site;
+	},
 	},
 	actions: {
 		async loadTemplates({ commit }) {
@@ -42,8 +42,8 @@ export const siteStore = {
 			commit({ type: 'setIsLoading', isLoading: true });
 			let site = await templateService.getTemplateById(id);
 			commit({ type: 'setSite', site });
-      commit({ type: 'setIsLoading', isLoading: false });
-      return site
+     		commit({ type: 'setIsLoading', isLoading: false });
+     	 	return site
 		},
 	},
 	modules: {},
