@@ -11,7 +11,7 @@
 }
 
 .smooth-dnd-ghost {
-    transform: scale(2);
+    transform: rotate(2.5deg) scale(2);
     border: 1px dashed $clr1;
     h3 {
         display: none;
@@ -19,6 +19,6 @@
 }
 
 .site-workspace .smooth-dnd-ghost {
-    transform: scale(0.6);
+    transform: scale(0.7);
     border: 3px dashed $clr1;
 }

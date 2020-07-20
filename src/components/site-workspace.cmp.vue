@@ -1,5 +1,5 @@
 <template>
-  <container :get-child-payload="getCmp" @drop="onDrop" group-name="1" class="site-workspace flex column" :class="minimized">
+  <container :get-child-payload="getCmp" @drop="onDrop" group-name="1" lock-axis="y" class="site-workspace flex column" :class="minimized">
     <component
       v-for="(cmp, idx) in site.cmps"
       :is="cmp.type"

@@ -1,6 +1,7 @@
 <template>
     <div class="edit-site-text">
       <h3> {{ (cmp.type  === 'site-text') ? 'Text' : 'Button' }} editor </h3>
+      <p style="color: #0076DF"> Currently Editing : "{{ cmp.content }}" </p>
       <div class="flex space-between align-center">
         <select-box :data="fonts" v-model="cmp.style.fontFamily" placeholder="Pick a font..."></select-box>
         <el-color-picker show-alpha @active-change="setColor" v-model="cmp.style.color"></el-color-picker>
@@ -51,6 +52,11 @@ props: ['cmp'],
       fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
+  },
+  computed: {
+    text() {
+      return this.cmp.content
+    }
   },
   methods: {
     openAdvanced() {
