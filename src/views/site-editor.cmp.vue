@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     siteToEdit(){
-        return _.cloneDeep(this.$store.getters.site)
+        return this.$store.getters.site;
     }
   },
   async created() {
