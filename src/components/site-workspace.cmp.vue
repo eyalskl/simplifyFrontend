@@ -41,7 +41,7 @@ export default {
   methods:{
     onDrop(dropResult){
       this.siteToEdit.cmps = applyDrag(this.siteToEdit.cmps,dropResult)
-      this.$store.commit('setSite',this.siteToEdit)
+      this.$store.commit({type:'setSite', site:this.siteToEdit})
     },
     getCmp(index){
       return this.siteToEdit.cmps[index]
@@ -58,8 +58,8 @@ export default {
       this.minimize = isMinimized
       })
     eventBus.$on(FORCE_UPDATE, () => {
-        this.$store.commit('setSite',this.siteToEdit)
-        this.$forceUpdate();
+        this.$store.commit({type:'setSite', site:this.siteToEdit})
+        // this.$forceUpdate();
       })
   },
 };
