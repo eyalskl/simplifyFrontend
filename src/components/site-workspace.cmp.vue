@@ -1,5 +1,5 @@
 <template>
-  <container :get-child-payload="getCmp" @drop="onDrop" group-name="1" class="site-workspace flex column" :class="minimized">
+  <container :get-child-payload="getCmp" auto-scroll-enabled :drop-placeholder="placeHolderOptions" drag-class="section-drag" @drop="onDrop" group-name="1" lock-axis="y" class="site-workspace flex column" :class="minimized">
     <component
       v-for="(cmp, idx) in site.cmps"
       :is="cmp.type"
@@ -23,6 +23,11 @@ export default {
   data() {
     return {
       minimize: false,
+      placeHolderOptions: {
+        className: 'drop-preview',
+        animationDuration: '150',
+        showOnTop: true
+      }
     }
   },
   computed: {

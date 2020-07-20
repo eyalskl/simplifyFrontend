@@ -10,15 +10,27 @@
     }
 }
 
-.smooth-dnd-ghost {
-    transform: scale(2);
-    border: 1px dashed $clr1;
-    h3 {
-        display: none;
-    }
-}
+// .smooth-dnd-ghost {
+//     transform: scale(2);
+//     border: 1px dashed $clr1;
+//     h3 {
+//         display: none;
+//     }
+// }
 
 .site-workspace .smooth-dnd-ghost {
-    transform: scale(0.6);
+    transform: scale(0.9);
     border: 3px dashed $clr1;
 }
+
+
+    .section-drag {
+        scroll-behavior: initial;
+    }
+    .sample-drag{
+        transform: scale(2) rotate(2.5deg);
+        border: 1px dashed $clr1;
+        h3 {
+            display: none;
+        }
+    }
