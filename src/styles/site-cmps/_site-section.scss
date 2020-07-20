@@ -1,7 +1,8 @@
 .site-section{
-    transition: .8s;
+    transition: .8s , outline 0s;
     &:hover{
-        outline: 2px #717171 dotted;
+        outline: 2px #717171 dashed;
+        z-index: 1;
     }
 
 }

@@ -1,12 +1,12 @@
 .element-controls {
     position: absolute;
-    right: 0;
-    top: 0;
-    background-color: #fff;
-    border: 1px solid #bbb;
-    border-radius: 5px;
+    right: 0px;
+    top: 0px;
+    background-color: #f8f8f8;
     padding: 0.15rem;
     width: 9rem;
+    border-left: 2px #717171 dashed;
+    border-bottom: 2px #717171 dashed;
     >* {
         font-size: .75rem;
         width: 20%;
