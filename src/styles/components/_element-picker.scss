@@ -15,7 +15,7 @@
         height: 100%;
         position: relative;
         .element-name {
-            cursor: grab;
+            cursor: pointer;
             font-family: 'Nunito Sans', sans-serif;
             width: 5.5833rem;
             height: 5.5833rem;
@@ -25,9 +25,11 @@
             background-color: $clr1;
             color: #ffffff;
             transition: .3s;
+            border-radius: 50%;
             &:first-child {
                 width: 17.5rem;
                 height: 5.5833rem;
+                border-radius: 20rem;
             }
             &:hover {
                 background-color: lighten($clr1, 5);

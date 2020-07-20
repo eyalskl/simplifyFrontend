@@ -1,10 +1,8 @@
 <template>
-  <section class="editor flex animate__animated animate__fadeIn">
-    <element-dashboard :samples="samples" @shouldAcceptDrop="false" />
-    <Container @drop="onDrop($event)">
+  <container  class="editor flex animate__animated animate__fadeIn">
+      <element-dashboard :samples="samples" @shouldAcceptDrop="false"/>
       <site-workspace v-if="siteToEdit" :siteToEdit="siteToEdit" @shouldAcceptDrop="true" />
-    </Container>
-  </section>
+  </container>
 </template>
 
 <script>
@@ -771,9 +769,6 @@ export default {
       cmps.splice(idx, 1);
       this.$store.commit('setSite',this.siteToEdit)
     },
-    onDrop(ev) {
-      console.log(ev);
-    }
   },
   watch: {
     '$route.params.id'() {
