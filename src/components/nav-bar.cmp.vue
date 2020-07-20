@@ -1,7 +1,8 @@
 <template>
   <nav class="nav-bar flex space-between align-center">
-    <div class="logo">
-      <h2>Simplify</h2>
+    <div class="logo flex">
+      <img src="@/assets/pngegg.png">
+      <h2>web<span>IT</span></h2>
     </div>
     <div class="main-nav">
       <router-link to="/">Home</router-link>

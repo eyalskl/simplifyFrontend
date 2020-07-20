@@ -7,19 +7,35 @@
     font-weight: normal;
     padding: 0 1.5rem;
     border-bottom: 2px solid $clr1;
-    background-color: rgb(255, 255, 255);
-    color: white;
+    background-color: white;
+    color: $clr1;
     height: 5rem;
     font-size: 1.5rem;
     .logo {
-        color: $clr1;
+        position: relative;
         cursor: default;
+        color: inherit;
+        font-size: 2rem;
         font-family: 'Electrolize', sans-serif;
+        img {
+            position: absolute;
+            height: 40px;
+            right: -22.3px;
+            top: -5px;
+            z-index: 3;
+        }
+        h2 {
+            color: inherit;
+            letter-spacing: -1.5px;
+            span {
+                font-size: 3.080rem;
+            }
+        }
     }
     .main-nav {
         height: 100%;
         >* {
-            color: rgb(0, 0, 0);
+            color: black;
             text-transform: capitalize;
             height: 100%;
             padding: 0 1rem;
