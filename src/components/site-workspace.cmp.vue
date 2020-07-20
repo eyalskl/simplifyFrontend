@@ -58,8 +58,8 @@ export default {
       this.minimize = isMinimized
       })
     eventBus.$on(FORCE_UPDATE, () => {
-        this.$store.commit({type:'setSite', site:this.siteToEdit})
-        // this.$forceUpdate();
+      this.$forceUpdate();
+        this.$store.commit({type:'setSite', site: this.siteToEdit})
       })
   },
 };
