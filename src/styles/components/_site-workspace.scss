@@ -1,10 +1,9 @@
-.site-container{
+.site-container {
     margin: 0;
     padding: 0;
     height: calc(100vh - 5rem);
     overflow-y: auto;
     overflow-x: hidden;
-
     &::-webkit-scrollbar {
         width: .75rem;
     }
@@ -19,7 +18,6 @@
         background: darken($clr1, 5);
     }
 }
-
 
 .site-workspace {
     // width: calc(100vw - 20rem);
@@ -52,5 +50,5 @@
         &::after{
         content:"Place Section Here";
         font-size: 5rem;
-        }
     }
+}

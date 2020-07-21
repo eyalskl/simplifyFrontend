@@ -1,37 +1,43 @@
 <template>
   <section class="templates-page">
     <h1>Choose your Template</h1>
-    <section class="template-list">
+    <img v-if="isLoading" src="https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif" alt="Loading...">
+    <section v-else class="template-list">
       <div
         v-for="template in templates"
         :key="template._id"
         @click="editTemplate(template._id)"
       >
-      <img :src="template.previewImg"/>
+        <img :src="template.previewImg" />
       </div>
     </section>
   </section>
 </template>
 
 <script>
-import { templateService } from '@/services/template-service.js';
 
 export default {
   name: 'templates-page',
   data() {
     return {
-      templates: []
+
     };
   },
-  async created() {
-    this.templates = await templateService.query();
-    this.templates = this.templates.map(template => {
-        return { _id: template._id, name: template.name, previewImg: template.previewImg }
-    })
+  computed: {
+    templates() {
+      return this.$store.getters.templates;
+    },
+    isLoading() {
+      return this.$store.getters.isLoading;
+    }
+  },
+  created() {
+    this.$store.dispatch({ type: 'loadTemplates' });
+    
   },
   methods: {
-    editTemplate(id){
-      this.$router.push(`/editor/${id}`)
+    editTemplate(id) {
+      this.$router.push(`/editor/${id}`);
     }
   }
 };

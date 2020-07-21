@@ -1,6 +1,5 @@
 import httpService from './http.service'
 
-
 const _ = require("lodash");
 const samples = {
     section: [{
@@ -778,11 +777,6 @@ function query() {
     return httpService.get('template')
 }
 
-// function getTemplateById(id) {
-//     const template = _.cloneDeep(templates.find(template => template._id === id))
-//     return addIds(template)
-// }
-
 function getTemplateById(id) {
     return httpService.get(`template/${id}`)
 }
@@ -829,7 +823,6 @@ function _update(template) {
 function _add(template) {
     return axios.post(_getUrl(template._id), template).then((res) => res.data);
 }
-
 
 
 

@@ -2,7 +2,7 @@
   <container class="site-container"> 
     <container :get-child-payload="getCmp"  :drop-placeholder="placeHolderOptions" drag-class="section-drag" auto-scroll-enabled  @drop="onDrop" group-name="1" lock-axis="y" class="site-workspace flex column" :class="minimized">
       <component
-        v-for="(cmp, idx) in site.cmps"
+        v-for="(cmp, idx) in siteToEdit.cmps"
         :is="cmp.type"
         :cmp="cmp"
         :key="idx"
@@ -21,7 +21,7 @@ const _ = require("lodash")
 
 export default {
   name: 'site-workspace',
-  props:['site'],
+  props:['siteToEdit'],
   data() {
     return {
       minimize: false,
@@ -40,10 +40,11 @@ export default {
 
   methods:{
     onDrop(dropResult){
-      this.site.cmps = applyDrag(this.site.cmps,dropResult)
+      this.siteToEdit.cmps = applyDrag(this.siteToEdit.cmps,dropResult)
+      this.$store.commit({type:'setSite', site:this.siteToEdit})
     },
     getCmp(index){
-      return this.site.cmps[index]
+      return this.siteToEdit.cmps[index]
     },
 
   },
@@ -51,18 +52,15 @@ export default {
     siteSection,
     Container,
     Draggable
-    
   },
   created() {
     eventBus.$on(MINIMIZE_DASHBOARD, isMinimized => {
       this.minimize = isMinimized
       })
     eventBus.$on(FORCE_UPDATE, () => {
-        this.$forceUpdate();
+      this.$forceUpdate();
+        this.$store.commit({type:'setSite', site: this.siteToEdit})
       })
-      // setInterval(() => {
-      //   console.log(this.site);
-      // }, 5000);
-  }
+  },
 };
 </script>

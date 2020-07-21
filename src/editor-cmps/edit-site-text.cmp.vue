@@ -41,7 +41,6 @@
 import selectBox from '../custom-cmps/select-box.cmp';
 import { eventBus, FORCE_UPDATE } from "@/services/event-bus.service.js";
 
-
 export default {  
 name: 'edit-site-text',
 props: ['cmp'],
@@ -69,6 +68,7 @@ props: ['cmp'],
     },
     setColor(color) {
       this.cmp.style.color = color
+      eventBus.$emit(FORCE_UPDATE);
     }
   },
   components: {

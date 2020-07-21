@@ -32,7 +32,6 @@ export default {
       this.content = txt;
     },
     endEdit() {
-      this.$store.dispatch({ type: 'saveSite', content: this.content });
       this.$el.blur();
     },
     openEditor() {
