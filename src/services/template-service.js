@@ -784,6 +784,7 @@ function getTemplateById(id) {
 function getSamplesOf(element) {
     return samples[element]
 }
+// console.log(JSON.stringify(addIds()))
 
 function addIds(template) {
     template.cmps.forEach(cmp => {

@@ -33,10 +33,9 @@ export default {
     return {
       samples: {},
       siteToEdit: {
-        _id: '5e28393890dd7201a06d4e49',
         name: 'Food',
         previewImg:
-          'https://i.ibb.co/cXp8r4b/screenshot-www-thegrilledcheesefactory-fr-2020-07-20-11-29-34.png',
+          'https://i.ibb.co/X5LMRVk/screenshot-localhost-8080-2020-07-21-22-49-51.png',
         createdBy: {
           username: 'eni',
           _id: '5e26e0b718a0891d4c995527'
@@ -136,7 +135,8 @@ export default {
               width: '100%',
               height: '40vw',
               display: 'flex',
-              flexDirection: 'row'
+              flexDirection: 'row',
+              
             },
             cmps: [
               {
@@ -331,8 +331,8 @@ export default {
                       backgroundPosition: `center`,
                       backgroundSize: `cover`,
                       display: 'flex',
-                      flexDirection:'column',
-                      justifyContent:'space-around',
+                      flexDirection: 'column',
+                      justifyContent: 'space-around',
                       width: '100%'
                     },
                     cmps: [
@@ -342,7 +342,7 @@ export default {
                           backgroundColor: '#ffffff',
                           backgroundPosition: `center`,
                           backgroundSize: `cover`,
-                          textAlign:'center',
+                          textAlign: 'center',
                           width: '100%'
                         },
                         cmps: [
@@ -364,7 +364,7 @@ export default {
                           backgroundColor: '#ffffff',
                           backgroundPosition: `center`,
                           backgroundSize: `cover`,
-                          textAlign:'center',
+                          textAlign: 'center',
                           width: '100%'
                         },
                         cmps: [
@@ -373,8 +373,8 @@ export default {
                             content: `L'Authentique
                         `,
                             style: {
-                              fontSize: '2rem',
-                              textDecoration:'underline',
+                              fontSize: '2.5rem',
+                              textDecoration: 'underline',
                               fontFamily: 'Mr Dafoe',
                               color: '#EF4135'
                             }
@@ -387,36 +387,838 @@ export default {
                           backgroundColor: '#ffffff',
                           backgroundPosition: `center`,
                           backgroundSize: `cover`,
-                          textAlign:'center',
+                          textAlign: 'center',
                           width: '100%'
                         },
                         cmps: [
                           {
                             type: 'site-text',
                             content: `Mozzarella
+
                                       Cheddar
                         `,
                             style: {
-                              fontSize: '2rem',
-                              textDecoration:'underline',
-                              fontFamily: 'Mr Dafoe',
+                              fontSize: '0.9rem',
+                              fontFamily: 'Inknut Antiqua',
                               color: '#EF4135'
                             }
                           }
                         ]
                       },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Tout est dans sa simplicité.
+
+                                      Croquant à l'extérieur et coulant à l'intérieur.
+
+                                      L'Authentique est le  Grilled Cheese traditionnel américain par excellence.
+                        `,
+                            style: {
+                              fontSize: '0.9rem',
+                              fontFamily: 'Josefin Slab',
+                              color: '#000000'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          width: '100%',
+                          display: 'flex',
+                          justifyContent: 'space-around'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-button',
+                            content: { text: 'ME FAIRE LIVRER', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#EF4135',
+                              textTransform: 'uppercase',
+                              border: '3px #EF4135 solid',
+                              borderRadius: '0'
+                            }
+                          },
+                          {
+                            type: 'site-button',
+                            content: { text: 'VOIR LE MENU', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#EF4135',
+                              textTransform: 'uppercase',
+                              border: '3px #EF4135 solid',
+                              borderRadius: '0'
+                            }
+                          }
+                        ]
+                      }
                     ]
                   },
                   {
                     type: 'site-div',
                     style: {
-                      background: `url('https://static.wixstatic.com/media/011abe_7d721b07c66047d7806c25ab154da5f3~mv2.jpg/v1/fill/w_398,h_498,fp_0.50_0.50,q_90/011abe_7d721b07c66047d7806c25ab154da5f3~mv2.webp') no-repeat`,
+                      background: `url('https://static.wixstatic.com/media/011abe_7ba06f4f989e4c439c9828113223cdaa~mv2.jpg/v1/crop/x_0,y_150,w_1080,h_1092/fill/w_490,h_496,al_c,q_80,usm_0.66_1.00_0.01/AUTHENTIQUE.webp') no-repeat`,
                       backgroundPosition: `center`,
                       backgroundSize: `cover`,
                       width: '100%'
                     },
                     cmps: []
                   }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'site-section',
+            class: 'post-card-section',
+            style: {
+              backgroundColor: `#ffffff`,
+              backgroundPosition: `center`,
+              backgroundSize: `cover`,
+              width: '100%',
+              height: '30vw',
+              display: 'flex',
+              justifyContent: 'space-around'
+            },
+            cmps: [
+              {
+                type: 'site-div',
+                style: {
+                  backgroundColor: `#ffffff`,
+                  backgroundPosition: `center`,
+                  backgroundSize: `cover`,
+                  objectFit: 'contain',
+                  display: 'flex',
+                  width: '100%',
+                  maxWidth: '1000px',
+                  height: 'auto'
+                },
+                cmps: [
+                  {
+                    type: 'site-div',
+                    style: {
+                      background: `url('https://static.wixstatic.com/media/011abe_2bbfe16dfa7048c184824370f75af6eb~mv2.jpg/v1/fill/w_490,h_490,al_c,q_80,usm_0.66_1.00_0.01/Veggie%20hemblem.webp') no-repeat`,
+                      backgroundPosition: `center`,
+                      backgroundSize: `cover`,
+                      width: '100%',
+                    },
+                    cmps: []
+                  },
+                  {
+                    type: 'site-div',
+                    style: {
+                      backgroundColor: '#ffffff',
+                      backgroundPosition: `center`,
+                      backgroundSize: `cover`,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-around',
+                      width: '100%'
+                    },
+                    cmps: [
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `VEGETARIEN ? ALL RIGHT !
+                        `,
+                            style: {
+                              fontSize: '1.4rem',
+                              fontFamily: 'Oswald',
+                              color: '#F7B714'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Le Veggie
+                        `,
+                            style: {
+                              fontSize: '2.5rem',
+                              textDecoration: 'underline',
+                              fontFamily: 'Mr Dafoe',
+                              color: '#F7B714'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Mozzarella 
+
+                                        Confits de tomates & olives maison
+
+                                        Pesto maison
+
+                                        Poivrons
+                        `,
+                            style: {
+                              fontSize: '0.9rem',
+                              fontFamily: 'Inknut Antiqua',
+                              color: '#F7B714'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Un des Grilled Cheese les plus surprenant.
+
+                                      Le confit a cuit pendant deux heures et le pesto apporte la juste touche de fraîcheur.
+
+                                      Le Veggie est la recette emblématique des quartiers italo-américains de New-York.
+                        `,
+                            style: {
+                              fontSize: '0.9rem',
+                              fontFamily: 'Josefin Slab',
+                              color: '#000000'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          width: '100%',
+                          display: 'flex',
+                          justifyContent: 'space-around'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-button',
+                            content: { text: 'ME FAIRE LIVRER', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#F7B714',
+                              textTransform: 'uppercase',
+                              border: '3px #F7B714 solid',
+                              borderRadius: '0'
+                            }
+                          },
+                          {
+                            type: 'site-button',
+                            content: { text: 'VOIR LE MENU', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#F7B714',
+                              textTransform: 'uppercase',
+                              border: '3px #F7B714 solid',
+                              borderRadius: '0'
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'site-section',
+            class: 'post-card-section',
+            style: {
+              backgroundColor: `#ffffff`,
+              backgroundPosition: `center`,
+              backgroundSize: `cover`,
+              width: '100%',
+              height: '30vw',
+              display: 'flex',
+              justifyContent: 'space-around'
+            },
+            cmps: [
+              {
+                type: 'site-div',
+                style: {
+                  backgroundColor: `#ffffff`,
+                  backgroundPosition: `center`,
+                  backgroundSize: `cover`,
+                  objectFit: 'contain',
+                  display: 'flex',
+                  width: '100%',
+                  maxWidth: '1000px',
+                  height: 'auto'
+                },
+                cmps: [
+                  {
+                    type: 'site-div',
+                    style: {
+                      backgroundColor: '#ffffff',
+                      backgroundPosition: `center`,
+                      backgroundSize: `cover`,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-around',
+                      width: '100%'
+                    },
+                    cmps: [
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `CARNIVORE ? WELCOME HOME !
+                        `,
+                            style: {
+                              fontSize: '1.4rem',
+                              fontFamily: 'Oswald',
+                              color: '#EF4135'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Le Pastrami
+                        `,
+                            style: {
+                              fontSize: '2.5rem',
+                              textDecoration: 'underline',
+                              fontFamily: 'Mr Dafoe',
+                              color: '#EF4135'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Mozzarella
+
+                                        Pastrami
+
+                                        Cornichons Pickels 
+
+                                        Moutarde au miel
+
+                                        Cheddar
+
+                                        Tomme d'Abondance
+                        `,
+                            style: {
+                              fontSize: '0.9rem',
+                              fontFamily: 'Inknut Antiqua',
+                              color: '#EF4135'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `C'est du sérieux !
+
+                                      C'est fondant, c'est épicé, c'est dégoulinant de fromage,
+
+                                      c'est ... c'est ... c'est trop bon quoi !
+
+                                      Le Pastrami c'est la recette secrète des resto yiddish de Brooklyn.
+                        `,
+                            style: {
+                              fontSize: '0.9rem',
+                              fontFamily: 'Josefin Slab',
+                              color: '#000000'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          width: '100%',
+                          display: 'flex',
+                          justifyContent: 'space-around'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-button',
+                            content: { text: 'VOIR LE MENU', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#EF4135',
+                              textTransform: 'uppercase',
+                              border: '3px #EF4135 solid',
+                              borderRadius: '0'
+                            }
+                          },
+                          {
+                            type: 'site-button',
+                            content: { text: 'VOIR LE MENU', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#EF4135',
+                              textTransform: 'uppercase',
+                              border: '3px #EF4135 solid',
+                              borderRadius: '0'
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'site-div',
+                    style: {
+                      background: `url('https://static.wixstatic.com/media/011abe_c00ecf63f2264f048ce832473a073fa8~mv2.jpg/v1/crop/x_0,y_125,w_768,h_767/fill/w_490,h_490,al_c,q_80,usm_0.66_1.00_0.01/Pastrami%20assiette%20hemblem.webp') no-repeat`,
+                      backgroundPosition: `center`,
+                      backgroundSize: `cover`,
+                      width: '100%'
+                    },
+                    cmps: []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'site-section',
+            class: 'post-card-section',
+            style: {
+              backgroundColor: `#ffffff`,
+              backgroundPosition: `center`,
+              backgroundSize: `cover`,
+              // width: '100%',
+              height: '30vw',
+              display: 'flex',
+              justifyContent: 'space-around'
+            },
+            cmps: [
+              {
+                type: 'site-div',
+                style: {
+                  backgroundColor: `#ffffff`,
+                  backgroundPosition: `center`,
+                  backgroundSize: `cover`,
+                  objectFit: 'contain',
+                  display: 'flex',
+                  width: '100%',
+                  maxWidth: '1000px',
+                  height: 'auto'
+                },
+                cmps: [
+                  {
+                    type: 'site-div',
+                    style: {
+                      background: `url('https://static.wixstatic.com/media/011abe_b92ec2bd678c4bbd995dcee9eab95f30~mv2.jpg/v1/fill/w_340,h_426,fp_0.50_0.50,q_90/011abe_b92ec2bd678c4bbd995dcee9eab95f30~mv2.webp') no-repeat`,
+                      backgroundPosition: `center`,
+                      backgroundSize: `cover`,
+                      width: '100%'
+                    },
+                    cmps: []
+                  },
+                  {
+                    type: 'site-div',
+                    style: {
+                      backgroundColor: '#ffffff',
+                      backgroundPosition: `center`,
+                      backgroundSize: `cover`,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-around',
+                      width: '100%'
+                    },
+                    cmps: [
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `MACARONI & CHEESE ?!?
+                        `,
+                            style: {
+                              fontSize: '1.4rem',
+                              fontFamily: 'Oswald',
+                              color: '#F7B714'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Le Mac & Cheese
+                        `,
+                            style: {
+                              fontSize: '2.5rem',
+                              textDecoration: 'underline',
+                              fontFamily: 'Mr Dafoe',
+                              color: '#F7B714'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `Mozzarella
+
+                                      Oignons confits maison
+
+                                      Mac & Cheese (béchamel muscade & cheddar)
+
+                                      Cheddar
+                        `,
+                            style: {
+                              fontSize: '0.9rem',
+                              fontFamily: 'Inknut Antiqua',
+                              color: '#F7B714'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundColor: '#ffffff',
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          textAlign: 'center',
+                          width: '100%'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-text',
+                            content: `C'est notre best seller !
+
+                                      Tout droit venu de la West Coast, c'est à Los Angeles que le fameux mac & cheese américain a pour la première fois glissé entre deux tranches de pains.
+
+                                      Destination Venice Beach pour une experience sans égale.
+                                      `,
+                            style: {
+                              fontSize: '0.9rem',
+                              fontFamily: 'Josefin Slab',
+                              color: '#000000'
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        type: 'site-div',
+                        style: {
+                          backgroundPosition: `center`,
+                          backgroundSize: `cover`,
+                          width: '100%',
+                          display: 'flex',
+                          justifyContent: 'space-around'
+                        },
+                        cmps: [
+                          {
+                            type: 'site-button',
+                            content: { text: 'ME FAIRE LIVRER', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#F7B714',
+                              textTransform: 'uppercase',
+                              border: '3px #F7B714 solid',
+                              borderRadius: '0'
+                            }
+                          },
+                          {
+                            type: 'site-button',
+                            content: { text: 'VOIR LE MENU', href: '' },
+                            style: {
+                              backgroundColor: '#ffffff',
+                              fontFamily: 'Righteous',
+                              color: '#F7B714',
+                              textTransform: 'uppercase',
+                              border: '3px #F7B714 solid',
+                              borderRadius: '0'
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'site-section',
+            class: 'info-block-section',
+            style: {
+              background: '#ba2204',
+              // width: '100%',
+              height: '50vw',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-around',
+              alignItems: 'center'
+            },
+            cmps: [
+              {
+                type: 'site-div',
+                style: {
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                },
+                cmps: [
+                  {
+                    type: 'site-div',
+                    style: {
+                      width: '45%',
+                      textAlign: 'center',
+                      display: 'flex',
+                      flexDirection: 'column'
+                    },
+                    cmps: [
+                      {
+                        type: 'site-text',
+                        content: `BASTILLE
+                    `,
+                        style: {
+                          backgroundColor: '#BA2204',
+                          fontSize: '3.5rem',
+                          fontFamily: 'Bitter',
+                          color: '#F7B714'
+                        }
+                      },
+                      {
+                        type: 'site-text',
+                        content: `9 RUE JACQUES COEUR - 75004 PARIS 01 77 10 67 83 
+                    `,
+                        style: {
+                          backgroundColor: '#BA2204',
+                          fontSize: '1.2‬rem',
+                          fontFamily: 'Bitter',
+                          color: '#ffffff'
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    type: 'site-div',
+                    style: {
+                      width: '45%',
+                      textAlign: 'center',
+                      display: 'flex',
+                      flexDirection: 'column'
+                    },
+                    cmps: [
+                      {
+                        type: 'site-text',
+                        content: `CONVENTION
+                    `,
+                        style: {
+                          backgroundColor: '#BA2204',
+                          fontSize: '3.5rem',
+                          fontFamily: 'Bitter',
+                          color: '#F7B714'
+                        }
+                      },
+                      {
+                        type: 'site-text',
+                        content: `196 RUE DE LA CONVENTION - 75015 PARIS 09 88 38 87 26 
+                    `,
+                        style: {
+                          backgroundColor: '#BA2204',
+                          fontSize: '1.2‬rem',
+                          fontFamily: 'Bitter',
+                          color: '#ffffff'
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                type: 'site-div',
+                style: {
+                  textAlign: 'center'
+                },
+                cmps: [
+                  {
+                    type: 'site-text',
+                    content: `NOUVEAUX HORAIRES SUITE A LA CRISE DU COVID 19 :
+                      7/7 - 12H - 16H & 19H - 23H
+                    `,
+                    style: {
+                      backgroundColor: '#f7b714',
+                      fontSize: '1.1rem',
+                      fontFamily: 'josefin slab',
+                      color: '#000000',
+                      fontWeight: 'bold'
+                    }
+                  }
+                ]
+              },
+              {
+                type: 'site-div',
+                style: {
+                  textAlign: 'center'
+                },
+                cmps: [
+                  {
+                    type: 'site-text',
+                    content: `NOTRE PERSONNEL EST FORME AUX NORMES SANITAIRES EN VIGUEUR. ENSEMBLE FAISONS FACE A LA CRISE SANTAIRE.
+                    `,
+                    style: {
+                      backgroundColor: '#f7b714',
+                      fontSize: '1.1rem',
+                      fontFamily: 'josefin slab',
+                      color: '#000000',
+                      fontWeight: 'bold'
+                    }
+                  }
+                ]
+              },
+              {
+                type: 'site-div',
+                style: {
+                  display: 'flex',
+                  alignItems: 'center',
+                },
+                cmps: [
+                  {
+                        type: 'site-image',
+                        content:
+                          'https://static.wixstatic.com/media/011abe_35658b808c1b4f8d83e1f43e9c497038~mv2.png/v1/fill/w_188,h_188,al_c,q_85,usm_0.66_1.00_0.01/logo%20sans%20fond%20blanc.webp',
+                        style: {
+                          width: '20%',
+                          textAlign: 'center',
+                          objectFit: 'contain',
+                          width: '100%',
+                          maxWidth: '250px',
+                          height: 'auto'
+                        }
+                      },
+                  {
+                          type: 'site-text',
+                          content: `© 2020 THE GRILLED CHEESE FACTORY COMPANY
+                                    L'AUTHENTQUE SANDWICH AU FROMAGE FONDU
+                            `,
+                          style: {
+                          width: '70%',
+                          textAlign: 'center',
+                          fontSize: '1.1rem',
+                          fontFamily: 'josefin slab',
+                          color: '#ffffff',
+                          fontWeight: 'bold'
+                        }
+                      }
                 ]
               }
             ]
