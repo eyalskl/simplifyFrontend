@@ -4,19 +4,7 @@
     height: calc(100vh - 5rem);
     overflow-y: auto;
     overflow-x: hidden;
-    &::-webkit-scrollbar {
-        width: .75rem;
-    }
-    &::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: $clr1;
-        border-radius: 10rem;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        background: darken($clr1, 5);
-    }
+    @include niceScrollBar(.75rem)
 }
 
 .site-workspace {
