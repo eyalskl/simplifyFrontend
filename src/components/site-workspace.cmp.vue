@@ -40,7 +40,6 @@ export default {
 
   methods:{
     onDrop(dropResult){
-      console.log('dropResult:', dropResult)
       this.site.cmps = applyDrag(this.site.cmps,dropResult)
     },
     getCmp(index){

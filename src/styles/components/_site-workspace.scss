@@ -36,7 +36,7 @@
     }
 }
 
-.drop-preview {
+.drop-preview{
 
         background-color: rgba(150, 150, 200, 0.1);
         border: 1px dashed #abc;
@@ -44,6 +44,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 200%;
+        font-family: Righteous;
+        color: rgba(128, 128, 128, 0.397);
        
         
         &::after{
