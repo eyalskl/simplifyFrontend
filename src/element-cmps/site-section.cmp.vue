@@ -1,6 +1,6 @@
 <template>
     <draggable>
-      <section class="site-section" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"> 
+      <section class="site-section" :class="cmp.class" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"> 
         <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"> </component>
         <element-controls v-show="showControls" :element="cmp" />
       </section>
