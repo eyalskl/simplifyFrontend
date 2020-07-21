@@ -5,8 +5,8 @@
     background-color: #f8f8f8;
     padding: 0.15rem;
     width: 9rem;
-    border-left: 2px #717171 dashed;
-    border-bottom: 2px #717171 dashed;
+    border-left: 2px $clr1 solid;
+    border-bottom: 2px $clr1 solid;
     z-index: 3;
     >* {
         font-size: .75rem;

@@ -32,7 +32,6 @@ export default {
       eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
-      console.log(this.cmp)
   },
   methods: {
     displayControls() {
@@ -46,7 +45,6 @@ export default {
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
     },
       onDrop(dropResult){
-      console.log('dropResult:', dropResult)
       this.cmp.cmps = applyDrag(this.cmp.cmps,dropResult)
     },
     getCmp(index){

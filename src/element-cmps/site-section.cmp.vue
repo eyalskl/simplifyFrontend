@@ -1,11 +1,11 @@
 <template>
     <draggable>
-      <container  group-name="items" :orientation="'horizontal'"  :drop-placeholder="placeHolderSection"  :get-child-payload="getCmp" class="site-section" @drop="onDrop" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"> 
-        <!-- <Container :group-name="divz"> -->
+      <section @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor">
+      <container  group-name="items" :orientation="getOrientation"  :drop-placeholder="placeHolderSection"  :get-child-payload="getCmp" class="site-section" @drop="onDrop" :style="cmp.style"> 
         <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"> </component>
         <element-controls v-show="showControls" :element="cmp" />
-        <!-- </Container> -->
       </container>
+      </section>
     </draggable>
 </template>
 
@@ -35,6 +35,12 @@ export default {
     
     };
   },
+
+  computed:{
+    getOrientation(){
+       return (this.cmp.style.flexDirection === 'column' ? 'vertical' : 'horizontal') 
+    }
+  },
   methods: {
     displayControls() {
       this.showControls = true;
@@ -47,7 +53,6 @@ export default {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
     },
       onDrop(dropResult){
-      console.log('dropResult:', dropResult)
       this.cmp.cmps = applyDrag(this.cmp.cmps,dropResult)
       },
           getCmp(index){
@@ -61,6 +66,7 @@ export default {
     eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
+      
   },
   components: {
     siteDiv,
