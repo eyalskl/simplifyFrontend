@@ -1,0 +1,91 @@
+.edit-site-text {
+    .text-dis {
+        // text-shadow: 0px 0px 1px black;
+        -webkit-text-stroke: .5px rgb(192, 192, 192)
+    }
+    >* {
+        &:nth-child(2) {
+            margin-block-start: 1rem;
+        }
+        margin-block-end: .5rem;
+    }
+    input {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #bbb;
+        padding: 0.75rem;
+    }
+    .el-select {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .el-slider {
+        width: 65%;
+    }
+    .el-color-picker {
+        >* {
+            border: none;
+        }
+    }
+    .align-controls,
+    .font-style-controls {
+        width: 100%;
+        justify-content: center;
+        margin-block-end: .5rem;
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            padding: 1.25rem;
+            width: 2rem;
+            height: 2rem;
+            margin: .25rem .5rem;
+            border-radius: 12.5px;
+            background-color: inherit;
+            color: #717171;
+            transition: .3s;
+            &.selected {
+                color: rgb(255, 255, 255);
+                background-color: rgb(79, 155, 255);
+            }
+        }
+    }
+    .align-controls {
+        button {
+            &:hover {
+                color: rgb(255, 255, 255);
+                background-color: rgb(79, 155, 255);
+                font-weight: bold;
+            }
+        }
+    }
+    .font-style-controls {
+        button {
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+    .text-shadow {
+        >* {
+            width: 100%;
+        }
+    }
+    .advanced {
+        margin-block-start: 1rem;
+        font-family: 'Nunito Sans', sans-serif;
+        color: white;
+        font-size: 1rem;
+        height: 3rem;
+        width: 100%;
+        background-color: $clr1;
+    }
+    .advanced-settings {
+        animation-duration: .8s;
+        .el-slider {
+            width: 50%;
+        }
+    }
+}
