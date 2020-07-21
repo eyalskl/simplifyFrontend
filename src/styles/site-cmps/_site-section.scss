@@ -1,34 +1,52 @@
     .site-section {
-    transition: width .8s, outline 0s, transform .7s;
-    background-size: cover !important;
-    &:hover {
-        outline: 2px #717171 dashed;
-        z-index: 1;
-        cursor: grab;
+        transition: width .8s, outline 0s, transform .7s;
+        background-size: cover !important;
+        &:hover {
+            outline: 2px #717171 dashed;
+            z-index: 1;
+            cursor: grab;
+        }
+        &:active {
+            cursor: grabbing;
+            animation: nadavdav 2s infinite;
+        }
+        .drag-btn {
+            position: absolute;
+            border-radius: 0;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            cursor: grab;
+            &:active {
+                cursor: grabbing;
+            }
+            &:hover {
+                outline: none;
+                >* {
+                    outline: none;
+                }
+            }
+        }
     }
-    &:active {
+    
+    .section-drag {
+        transform: scale(0.7);
+        border: 3px dashed $clr1;
+        opacity: 0.9;
+        border: none;
+        box-shadow: 2px 2px 10px black;
         cursor: grabbing;
-        animation: nadavdav 2s infinite;
     }
-}
-
-.section-drag {
-    transform: scale(0.7);
-    border: 3px dashed $clr1;
-    opacity: 0.9;
-    border: none;
-    box-shadow: 2px 2px 10px black;
-    cursor: grabbing;
-}
-
-.sample-drag {
-    transform: scale(2) rotate(2.5deg);
-    box-shadow: 2px 2px 6px black;
-    cursor: grabbing;
-    h3 {
-        display: none;
+    
+    .sample-drag {
+        transform: scale(2) rotate(2.5deg);
+        box-shadow: 2px 2px 6px black;
+        cursor: grabbing;
+        h3 {
+            display: none;
+        }
     }
-}
+    
     .drop-preview-section {
         background-color: rgba(150, 150, 200, 0.1);
         margin: 0;
@@ -42,14 +60,11 @@
             color: rgba(128, 128, 128, 0.397);
         }
     }
+    
     .site-div {
         z-index: 1;
     }
-    // .site-workspace *:hover {
-    //     outline: 3px solid $clr1;
-    //     // padding: 1rem;
-    //     // animation: idovsky 1.5s infinite;
-    // }
+    
     @keyframes nadavdav {
         0% {
             opacity: 1;
