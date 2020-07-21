@@ -1,8 +1,11 @@
 <template>
     <draggable>
-      <section class="site-section" :class="cmp.class" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"> 
+      <section @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor">
+      <container  group-name="items" :orientation="getOrientation"  :drop-placeholder="placeHolderSection"  :get-child-payload="getCmp" class="site-section" @drop="onDrop" :style="cmp.style"> 
         <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"> </component>
+        <button v-show="showControls" class="drag-btn"> <i class="fas fa-grip-lines"></i> </button>
         <element-controls v-show="showControls" :element="cmp" />
+      </container>
       </section>
     </draggable>
 </template>
@@ -24,8 +27,20 @@ export default {
   props: ['cmp'],
   data() {
     return {
-      showControls: false
+      showControls: false,
+          placeHolderSection: {
+          className: 'drop-preview-section',
+          animationDuration: '50',
+          showOnTop: true
+      },
+    
     };
+  },
+
+  computed:{
+    getOrientation(){
+       return (this.cmp.style.flexDirection === 'column' ? 'vertical' : 'horizontal') 
+    }
   },
   methods: {
     displayControls() {
@@ -37,12 +52,22 @@ export default {
     openEditor() {
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
-    }
+    },
+      onDrop(dropResult){
+      this.cmp.cmps = applyDrag(this.cmp.cmps,dropResult)
+      },
+          getCmp(index){
+      return this.cmp.cmps[index]
+      
+    },
+   
+
   },
   created() {
     eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
+      
   },
   components: {
     siteDiv,

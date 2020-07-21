@@ -7,7 +7,7 @@
     <div class="edit-image">
       <p>Or upload an image:</p>
       <label class="img-upload flex column" v-if="!isUploading">
-        <div class="img-preview" :style="{backgroundColor: cmp.style.backgroundColor, background: cmp.style.background}"></div>
+        <div ref="bgcPreview" class="img-preview" :style="{backgroundColor: this.cmp.style.backgroundColor, background: cmp.style.background}"></div>
         <p>
           <i class="fas fa-upload"></i> Upload Your Own
         </p>
@@ -34,20 +34,12 @@ export default {
   data() {
     return {
       isUploading: false,
-      keyword: '',
-      imgKey: '',
-      showImgs: false
     };
   },
   methods: {
-    searchOnline() {
-      if (this.imgKey) this.imgKey = ''
-      this.showImgs = true;
-      this.imgKey = this.keyword;
-      this.keyword = ''
-    },
     setBgc(bgc) {
       this.cmp.style.background = bgc;
+      this.$refs.bgcPreview.style.background = bgc;
       eventBus.$emit(FORCE_UPDATE);
     },
     async onUploadImg(ev) {
@@ -57,11 +49,10 @@ export default {
       this.cmp.style.background = `url(${img.url}) no-repeat center center scroll`;
       this.isUploading = false;
       eventBus.$emit(FORCE_UPDATE);
-      console.log(this.cmp);
     }
   },
   created() {
-    console.log(this.cmp);
+    this.bgc = this.cmp.style.backgroundColor
   },
   components: {
     colorPicker

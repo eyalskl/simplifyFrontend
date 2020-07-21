@@ -4,23 +4,11 @@
     height: calc(100vh - 5rem);
     overflow-y: auto;
     overflow-x: hidden;
-    &::-webkit-scrollbar {
-        width: .75rem;
-    }
-    &::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: $clr1;
-        border-radius: 10rem;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        background: darken($clr1, 5);
-    }
+    @include niceScrollBar(.75rem)
 }
 
 .site-workspace {
-    // width: calc(100vw - 20rem);
+    width: calc(100vw - 20rem);
     margin-inline-start: 20rem;
     padding: 2rem;
     outline: none;
@@ -34,15 +22,21 @@
     }
 }
 
-.drop-preview {
-    background-color: rgba(150, 150, 200, 0.1);
-    border: 1px dashed #abc;
-    margin: 15px 80px 15px 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &::after {
-        content: "Drop Me Here 👈";
+.drop-preview{
+
+        background-color: rgba(150, 150, 200, 0.1);
+        border: 1px dashed #abc;
+        margin: 15px 80px 15px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200%;
+        font-family: Righteous;
+        color: rgba(128, 128, 128, 0.397);
+       
+        
+        &::after{
+        content:"Place Section Here";
         font-size: 5rem;
     }
 }

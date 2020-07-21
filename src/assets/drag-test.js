@@ -5,7 +5,6 @@ export const applyDrag = (arr, dragResult) => {
     if (removedIndex === null && addedIndex === null) return arr
 
     const result = [...arr]
-    console.log('payload:', payload)
     let itemToAdd = payload
     itemToAdd = _.cloneDeep(itemToAdd);
     itemToAdd.id = makeId();
@@ -22,13 +21,6 @@ export const applyDrag = (arr, dragResult) => {
     return result
 }
 
-export const generateItems = (count, creator) => {
-    const result = []
-    for (let i = 0; i < count; i++) {
-        result.push(creator(i))
-    }
-    return result
-}
 
 
 
