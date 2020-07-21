@@ -1,4 +1,4 @@
-.site-section {
+    .site-section {
     transition: width .8s, outline 0s, transform .7s;
     background-size: cover !important;
     &:hover {
@@ -29,32 +29,26 @@
         display: none;
     }
     .drop-preview-section {
-
         background-color: rgba(150, 150, 200, 0.1);
-  
         margin: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-       
-        
-        &::after{
-        content:"Place Content Here";
-        font-size: 3rem;
-        color: rgba(128, 128, 128, 0.397);
+        &::after {
+            content: "Place Content Here";
+            font-size: 3rem;
+            color: rgba(128, 128, 128, 0.397);
         }
     }
-    .site-div{
+    .site-div {
         z-index: 1;
     }
-
     // .site-workspace *:hover {
     //     outline: 3px solid $clr1;
     //     // padding: 1rem;
     //     // animation: idovsky 1.5s infinite;
     // }
-    
     @keyframes nadavdav {
         0% {
             opacity: 1;
@@ -66,5 +60,3 @@
             opacity: 1;
         }
     }
-
-   

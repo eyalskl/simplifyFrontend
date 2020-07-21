@@ -22,7 +22,7 @@
         <button @click.stop="toggleUnderline" :class="{selected: isUnderline}"> <i class="fas fa-underline"></i> </button>
       </div>
     <div class="text-shadow">
-      <select-box v-model="shadow" :data="shadows" placeholder="Add text shadow...">  </select-box>
+      <select-box @input="setShadow" :data="shadows" placeholder="Add text shadow...">  </select-box>
     </div>
     <button class="advanced" @click="openAdvanced"> Advanced Settings </button>
     <div v-if="showAdvanced" class="advanced-settings animate__animated animate__fadeInUpBig">
@@ -55,7 +55,7 @@ props: ['cmp'],
       shadow: 'None',
       textAlign: 'center',
       fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
-      shadows: ['None', 'Light', 'Medium', 'Heavy'],
+      shadows: ['Light', 'Medium', 'Heavy'],
     };
   },
   computed: {
@@ -94,6 +94,12 @@ props: ['cmp'],
     toggleUnderline() {
       this.isUnderline = !this.isUnderline
       this.cmp.style.textDecoration = this.isUnderline ? 'underline' : 'none';
+      eventBus.$emit(FORCE_UPDATE);
+    },
+    setShadow(shadow) {
+      console.log('shadow:', shadow)
+      this.shadow = shadow;
+      this.cmp.style.textShadow = shadow === 'Light' ? '1px 1px 1px black' : shadow === 'Medium' ? '2px 2px 4px black' : '4px 4px 8px black';
       eventBus.$emit(FORCE_UPDATE);
     }
   },
