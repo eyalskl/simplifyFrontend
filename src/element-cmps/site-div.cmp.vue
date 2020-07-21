@@ -1,6 +1,6 @@
 <template>
 <!-- group-name="items" -->
-  <Draggable class="site-div"  :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"  >
+  <Draggable class="site-div"  :style="cmp.style">
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls v-show="showControls" />
   </Draggable>
