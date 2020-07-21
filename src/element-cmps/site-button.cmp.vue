@@ -1,31 +1,36 @@
 <template>
   <button
     :style="cmp.style"
-    contenteditable="true"
+    :contenteditable="editMode"
     v-text="content.text"
     :href="content.href"
     @blur="onEdit"
     @click.stop="openEditor"
     @keydown.enter="endEdit"
     @dragover.prevent
-  >
-  </button>
+  ></button>
 </template>
 
 <script>
-import { eventBus, EDIT_ELEMENT, OPEN_EDITOR, FORCE_UPDATE } from "@/services/event-bus.service.js";
+import {
+  eventBus,
+  EDIT_ELEMENT,
+  OPEN_EDITOR,
+  FORCE_UPDATE
+} from '@/services/event-bus.service.js';
 
 export default {
   name: 'site-button',
   props: ['cmp'],
   data() {
     return {
-      content:{ text:' ', href:''}
+      content: { text: ' ', href: '' }
     };
   },
-  created() {
-    this.content = this.cmp.content;
-    eventBus.$on(FORCE_UPDATE, () => this.$forceUpdate());
+  computed: {
+    editMode() {
+      return this.$store.getters.editMode;
+    }
   },
   methods: {
     onEdit(ev) {
@@ -39,6 +44,11 @@ export default {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
     }
+  },
+  created() {
+    this.content = this.cmp.content;
+    eventBus.$on(FORCE_UPDATE, () => this.$forceUpdate());
   }
-};
+}
+
 </script>

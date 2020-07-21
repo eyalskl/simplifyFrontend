@@ -8,7 +8,6 @@
         }
         &:active {
             cursor: grabbing;
-            animation: nadavdav 2s infinite;
         }
         .drag-btn {
             position: absolute;
@@ -74,5 +73,38 @@
         }
         100% {
             opacity: 1;
+        }
+    }
+    
+    @media (max-width: 780px) {
+        .text-logo-text-section {
+            flex-direction: column !important;
+        }
+        .three-pics-section {
+            flex-direction: column;
+            height: 50vw !important;
+        }
+        .post-card-section {
+            height: auto !important;
+            >div:not(.element-controls) {
+                flex-direction: column !important;
+                >div {
+                    height: 50vw !important;
+                }
+            }
+        }
+        .info-block-section {
+            * {
+                font-size: 0.7rem !important;
+            }
+        }
+        .text-on-photo {
+            height: auto;
+            * {
+                font-size: 0.8rem !important;
+            }
+            div {
+                align-items: 'center' !important;
+            }
         }
     }

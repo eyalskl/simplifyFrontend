@@ -29,7 +29,7 @@ const routes = [{
         component: templatesPage
     },
     {
-        path: '/publish',
+        path: '/:id?',
         name: 'Publish Page',
         component: publishPage
     }

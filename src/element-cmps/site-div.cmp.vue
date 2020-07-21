@@ -1,9 +1,14 @@
 <template>
-<!-- group-name="items" -->
-  <Draggable class="site-div"  :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"  >
+
+  <Draggable v-if="editMode" class="site-div"  :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"  >
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls v-show="showControls" />
   </Draggable>
+  
+  <div v-else class="site-div" :style="cmp.style" :class="cmp.class">
+    <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"> </component>
+    <element-controls v-show="showControls" />
+  </div>
 
 </template>
 
@@ -28,10 +33,15 @@ export default {
       showControls: false
     };
   },
-  created(){
+  created() {
       eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
+  },
+  computed: {
+    editMode() {
+      return this.$store.getters.editMode;
+    }
   },
   methods: {
     displayControls() {
@@ -44,7 +54,7 @@ export default {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
     },
-      onDrop(dropResult){
+    onDrop(dropResult){
       this.cmp.cmps = applyDrag(this.cmp.cmps,dropResult)
     },
     getCmp(index){

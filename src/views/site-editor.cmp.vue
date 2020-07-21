@@ -1,11 +1,15 @@
 <template>
-  <container  class="editor flex animate__animated animate__fadeIn">
+  <container  class="editor flex column animate__animated animate__fadeIn">
+    <nav-bar />
+  <div class="flex">
       <element-dashboard :samples="samples" @shouldAcceptDrop="false"/>
       <site-workspace v-if="siteToEdit" :siteToEdit="siteToEdit" @shouldAcceptDrop="true" />
+  </div>
   </container>
 </template>
 
 <script>
+import navBar from '@/components/nav-bar.cmp.vue';
 import siteWorkspace from '../components/site-workspace.cmp.vue';
 import elementDashboard from '@/components/element-dashboard.cmp.vue';
 import { templateService } from '@/services/template-service.js';
@@ -36,6 +40,7 @@ export default {
     }
   },
   async created() {
+    this.$store.commit({type: 'setEditMode', editMode: true});
     this.loadSite();
 
     this.samples = templateService.getSamplesOf('section');
@@ -96,7 +101,8 @@ export default {
     siteWorkspace,
     elementDashboard,
     Container,
-    Draggable
+    Draggable,
+    navBar
   }
 };
 </script>
