@@ -8,6 +8,7 @@
     }
     &:active {
         cursor: grabbing;
+        animation: nadavdav 2s infinite;
     }
 }
 
@@ -23,8 +24,47 @@
 .sample-drag {
     transform: scale(2) rotate(2.5deg);
     box-shadow: 2px 2px 6px black;
+    cursor: grabbing;
     h3 {
         display: none;
     }
-    cursor: grabbing;
-}
+    .drop-preview-section {
+
+        background-color: rgba(150, 150, 200, 0.1);
+  
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+       
+        
+        &::after{
+        content:"Place Content Here";
+        font-size: 3rem;
+        color: rgba(128, 128, 128, 0.397);
+        }
+    }
+    .site-div{
+        z-index: 1;
+    }
+
+    // .site-workspace *:hover {
+    //     outline: 3px solid $clr1;
+    //     // padding: 1rem;
+    //     // animation: idovsky 1.5s infinite;
+    // }
+    
+    @keyframes nadavdav {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.75;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+   

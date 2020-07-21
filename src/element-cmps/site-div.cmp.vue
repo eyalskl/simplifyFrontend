@@ -1,8 +1,10 @@
 <template>
-  <div class="site-div" :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor">
+<!-- group-name="items" -->
+  <Draggable class="site-div"  :style="cmp.style" @mouseover="displayControls" @mouseout="hideControls" @click.stop="openEditor"  >
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls v-show="showControls" />
-  </div>
+  </Draggable>
+
 </template>
 
 <script>
@@ -14,6 +16,9 @@ import siteForm from '@/element-cmps/site-form.cmp.vue';
 import siteList from '@/element-cmps/site-list.cmp.vue';
 import elementControls from '@/components/element-controls.cmp.vue';
 import { eventBus, EDIT_ELEMENT, FORCE_UPDATE, OPEN_EDITOR } from "@/services/event-bus.service.js";
+
+import { Container, Draggable } from "vue-smooth-dnd";
+import { applyDrag, generateItems } from "@/assets/drag-test.js";
 
 export default {
   name: 'site-div',
@@ -27,6 +32,7 @@ export default {
       eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
+      console.log(this.cmp)
   },
   methods: {
     displayControls() {
@@ -38,7 +44,15 @@ export default {
     openEditor() {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
-    }
+    },
+      onDrop(dropResult){
+      console.log('dropResult:', dropResult)
+      this.cmp.cmps = applyDrag(this.cmp.cmps,dropResult)
+    },
+    getCmp(index){
+      return this.cmp.cmps[index]
+    },
+
   },
   components: {
     siteText,
@@ -47,7 +61,9 @@ export default {
     siteList,
     siteForm,
     siteMap,
-    elementControls
+    elementControls,
+    Container,
+    Draggable
   }
 };
 </script>

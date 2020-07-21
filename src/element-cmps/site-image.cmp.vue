@@ -1,5 +1,5 @@
 <template>
-        <img :src="cmp.content" :style="cmp.style" class="site-image" @click.stop="openEditor" />
+        <img :src="cmp.content" @dragstart.prevent :style="cmp.style" class="site-image" @click.stop="openEditor" />
 </template>
 
 <script>
