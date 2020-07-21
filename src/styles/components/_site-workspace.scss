@@ -1,10 +1,9 @@
-.site-container{
+.site-container {
     margin: 0;
     padding: 0;
     height: calc(100vh - 5rem);
     overflow-y: auto;
     overflow-x: hidden;
-
     &::-webkit-scrollbar {
         width: .75rem;
     }
@@ -19,7 +18,6 @@
         background: darken($clr1, 5);
     }
 }
-
 
 .site-workspace {
     // width: calc(100vw - 20rem);
@@ -37,17 +35,14 @@
 }
 
 .drop-preview {
-
-        background-color: rgba(150, 150, 200, 0.1);
-        border: 1px dashed #abc;
-        margin: 15px 80px 15px 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-        
-        &::after{
-        content:"Place Section Here";
+    background-color: rgba(150, 150, 200, 0.1);
+    border: 1px dashed #abc;
+    margin: 15px 80px 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+        content: "Drop Me Here 👈";
         font-size: 5rem;
-        }
     }
+}
