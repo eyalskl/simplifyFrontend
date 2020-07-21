@@ -54,7 +54,7 @@ props: ['cmp'],
       isUnderline: false,
       shadow: 'None',
       textAlign: 'center',
-      fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
+      fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Bitter', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
   },

@@ -33,7 +33,6 @@ export default {
       this.content.text = txt;
     },
     endEdit() {
-      this.$store.dispatch({ type: 'saveSite', content: this.content });
       this.$el.blur();
     },
     openEditor() {
