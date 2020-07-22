@@ -4,7 +4,6 @@
     :contenteditable="editMode"
     v-text="cmp.content"
     @blur="onEdit"
-    @keydown.enter="endEdit"
     @click.stop="openEditor"
     @dragover.prevent
   >
@@ -35,9 +34,6 @@ export default {
     onEdit(ev) {
       var txt = ev.target.innerText;
       this.content = txt;
-    },
-    endEdit() {
-      this.$el.blur();
     },
     openEditor() {
         eventBus.$emit(EDIT_ELEMENT, this.cmp);

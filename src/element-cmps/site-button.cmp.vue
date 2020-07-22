@@ -6,7 +6,6 @@
     :href="content.href"
     @blur="onEdit"
     @click.stop="openEditor"
-    @keydown.enter="endEdit"
     @dragover.prevent
   ></button>
 </template>
@@ -36,9 +35,6 @@ export default {
     onEdit(ev) {
       var txt = ev.target.innerText;
       this.content.text = txt;
-    },
-    endEdit() {
-      this.$el.blur();
     },
     openEditor() {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);

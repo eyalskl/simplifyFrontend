@@ -2,7 +2,7 @@
   <container  class="editor flex column animate__animated animate__fadeIn">
     <nav-bar />
   <div class="flex">
-      <element-dashboard :samples="samples" @shouldAcceptDrop="false"/>
+      <element-dashboard :samples="samples" @getSamplesToShow="getSamplesToShow" @shouldAcceptDrop="false"/>
       <site-workspace v-if="siteToEdit" :siteToEdit="siteToEdit" @shouldAcceptDrop="true" />
   </div>
   </container>
@@ -32,6 +32,7 @@ export default {
   data() {
     return {
       samples: {},
+      
     };
   },
   computed: {
@@ -44,19 +45,27 @@ export default {
     this.loadSite();
 
     this.samples = templateService.getSamplesOf('section');
-    
+
     eventBus.$on(ADD_SAMPLE, sample => this.addSample(sample));
     eventBus.$on(CLONE_ELEMENT, element => this.clone(element));
     eventBus.$on(REMOVE_ELEMENT, elementId => this.remove(elementId));
-    eventBus.$on(MOVE_ELEMENT, (elementId, direction) => this.moveElement(elementId, direction));
+    eventBus.$on(MOVE_ELEMENT, (elementId, direction) =>
+      this.moveElement(elementId, direction)
+    );
   },
   methods: {
     async loadSite() {
-      const site = await this.$store.dispatch({type: 'loadSite', id: this.$route.params.id});
+      const site = await this.$store.dispatch({
+        type: 'loadSite',
+        id: this.$route.params.id
+      });
+    },
+    getSamplesToShow(listName){
+      this.samples = templateService.getSamplesOf(listName);
     },
     addSample(sample) {
       this.siteToEdit.cmps.unshift(sample);
-      this.$store.commit({type:'setSite', site:this.siteToEdit})
+      this.$store.commit({ type: 'setSite', site: this.siteToEdit });
     },
     getElementSamples(element) {
       this.samples = templateService.getSamplesOf(element);
@@ -73,8 +82,7 @@ export default {
         cmps.splice(idx, 1, cmps[idx - 1]);
         cmps.splice(idx - 1, 1, cmp);
       }
-      this.$store.commit({type:'setSite', site:this.siteToEdit})
-
+      this.$store.commit({ type: 'setSite', site: this.siteToEdit });
     },
     clone(element) {
       const cmps = this.siteToEdit.cmps;
@@ -83,14 +91,14 @@ export default {
       clone.id = templateService.makeId();
       clone = templateService.addIds(clone);
       cmps.splice(idx, 0, clone);
-      this.$store.commit({type:'setSite', site:this.siteToEdit})
+      this.$store.commit({ type: 'setSite', site: this.siteToEdit });
     },
     remove(elementId) {
       const cmps = this.siteToEdit.cmps;
       const idx = cmps.findIndex(cmp => cmp.id === elementId);
       cmps.splice(idx, 1);
-      this.$store.commit({type:'setSite', site:this.siteToEdit})
-    },
+      this.$store.commit({ type: 'setSite', site: this.siteToEdit });
+    }
   },
   watch: {
     '$route.params.id'() {
