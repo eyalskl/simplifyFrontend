@@ -3,13 +3,21 @@
     background-size: cover !important;
     &:hover {
         outline: 2px #717171 dashed;
-        z-index: 1;
         cursor: grab;
     }
     &:active {
         cursor: grabbing;
         animation: nadavdav 2s infinite;
     }
+}
+
+.site-section-container{
+    z-index: 3;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
 }
 
 .section-drag {
@@ -43,7 +51,8 @@
         }
     }
     .site-div {
-        z-index: 1;
+        // height: 100%;
+        // z-index: 1;
     }
     // .site-workspace *:hover {
     //     outline: 3px solid $clr1;
@@ -61,3 +70,7 @@
             opacity: 1;
         }
     }
+    
+.site-txt{
+    word-break: break-word;
+}

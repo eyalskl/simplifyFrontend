@@ -1,10 +1,12 @@
 <template>
-<!-- group-name="items" -->
-  <Draggable class="site-div"  :style="cmp.style">
+  <Draggable group-name="2" > 
+<container group-name="1" orientation="vertical" @drop="onDrop" class="site-div" :get-child-payload="getElement" :style="cmp.style" >
+
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls v-show="showControls" />
-  </Draggable>
 
+</container>
+  </Draggable>
 </template>
 
 <script>
@@ -32,6 +34,7 @@ export default {
       eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
+
   },
   methods: {
     displayControls() {
@@ -45,11 +48,15 @@ export default {
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
     },
       onDrop(dropResult){
+      dropResult.shouldAddId = false
       this.cmp.cmps = applyDrag(this.cmp.cmps,dropResult)
-    },
-    getCmp(index){
-      return this.cmp.cmps[index]
-    },
+      
+      },
+    
+      getElement(index){
+    return this.cmp.cmps[index]
+  },
+  
 
   },
   components: {
