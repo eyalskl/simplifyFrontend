@@ -21,20 +21,17 @@
         <button @click.stop="toggleItalic" :class="{selected: isItalic}"> <i class="fas fa-italic"></i> </button>
         <button @click.stop="toggleUnderline" :class="{selected: isUnderline}"> <i class="fas fa-underline"></i> </button>
       </div>
-    <div class="text-shadow">
-      <select-box @input="setShadow" :data="shadows" placeholder="Add text shadow...">  </select-box>
-    </div>
-    <button class="advanced" @click="openAdvanced"> Advanced Settings </button>
-    <div v-if="showAdvanced" class="advanced-settings animate__animated animate__fadeInUpBig">
-      <div class="flex space-between align-center">
-        <label>Line height:</label>
-        <!-- <el-slider v-model="cmpToEdit.lineHeight"></el-slider> -->
-    </div>
-      <div class="flex space-between align-center">
-      <label>Letter spacing:</label>
-      <!-- <el-slider v-model="cmpToEdit.letterSpacing"></el-slider> -->
-    </div>
-    </div>
+      <div class="text-shadow">
+        <select-box @input="setShadow" :data="shadows" placeholder="Add text shadow...">  </select-box>
+      </div>
+      <div class="flex column align-center">
+          <label>Line height:</label>
+          <el-slider @input="setLineHeight" v-model="lineHeight" :min="5" :max="20"></el-slider>
+      </div>
+      <div class="flex column align-center">
+        <label>Letter spacing:</label>
+        <el-slider @input="setLetterSpacing" v-model="letterSpacing" :max="50"></el-slider>
+      </div>
     </div>
 </template>
 
@@ -47,14 +44,15 @@ name: 'edit-site-text',
 props: ['cmp'],
   data() {
     return {
-      showAdvanced: false,
       fontSize: 16,
+      lineHeight: 10,
+      letterSpacing: 0,
       isBold: false,
       isItalic: false,
       isUnderline: false,
       shadow: 'None',
       textAlign: 'center',
-      fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
+      fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Bitter', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
   },
@@ -97,9 +95,18 @@ props: ['cmp'],
       eventBus.$emit(FORCE_UPDATE);
     },
     setShadow(shadow) {
-      console.log('shadow:', shadow)
       this.shadow = shadow;
       this.cmp.style.textShadow = shadow === 'Light' ? '1px 1px 1px black' : shadow === 'Medium' ? '2px 2px 4px black' : '4px 4px 8px black';
+      eventBus.$emit(FORCE_UPDATE);
+    },
+    setLineHeight(height) {
+      this.lineHeight = height;
+      this.cmp.style.lineHeight = height / 4;
+      eventBus.$emit(FORCE_UPDATE);
+    },
+    setLetterSpacing(spacing) {
+      this.letterSpacing = spacing;
+      this.cmp.style.letterSpacing = spacing + 'px';
       eventBus.$emit(FORCE_UPDATE);
     }
   },
@@ -108,6 +115,8 @@ props: ['cmp'],
   },
   created() {
       this.fontSize = (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
+      this.lineHeight = (this.cmp.style.lineHeight) ? this.cmp.style.lineHeight * 4 : 5;
+      this.letterSpacing = (this.cmp.style.letterSpacing) ? parseFloat(this.cmp.style.letterSpacing) : 0;
       this.textAlign = (this.cmp.style.textAlign) ? this.cmp.style.textAlign : '';
       this.isBold = (this.cmp.style.fontWeight === 'bold');
       this.isItalic = (this.cmp.style.fontStyle === 'italic');
@@ -117,6 +126,8 @@ props: ['cmp'],
     cmp(newVal , oldVal) {
       deep: true,
       this.fontSize = (newVal.style.fontSize) ? parseFloat(newVal.style.fontSize) * 16 : 16;
+      this.lineHeight = (newVal.style.letterSpacing) ? parseFloat(newVal.style.letterSpacing) : 0;
+      this.letterSpacing = (newVal.style.lineHeight) ? newVal.style.lineHeight * 4 : 5;
       this.textAlign = (newVal.style.textAlign) ? newVal.style.textAlign : '';
       this.isBold = (newVal.style.fontWeight === 'bold');
       this.isItalic = (newVal.style.fontStyle === 'italic');

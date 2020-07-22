@@ -1,0 +1,29 @@
+
+.sample-section {
+    margin-block-end: 10rem;
+    h3 {
+        font-size: 1.15rem;
+        color: white;
+        font-family: 'Nunito Sans', sans-serif;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        padding: .1rem 0;
+    }
+    .section-sample-img {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .sample-section-preview {
+        border-radius: 2.5px 2.5px 0 0;
+        background-color: $clr1;
+        margin: 1rem;
+        padding: 0;
+        &:hover {
+            cursor: grab;
+        }
+        &:active {
+            cursor: grabbing;
+        }
+    }
+}

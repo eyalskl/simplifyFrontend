@@ -66,7 +66,7 @@ export default {
       eventBus.$emit(MINIMIZE_DASHBOARD, this.minimize);
     },
     showList(listName) {
-      this.$emit('setSamplesList', listName)
+      this.$emit('getSamplesToShow', listName)
       this.currSampList = listName
       this.showSamples = true;
     },

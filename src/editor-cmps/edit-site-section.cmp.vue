@@ -34,13 +34,7 @@ export default {
   data() {
     return {
       isUploading: false,
-      bgc: '',
     };
-  },
-  computed: {
-    bgc() {
-      return this.cmp.style.background
-    }
   },
   methods: {
     setBgc(bgc) {

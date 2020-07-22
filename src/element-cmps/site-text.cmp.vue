@@ -1,10 +1,9 @@
 <template>
   <span class="site-txt"
     :style="cmp.style"
-    contenteditable="true"
+    :contenteditable="editMode"
     v-text="cmp.content"
     @blur="onEdit"
-    @keydown.enter="endEdit"
     @click.stop="openEditor"
     @dragover.prevent
   >
@@ -25,6 +24,11 @@ export default {
       content: ''
     };
   },
+  computed: {
+    editMode() {
+      return this.$store.getters.editMode;
+    }
+  },
   created() {
     this.content = this.cmp.content;
     eventBus.$on(FORCE_UPDATE, () => this.$forceUpdate());
@@ -33,9 +37,6 @@ export default {
     onEdit(ev) {
       var txt = ev.target.innerText;
       this.content = txt;
-    },
-    endEdit() {
-      this.$el.blur();
     },
     openEditor() {
         eventBus.$emit(EDIT_ELEMENT, this.cmp);

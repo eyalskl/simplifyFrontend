@@ -1,12 +1,19 @@
 <template>
-  <Draggable group-name="2" > 
+  <Draggable group-name="2"  v-if="editMode"> 
 <container group-name="1" orientation="vertical" @drop="onDrop" class="site-div" :get-child-payload="getElement" :style="cmp.style" >
 
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls v-show="showControls" />
 
+
+
 </container>
   </Draggable>
+
+  <div v-else class="site-div" :style="cmp.style" :class="cmp.class">
+    <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"> </component>
+    <element-controls v-show="showControls" />
+  </div>
 </template>
 
 <script>
@@ -30,11 +37,16 @@ export default {
       showControls: false
     };
   },
-  created(){
+  created() {
       eventBus.$on(FORCE_UPDATE, () => {
         this.$forceUpdate();
       })
 
+  },
+  computed: {
+    editMode() {
+      return this.$store.getters.editMode;
+    }
   },
   methods: {
     displayControls() {

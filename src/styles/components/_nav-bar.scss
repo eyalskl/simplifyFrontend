@@ -13,7 +13,7 @@
     font-size: 1.5rem;
     .logo {
         position: relative;
-        cursor: default;
+        cursor: pointer;
         color: inherit;
         font-size: 2rem;
         font-family: 'Electrolize', sans-serif;
@@ -35,10 +35,9 @@
     .main-nav {
         height: 100%;
         >* {
-            color: black;
-            text-transform: capitalize;
             height: 100%;
             padding: 0 1rem;
+            font-size: 1.25rem;
             display: inline-flex;
             justify-content: center;
             align-items: center;

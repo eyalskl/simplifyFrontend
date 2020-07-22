@@ -32,4 +32,7 @@
             background-color: darken($clr1, 2.5);
         }
     }
+    & .publish {
+        display: none;
+    }
 }

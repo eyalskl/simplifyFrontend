@@ -2,21 +2,29 @@
 
   <button
     :style="cmp.style"
-    contenteditable="true"
+    :contenteditable="editMode"
     v-text="content.text"
     :href="content.href"
     @blur="onEdit"
     @click.stop="openEditor"
-    @keydown.enter="endEdit"
     @dragover.prevent
+<<<<<<< HEAD
 
   >
   </button>
 
+=======
+  ></button>
+>>>>>>> f40a50af9586a8ff45bbb32f1962bb217106c64d
 </template>
 
 <script>
-import { eventBus, EDIT_ELEMENT, OPEN_EDITOR, FORCE_UPDATE } from "@/services/event-bus.service.js";
+import {
+  eventBus,
+  EDIT_ELEMENT,
+  OPEN_EDITOR,
+  FORCE_UPDATE
+} from '@/services/event-bus.service.js';
 
 
 export default {
@@ -24,26 +32,28 @@ export default {
   props: ['cmp'],
   data() {
     return {
-      content:{ text:' ', href:''}
+      content: { text: ' ', href: '' }
     };
   },
-  created() {
-    this.content = this.cmp.content;
-    eventBus.$on(FORCE_UPDATE, () => this.$forceUpdate());
+  computed: {
+    editMode() {
+      return this.$store.getters.editMode;
+    }
   },
   methods: {
     onEdit(ev) {
       var txt = ev.target.innerText;
       this.content.text = txt;
     },
-    endEdit() {
-      this.$store.dispatch({ type: 'saveSite', content: this.content });
-      this.$el.blur();
-    },
     openEditor() {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
     }
+  },
+  created() {
+    this.content = this.cmp.content;
+    eventBus.$on(FORCE_UPDATE, () => this.$forceUpdate());
   }
-};
+}
+
 </script>

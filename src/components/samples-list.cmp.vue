@@ -7,6 +7,7 @@
 
 <script>
 import sampleSection from '@/samples-cmps/sample-section.cmp.vue'
+import sampleButton from '@/samples-cmps/sample-button.cmp.vue'
 
 export default {
   name: 'samples-list',
@@ -20,7 +21,8 @@ export default {
 
   },
   components:{
-    sampleSection
+    sampleSection,
+    sampleButton
   }
 };
 </script>
