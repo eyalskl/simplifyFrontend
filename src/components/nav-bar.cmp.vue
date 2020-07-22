@@ -1,8 +1,7 @@
 <template>
   <nav class="nav-bar flex space-between align-center">
     <div class="logo flex" @click="$router.push('/')">
-      <img src="@/assets/pngegg.png">
-      <h2>web<span>IT</span></h2>
+      <h2 title="🐸s">web<span>IT</span></h2>
     </div>
     <div class="main-nav">
       <router-link to="/">Home</router-link>

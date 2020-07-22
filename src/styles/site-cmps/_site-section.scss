@@ -9,23 +9,6 @@
         &:active {
             cursor: grabbing;
         }
-        .drag-btn {
-            position: absolute;
-            border-radius: 0;
-            z-index: 5;
-            top: 0;
-            left: 0;
-            cursor: grab;
-            &:active {
-                cursor: grabbing;
-            }
-            &:hover {
-                outline: none;
-                >* {
-                    outline: none;
-                }
-            }
-        }
     }
     
     .section-drag {
@@ -38,7 +21,7 @@
     }
     
     .sample-drag {
-        transform: scale(2) rotate(2.5deg);
+        transform: scale(2) rotate(1deg);
         box-shadow: 2px 2px 6px black;
         cursor: grabbing;
         h3 {
