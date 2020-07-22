@@ -1,84 +1,70 @@
 .edit-site-text {
-    >* {
-        margin-block-end: .5rem;
-    }
-    input {
-        width: 100%;
-        border-radius: 5px;
-        border: 1px solid #bbb;
-        padding: 0.75rem;
-    }
-    .el-select {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-    .el-slider {
-        width: 65%;
-    }
-    .el-color-picker {
+    .edit-text {
+        padding: 0 1rem;
+        font-size: 1rem;
         >* {
-            border: none;
+            margin-block-end: .75rem;
         }
-    }
-    .align-controls,
-    .font-style-controls {
-        width: 100%;
-        justify-content: center;
-        margin-block-end: .5rem;
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1rem;
-            padding: 1rem;
-            width: 1.5rem;
-            height: 1.5rem;
-            margin: .25rem .5rem;
-            border-radius: 10px;
-            background-color: inherit;
-            color: #717171;
-            transition: .3s;
-            &.selected {
-                color: rgb(255, 255, 255);
-                background-color: #556573;
-            }
+        input {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #bbb;
+            padding: 0.75rem;
         }
-    }
-    .align-controls {
-        button {
-            &:hover {
-                color: rgb(255, 255, 255);
-                background-color: #556573;
-                font-weight: bold;
-            }
-        }
-    }
-    .font-style-controls {
-        button {
-            &:hover {
-                font-weight: bold;
-            }
-        }
-    }
-    .text-shadow {
-        >* {
+        .el-select {
+            padding: 0;
+            margin: 0;
             width: 100%;
         }
-    }
-    .advanced {
-        margin-block-start: 1rem;
-        font-family: 'Nunito Sans', sans-serif;
-        color: white;
-        font-size: 1rem;
-        height: 3rem;
-        width: 100%;
-        background-color: $clr1;
-    }
-    .advanced-settings {
-        animation-duration: .8s;
         .el-slider {
-            width: 50%;
+            width: 65%;
+        }
+        .el-color-picker {
+            >* {
+                border: none;
+            }
+        }
+        .align-controls,
+        .font-style-controls {
+            width: 100%;
+            justify-content: center;
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.1rem;
+                padding: 1.15rem;
+                width: 1.75rem;
+                height: 1.75rem;
+                margin: .25rem .5rem;
+                border-radius: 10px;
+                background-color: inherit;
+                color: $clr3;
+                transition: .3s;
+                &.selected {
+                    background-color: $clr6;
+                }
+            }
+        }
+        .align-controls {
+            button {
+                &:hover {
+                    background-color: $clr6;
+                    font-weight: bold;
+                }
+            }
+        }
+        .font-style-controls {
+            button {
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+        .text-shadow {
+            >* {
+                width: 100%;
+            }
         }
     }
 }

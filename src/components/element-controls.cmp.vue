@@ -1,5 +1,6 @@
 <template>
   <div class="element-controls flex">
+    <button class="drag-btn"> <i class="fas fa-arrows-alt"></i> </button>
     <button @click.stop="move('up')"><i class="fas fa-arrow-up"></i></button>
     <button @click.stop="move('down')">
       <i class="fas fa-arrow-down"></i>

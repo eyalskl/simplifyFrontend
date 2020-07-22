@@ -1,37 +1,37 @@
 <template>
     <div class="edit-site-text">
-      <h3> {{ (cmp.type  === 'site-text') ? 'Text' : 'Button' }} editor </h3>
-      <p class="text-dis" v-if="cmp.type  === 'site-text'" :style="{color: cmp.style.color}"> Currently Editing : <br> {{ cmp.content.slice(0,40).trim() }}... </p>
-      <p class="text-dis" v-else  :style="{color: cmp.style.color}"> Currently Editing : <br> "{{ cmp.content.text }}" </p>
-      <div class="flex space-between align-center">
-        <select-box :data="fonts" v-model="cmp.style.fontFamily" placeholder="Pick a font..."></select-box>
-        <el-color-picker show-alpha @active-change="setColor" v-model="cmp.style.color"></el-color-picker>
-      </div>
-      <div class="flex space-between align-center">
-        <label> Font size: </label>
-        <el-slider @input="setFontSize" v-model="fontSize"> </el-slider>
-      </div>
-      <div class="align-controls flex">
-        <button @click.stop="setAlign('left')" :class="{selected: textAlign === 'left'}"> <i class="fas fa-align-left"></i> </button>
-        <button @click.stop="setAlign('center')" :class="{selected: textAlign === 'center'}"> <i class="fas fa-align-center"></i> </button>
-        <button @click.stop="setAlign('right')" :class="{selected: textAlign === 'right'}"> <i class="fas fa-align-right"></i> </button>
-      </div>
-      <div class="font-style-controls flex">
-        <button @click.stop="toggleBold" :class="{selected: isBold}"> <i class="fas fa-bold"></i> </button>
-        <button @click.stop="toggleItalic" :class="{selected: isItalic}"> <i class="fas fa-italic"></i> </button>
-        <button @click.stop="toggleUnderline" :class="{selected: isUnderline}"> <i class="fas fa-underline"></i> </button>
-      </div>
-      <div class="text-shadow">
-        <select-box @input="setShadow" :data="shadows" placeholder="Add text shadow...">  </select-box>
-      </div>
-      <div class="flex column align-center">
-          <label>Line height:</label>
-          <el-slider @input="setLineHeight" v-model="lineHeight" :min="5" :max="20"></el-slider>
-      </div>
-      <div class="flex column align-center">
-        <label>Letter spacing:</label>
-        <el-slider @input="setLetterSpacing" v-model="letterSpacing" :max="50"></el-slider>
-      </div>
+        <h3> {{ (cmp.type  === 'site-text') ? 'Text' : 'Button' }} editor </h3>
+        <section class="edit-text">
+          <div class="flex space-between align-center">
+            <select-box :data="fonts" v-model="cmp.style.fontFamily" placeholder="Pick a font..."></select-box>
+            <el-color-picker show-alpha @active-change="setColor" v-model="cmp.style.color"></el-color-picker>
+          </div>
+          <div class="flex space-between align-center">
+            <label> Font size: </label>
+            <el-slider @input="setFontSize" v-model="fontSize"> </el-slider>
+          </div>
+          <div class="align-controls flex">
+            <button @click.stop="setAlign('left')" :class="{selected: textAlign === 'left'}"> <i class="fas fa-align-left"></i> </button>
+            <button @click.stop="setAlign('center')" :class="{selected: textAlign === 'center'}"> <i class="fas fa-align-center"></i> </button>
+            <button @click.stop="setAlign('right')" :class="{selected: textAlign === 'right'}"> <i class="fas fa-align-right"></i> </button>
+          </div>
+          <div class="font-style-controls flex">
+            <button @click.stop="toggleBold" :class="{selected: isBold}"> <i class="fas fa-bold"></i> </button>
+            <button @click.stop="toggleItalic" :class="{selected: isItalic}"> <i class="fas fa-italic"></i> </button>
+            <button @click.stop="toggleUnderline" :class="{selected: isUnderline}"> <i class="fas fa-underline"></i> </button>
+          </div>
+          <div class="text-shadow">
+            <select-box @input="setShadow" :data="shadows" placeholder="Add text shadow...">  </select-box>
+          </div>
+          <div class="flex column align-center">
+              <label>Line height:</label>
+              <el-slider @input="setLineHeight" v-model="lineHeight" :min="5" :max="20"></el-slider>
+          </div>
+          <div class="flex column align-center">
+            <label>Letter spacing:</label>
+            <el-slider @input="setLetterSpacing" v-model="letterSpacing" :max="50"></el-slider>
+          </div>
+        </section>
     </div>
 </template>
 

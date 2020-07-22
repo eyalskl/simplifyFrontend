@@ -2,7 +2,7 @@
   <div class="element-dashboard flex column" :class="minimized">
 
     <div class="element-header flex justify-center">
-      <button @click="pickerMode=true" :class="{selected: pickerMode === true}"> Elements </button>
+      <button @click="pickerMode=true" :class="{selected: pickerMode === true}"> Add </button>
       <button @click="pickerMode=false" :class="{selected: pickerMode === false}"> Edit </button>
     </div>
 

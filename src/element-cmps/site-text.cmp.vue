@@ -1,11 +1,14 @@
 <template>
   <span
+  class="site-text"
     :style="cmp.style"
     :contenteditable="editMode"
     v-text="cmp.content"
     @blur="onEdit"
     @click.stop="openEditor"
     @dragover.prevent
+    @drag.prevent
+    @dragstart.prevent
   >
   </span>
 </template>

@@ -4,11 +4,12 @@
         background: url(~@/assets/imgs/hero-temp.jpg) no-repeat center center fixed;
         background-size: cover;
         height: calc(100vh - 3.5rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .text-container {
         font-family: 'Nunito Sans', sans-serif;
-        // font-family: 'Russo One', sans-serif;
-        padding-block-start: 4rem;
     }
     .tc-header {
         text-shadow: 1px -1px 5px #000000;
