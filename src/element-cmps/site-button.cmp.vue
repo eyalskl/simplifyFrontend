@@ -8,14 +8,7 @@
     @blur="onEdit"
     @click.stop="openEditor"
     @dragover.prevent
-<<<<<<< HEAD
-
-  >
-  </button>
-
-=======
   ></button>
->>>>>>> f40a50af9586a8ff45bbb32f1962bb217106c64d
 </template>
 
 <script>
