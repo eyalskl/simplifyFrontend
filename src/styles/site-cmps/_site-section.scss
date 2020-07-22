@@ -76,7 +76,8 @@
             display: none;
         }
     }
-    
+}
+}
     .drop-preview-section {
         background-color: rgba(150, 150, 200, 0.1);
         margin: 0;
@@ -91,9 +92,8 @@
         }
     }
     
-    .site-div {
-        // height: 100%;
-        // z-index: 1;
+    .site-txt{
+        word-break: break-word;
     }
     
     @keyframes nadavdav {
@@ -108,9 +108,7 @@
         }
     }
     
-.site-txt{
-    word-break: break-word;
-}
+
     @media (max-width: 780px) {
         .text-logo-text-section {
             flex-direction: column !important;
@@ -143,3 +141,4 @@
             }
         }
     }
+    
