@@ -137,7 +137,7 @@ const samples = {
         },
         {
             name: 'footer',
-            img: 'https://i.imgur.com/AchuVuN.png',
+            img: "https://i.imgur.com/AchuVuN.png",
             tree: {
                 "type": "site-section",
                 "style": {
@@ -308,7 +308,7 @@ const samples = {
         },
         {
             name: 'hero',
-            img: 'https://i.imgur.com/Og9AjzD.png',
+            img: "https://res.cloudinary.com/asantasana/image/upload/v1595403001/herolion_gtjcvl.png",
             tree: {
                 "type": "site-section",
                 "style": {
@@ -455,7 +455,7 @@ const samples = {
         },
         {
             name: 'cards',
-            img: 'https://i.imgur.com/z5ZffOP.png',
+            img: "https://res.cloudinary.com/asantasana/image/upload/v1595402921/cards_p8dgsc.png",
             tree: {
                 "type": "site-section",
                 "style": {

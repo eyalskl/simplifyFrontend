@@ -4,13 +4,13 @@
     height: calc(100vh - 5rem);
     overflow-y: auto;
     overflow-x: hidden;
-    @include niceScrollBar(.75rem)
+    @include niceScrollBar(.75rem, #bbb)
 }
 
 .site-workspace {
     width: calc(100vw - 20rem);
     margin-inline-start: 20rem;
-    padding: 2rem;
+    padding: 1rem;
     outline: none;
     transition: .8s;
     &.minimized {
@@ -22,21 +22,18 @@
     }
 }
 
-.drop-preview{
-
-        background-color: rgba(150, 150, 200, 0.1);
-        border: 1px dashed #abc;
-        margin: 15px 80px 15px 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200%;
-        font-family: Righteous;
-        color: rgba(128, 128, 128, 0.397);
-       
-        
-        &::after{
-        content:"Place Section Here";
+.drop-preview {
+    background-color: rgba(150, 150, 200, 0.1);
+    border: 1px dashed #abc;
+    margin: 15px 80px 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200%;
+    font-family: Righteous;
+    color: rgba(128, 128, 128, 0.397);
+    &::after {
+        content: "Place Section Here";
         font-size: 5rem;
     }
 }

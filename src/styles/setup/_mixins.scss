@@ -9,7 +9,7 @@
     cursor: default;
 }
 
-@mixin niceScrollBar($width) {
+@mixin niceScrollBar($width, $color) {
     &::-webkit-scrollbar {
         width: $width;
     }
@@ -17,10 +17,10 @@
         background: #f1f1f1;
     }
     &::-webkit-scrollbar-thumb {
-        background: $clr1;
+        background: $color;
         border-radius: 10rem;
     }
     &::-webkit-scrollbar-thumb:hover {
-        background: darken($clr1, 5);
+        background: darken($color, 5);
     }
 }
