@@ -1,4 +1,5 @@
 <template>
+
   <button
     :style="cmp.style"
     :contenteditable="editMode"
@@ -17,6 +18,7 @@ import {
   OPEN_EDITOR,
   FORCE_UPDATE
 } from '@/services/event-bus.service.js';
+
 
 export default {
   name: 'site-button',
