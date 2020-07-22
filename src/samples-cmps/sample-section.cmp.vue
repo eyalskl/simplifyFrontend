@@ -1,5 +1,5 @@
 <template>
-     <container behavior="copy" group-name="3" drag-class="sample-drag" class="sample-section flex column align-center" :get-child-payload="getSample">
+     <container behavior="copy" group-name="4" drag-class="sample-drag" class="sample-section flex column align-center" :get-child-payload="getSample">
       <draggable v-for="(sample,idx) in samples" :key="idx">
           <div class="sample-section-preview flex column adivgn-center" @click.prevent="addSample(sample.tree)" @dragstart.prevent>
             <h3> {{sample.name}} </h3>
@@ -25,15 +25,6 @@ methods:{
     return this.samples[index].tree
   }
 
-//     onDropReady(dropResult) {
-//       const { removedIndex, addedIndex, payload, element } = dropResult;
-// },
-//     onDragStart (dragResult) {
-//       const { isSource, payload, willAcceptDrop } = dragResult
-// },
-// onDragEnd (dragResult) {
-//   const { isSource, payload, willAcceptDrop } = dragResult
-// }
 
 
 },

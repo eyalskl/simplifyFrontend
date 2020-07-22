@@ -43,6 +43,18 @@
     }
 }
 
+
+//SITE DIV
+.isDraggable{
+    cursor: move;
+    padding: 5px;
+    &:before{
+    content: "DRAG ME";
+    display: flex;
+    justify-content: center;
+}
+}
+
 .site-section-container{
     z-index: 3;
 }

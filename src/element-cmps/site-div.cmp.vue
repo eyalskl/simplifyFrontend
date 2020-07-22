@@ -1,13 +1,7 @@
 <template>
-  <Draggable group-name="2"  v-if="editMode"> 
-<container group-name="1" orientation="vertical" @drop="onDrop" class="site-div" :get-child-payload="getElement" :style="cmp.style" >
-
+  <Draggable  group-name="2" :style="cmp.style" v-if="editMode" :class="cmp.class">  
     <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"></component>
     <element-controls v-show="showControls" />
-
-
-
-</container>
   </Draggable>
 
   <div v-else class="site-div" :style="cmp.style" :class="cmp.class">
@@ -34,7 +28,7 @@ export default {
   props: ['cmp'],
   data() {
     return {
-      showControls: false
+      showControls: false,
     };
   },
   created() {
@@ -59,17 +53,6 @@ export default {
       eventBus.$emit(EDIT_ELEMENT, this.cmp);
       eventBus.$emit(OPEN_EDITOR, this.cmp.type);
     },
-      onDrop(dropResult){
-      dropResult.shouldAddId = false
-      this.cmp.cmps = applyDrag(this.cmp.cmps,dropResult)
-      
-      },
-    
-      getElement(index){
-    return this.cmp.cmps[index]
-  },
-  
-
   },
   components: {
     siteText,
@@ -81,6 +64,7 @@ export default {
     elementControls,
     Container,
     Draggable
-  }
+  },
+
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
     <draggable class="site-section-container" v-if="editMode">
-      <container :tag="{value:'section',props:{on:{mouseover:this.displayControls, mouseout:this.hideControls,click:this.openEditor}}}" group-name="2" :orientation="getOrientation"  :drop-placeholder="placeHolderSection" :get-child-payload="getCmp" class="site-section" @drop="onDrop" :style="cmp.style"> 
+      <container :tag="{value:'section',props:{on:{mouseover:this.displayControls, mouseout:this.hideControls,click:this.openEditor}}}" drag-handle-selector=".isDraggable" group-name="2" :orientation="getOrientation" lock-axis="x"  :drop-placeholder="placeHolderSection" :get-child-payload="getCmp" class="site-section" @drop="onDrop" :style="cmp.style"> 
         <component v-for="(cmp, idx) in cmp.cmps" :is="cmp.type" :cmp="cmp" :key="idx"> </component>
         <button v-show="showControls" class="drag-btn"> <i class="fas fa-grip-lines"></i> </button>
         <element-controls v-show="showControls" :element="cmp" />
