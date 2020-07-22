@@ -8,8 +8,19 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     // strict: true,
-    state: {},
-    mutations: {},
+    state: {
+        editMode: '',
+    },
+    getters: {
+        editMode(state) {
+            return state.editMode;
+        }
+    },
+    mutations: {
+        setEditMode(state, { editMode }) {
+            state.editMode = editMode;
+        }
+    },
     actions: {},
     modules: {
         siteStore,

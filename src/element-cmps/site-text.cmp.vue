@@ -1,7 +1,7 @@
 <template>
   <span
     :style="cmp.style"
-    contenteditable="true"
+    :contenteditable="editMode"
     v-text="cmp.content"
     @blur="onEdit"
     @click.stop="openEditor"
@@ -20,6 +20,11 @@ export default {
     return {
       content: ''
     };
+  },
+  computed: {
+    editMode() {
+      return this.$store.getters.editMode;
+    }
   },
   created() {
     this.content = this.cmp.content;
