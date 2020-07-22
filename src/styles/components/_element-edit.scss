@@ -1,34 +1,31 @@
-.element-edit {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.25rem;
-    padding: 0 .75rem;
-    margin-top: 1rem;
-    height: 90vh;
-    overflow-y: auto;
-    padding-bottom: 5rem;
-    @include niceScrollBar(.5rem);
-    h2 {
-        cursor: default;
-        text-align: center;
-        line-height: 2;
-        font-size: 1.25rem;
-        background-color: $clr1;
-        color: white;
-        padding: 1rem;
-        border: 1px solid #bbb;
-        border-radius: 5px;
+    .element-edit {
         font-family: 'Nunito Sans', sans-serif;
-        font-weight: normal;
-        transition: .3s;
-        &:hover {
-            opacity: 0.9;
+        font-size: 1.25rem;
+        padding: 0 .75rem;
+        height: 90vh;
+        overflow-y: auto;
+        padding-bottom: 5rem;
+        @include niceScrollBar(.5rem, $clr1);
+        h2 {
+            cursor: default;
+            text-align: center;
+            line-height: 2;
+            font-size: 1rem;
+            background-color: #556572;
+            color: #fff;
+            padding: 1rem;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: normal;
+        }
+        h3 {
+            text-transform: capitalize;
+            text-align: center;
+            padding: .5rem 0;
+            border-bottom: 1px solid #000;
+            color: white;
+            background-color: #556572;
+            font-weight: normal;
         }
     }
-    h3 {
-        text-transform: capitalize;
-        text-align: center;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #000;
-        margin-block-end: 1rem;
-    }
-}

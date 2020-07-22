@@ -52,7 +52,7 @@ props: ['cmp'],
       isUnderline: false,
       shadow: 'None',
       textAlign: 'center',
-      fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Bitter', 'Advent Pro', 'Sans Serif', 'Russo One', 'Fantasy', 'Impact'],
+      fonts: ['Arial', 'Nunito Sans', 'Righteous', 'Oswald', 'Bitter', 'Advent Pro', 'Josefin Slab', 'Russo One', 'Inknut Antiqua', 'Mr Dafoe'],
       shadows: ['Light', 'Medium', 'Heavy'],
     };
   },
@@ -106,7 +106,7 @@ props: ['cmp'],
     },
     setLetterSpacing(spacing) {
       this.letterSpacing = spacing;
-      this.cmp.style.letterSpacing = spacing + 'px';
+      this.cmp.style.letterSpacing = spacing / 4 + 'px';
       eventBus.$emit(FORCE_UPDATE);
     }
   },
@@ -115,8 +115,8 @@ props: ['cmp'],
   },
   created() {
       this.fontSize = (this.cmp.style.fontSize) ? parseFloat(this.cmp.style.fontSize) * 16 : 16;
-      this.lineHeight = (this.cmp.style.lineHeight) ? this.cmp.style.lineHeight * 4 : 5;
-      this.letterSpacing = (this.cmp.style.letterSpacing) ? parseFloat(this.cmp.style.letterSpacing) : 0;
+      this.lineHeight = (this.cmp.style.lineHeight) ? parseInt(this.cmp.style.lineHeight) : 1;
+      this.letterSpacing = (this.cmp.style.letterSpacing) ? parseFloat(this.cmp.style.letterSpacing) : 1;
       this.textAlign = (this.cmp.style.textAlign) ? this.cmp.style.textAlign : '';
       this.isBold = (this.cmp.style.fontWeight === 'bold');
       this.isItalic = (this.cmp.style.fontStyle === 'italic');
@@ -126,8 +126,8 @@ props: ['cmp'],
     cmp(newVal , oldVal) {
       deep: true,
       this.fontSize = (newVal.style.fontSize) ? parseFloat(newVal.style.fontSize) * 16 : 16;
-      this.lineHeight = (newVal.style.letterSpacing) ? parseFloat(newVal.style.letterSpacing) : 0;
-      this.letterSpacing = (newVal.style.lineHeight) ? newVal.style.lineHeight * 4 : 5;
+      this.lineHeight = (newVal.style.lineHeight) ? parseFloat(newVal.style.lineHeight) : 1;
+      this.letterSpacing = (newVal.style.letterSpacing) ? parseFloat(newVal.style.letterSpacing) : 1;
       this.textAlign = (newVal.style.textAlign) ? newVal.style.textAlign : '';
       this.isBold = (newVal.style.fontWeight === 'bold');
       this.isItalic = (newVal.style.fontStyle === 'italic');

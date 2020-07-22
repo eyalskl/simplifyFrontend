@@ -1,10 +1,11 @@
 .sample-section {
     margin-block-end: 10rem;
     h3 {
-        font-size: 1.15rem;
+        font-size: 1rem;
         color: white;
         font-family: 'Nunito Sans', sans-serif;
         letter-spacing: 1px;
+        text-align: center;
         text-transform: capitalize;
         padding: .1rem 0;
     }
@@ -15,7 +16,7 @@
     }
     .sample-section-preview {
         border-radius: 2.5px 2.5px 0 0;
-        background-color: $clr1;
+        background-color: #556573;
         margin: 1rem;
         padding: 0;
         &:hover {
@@ -30,5 +31,5 @@
 .samples-list {
     height: calc(100vh - 5rem - 3rem);
     overflow-y: scroll;
-    @include niceScrollBar(.5rem)
+    @include niceScrollBar(.5rem, $clr1)
 }

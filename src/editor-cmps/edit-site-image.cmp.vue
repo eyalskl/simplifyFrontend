@@ -31,6 +31,7 @@ export default {
       this.isUploading = true;
       let res = uploadImg(ev);
       let img = await res;
+      console.log(img.url);
       this.cmp.content = img.url;
       this.isUploading = false;
       console.log(this.cmp);
