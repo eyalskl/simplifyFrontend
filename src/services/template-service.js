@@ -841,6 +841,297 @@ function getSamplesOf(element) {
 }
 // console.log(JSON.stringify(addIds()))
 
+//                 }
+//             }]
+        
+//         },
+//       {
+//               type: "site-div",
+//               style: {
+//                   display: "flex",
+//                   flexDirection: "column",
+//                   flex:"1",
+//               },
+//               cmps: [{
+//                       type: "site-text",
+//                       content: `Lago Di Braies, Italy`,
+//                       style: {
+//                           fontFamily: "Righteous",
+//                           textAlign: "center",
+//                           lineHeight: "2rem",
+//                           fontSize: "2rem",
+//                           fontWeight: "bold",
+
+//                       },
+//                   },
+//                   {
+//                       type: "site-text",
+//                       content: `In summer, lake Lago di Braies in South Tyrol reflects colours in all shades from green to blue, in winter Lago di Braies is covered with ice and snow. In winter and summer this jewel is the starting point for hikes, ski tours, snowshoe hikes and walks. Book through us and let's explore it together!`,
+//                       style: {
+//                           fontFamily: "Righteous",
+//                           padding: "1rem",
+//                           textAlign: "center",
+//                           lineHeight: "2rem",
+//                           fontSize: "1rem",
+
+//                       },
+//                   },
+//               ]}
+//               ]
+  
+//  },
+
+
+//   {
+//       type: "site-section",
+//       class:"map-n-contact-section",
+//       style: {
+//           height: "30vw",
+//           display: "flex",
+//           alignItems: "center",
+          
+//       },
+//       cmps: [{
+//               type: "site-div",
+//               style: {
+//                   display: "flex",
+//                   flexDirection: "column",
+//                   alignItems: "center",
+//                   backgroundColor: "#ffffc47d",
+//                   flex:"1",
+//                   justifyContent:"space-around"
+//               },
+//               cmps: [{
+//                       type: "site-text",
+//                       content: "CONTACT US",
+//                       style: {
+//                           fontSize: "3rem",
+//                           fontFamily: "Righteous",
+//                           textShadow: "0 0 1px black"
+
+//                       }
+//                   },
+//                   {
+//                       type: "site-form",
+//                       style: {
+//                           display: "flex",
+//                           flexDirection: "column",
+//                           color: "#313b3f",
+//                           alignItems:"center"
+
+
+//                       },
+//                       content: [{
+//                               type: "text",
+//                               tag: "Full Name"
+//                           },
+//                           {
+//                               type: "email",
+//                               tag: "Email"
+//                           },
+//                           {
+//                               type: "tel",
+//                               tag: "Phone"
+//                           }
+//                       ]
+
+
+//                   },
+//                               {
+//                       type: "site-button",
+//                       content: { text: "Submit", href: "" },
+//                       style: {
+//                           fontFamily: "Righteous",
+//                           backgroundColor: "#5ba8b3",
+//                           padding: "1rem",
+//                           textTransform: "uppercase",
+//                           color: "white",
+//                           borderRadius: "12px",
+//                       },
+//                   }
+//               ]
+//           },
+//           {
+//               type: "site-div",
+//               style: {
+//                   flex:"1"
+//               },
+
+//               cmps: [{
+//                   type: "site-map",
+
+//               }]
+//           }
+//       ]
+//   },
+//   {
+//       type: "site-section",
+//       class:"site-footer-section",
+//       style: {
+//           height: "15vw",
+//           display: "flex",
+//           justifyContent: "space-around",
+//           alignItems: "center",
+//           backgroundColor: "#5ba8b3cc",
+//           color: "white",
+//           paddingBlockStart: "2rem"
+//       },
+//       cmps: [{
+//               type: "site-div",
+//               style: {
+//                   height: "100%"
+//               },
+//               cmps: [{
+//                       type: "site-text",
+//                       content: "DESTINATIONS",
+//                       style: {
+//                           width: "100px",
+//                           fontWeigt: "bold",
+//                           fontSize: "1.5rem",
+//                       },
+//                   },
+//                   {
+//                       type: "site-list",
+//                       style: {
+//                           display: "flex",
+//                           flexDirection: "column",
+//                           color: "#fff",
+//                           marginTop: "1rem",
+//                       },
+//                       cmps: [
+
+//                           {
+//                               type: "site-text",
+//                               content: `New-Zealand Australia Argentina Bolivia More...`,
+//                               style: {
+//                                   display: "flex",
+//                                   flexDirection: "column",
+//                                   width: "100px"
+//                               },
+//                           },
+
+//                       ],
+//                   }
+//               ],
+//           },
+
+//           {
+//               type: "site-div",
+//               style: {
+//                   height: "100%"
+//               },
+//               cmps: [{
+//                       type: "site-text",
+//                       content: "SHOP",
+//                       style: {
+//                           width: "100px",
+//                           fontWeigt: "bold",
+//                           fontSize: "1.5rem",
+//                       },
+//                   },
+//                   {
+//                       type: "site-list",
+//                       style: {
+//                           display: "flex",
+//                           flexDirection: "column",
+//                           color: "#fff",
+//                           marginTop: "1rem",
+//                       },
+//                       cmps: [
+
+//                           {
+//                               type: "site-text",
+//                               content: `Non English Guides Delivery Times Special Offers FAQs`,
+//                               style: {
+//                                   display: "flex",
+//                                   flexDirection: "column",
+//                                   width: "142px"
+//                               },
+//                           },
+
+//                       ],
+//                   }
+//               ],
+//           }, {
+//               type: "site-div",
+//               style: {
+//                   height: "100%",
+//               },
+//               cmps: [{
+//                       type: "site-text",
+//                       content: "FORUMS",
+//                       style: {
+//                           width: "100px",
+//                           fontWeigt: "bold",
+//                           fontSize: "1.5rem",
+//                       },
+//                   },
+//                   {
+//                       type: "site-list",
+//                       style: {
+//                           display: "flex",
+//                           flexDirection: "column",
+//                           color: "#fff",
+//                           marginTop: "1rem",
+//                       },
+//                       cmps: [
+
+//                           {
+//                               type: "site-text",
+//                               content: `Country Forums Interest Forums Talk To Us`,
+//                               style: {
+//                                   display: "flex",
+//                                   flexDirection: "column",
+//                                   width: "140px"
+//                               },
+//                           },
+
+//                       ],
+//                   }
+//               ],
+//           }, {
+//               type: "site-div",
+//               style: {
+//                   height: "100%"
+//               },
+//               cmps: [{
+//                       type: "site-text",
+//                       content: "TRAVEL BOOKING",
+//                       style: {
+//                           width: "100px",
+//                           fontWeigt: "bold",
+//                           fontSize: "1.5rem",
+//                       },
+//                   },
+//                   {
+//                       type: "site-list",
+//                       style: {
+//                           display: "flex",
+//                           flexDirection: "column",
+//                           color: "#fff",
+//                           marginTop: "1rem",
+//                       },
+//                       cmps: [
+
+//                           {
+//                               type: "site-text",
+//                               content: `Hotels Flights Insurance`,
+//                               style: {
+//                                   display: "flex",
+//                                   flexDirection: "column",
+//                                   width: "90px"
+//                               },
+//                           },
+
+//                       ],
+//                   }
+//               ],
+//           },
+//       ],
+//   },
+
+// ],
+// })))
 function addIds(template) {
     template.cmps.forEach(cmp => {
         if (!cmp.id) cmp.id = makeId()

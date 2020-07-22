@@ -1,5 +1,5 @@
 <template>
-  <span
+  <span class="site-txt"
     :style="cmp.style"
     :contenteditable="editMode"
     v-text="cmp.content"
@@ -8,10 +8,13 @@
     @dragover.prevent
   >
   </span>
+
+
 </template>
 
 <script>
 import { eventBus, EDIT_ELEMENT, FORCE_UPDATE, OPEN_EDITOR } from "@/services/event-bus.service.js";
+
 
 export default {
   name: 'site-text',
@@ -39,7 +42,8 @@ export default {
         eventBus.$emit(EDIT_ELEMENT, this.cmp);
         eventBus.$emit(OPEN_EDITOR, this.cmp.type);
     }
-  }
+  },
+
 };
 </script>
 

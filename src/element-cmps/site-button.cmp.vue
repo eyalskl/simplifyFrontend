@@ -1,4 +1,5 @@
 <template>
+
   <button
     :style="cmp.style"
     :contenteditable="editMode"
@@ -7,7 +8,14 @@
     @blur="onEdit"
     @click.stop="openEditor"
     @dragover.prevent
+<<<<<<< HEAD
+
+  >
+  </button>
+
+=======
   ></button>
+>>>>>>> f40a50af9586a8ff45bbb32f1962bb217106c64d
 </template>
 
 <script>
@@ -17,6 +25,7 @@ import {
   OPEN_EDITOR,
   FORCE_UPDATE
 } from '@/services/event-bus.service.js';
+
 
 export default {
   name: 'site-button',

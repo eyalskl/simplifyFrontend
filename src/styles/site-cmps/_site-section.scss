@@ -1,4 +1,9 @@
     .site-section {
+    transition: width .8s, outline 0s, transform .7s;
+    background-size: cover !important;
+    &:hover {
+        outline: 2px #717171 dashed;
+        cursor: grab;
         transition: width .8s, outline 0s, transform .7s;
         background-size: cover !important;
         &:hover {
@@ -19,6 +24,44 @@
         box-shadow: 2px 2px 10px black;
         cursor: grabbing;
     }
+}
+
+
+//SITE DIV
+.isDraggable{
+    cursor: move;
+    padding: 5px;
+    &:before{
+    content: "DRAG ME";
+    display: flex;
+    justify-content: center;
+}
+}
+
+.site-section-container{
+    z-index: 3;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-drag {
+    transform: scale(0.7);
+    border: 3px dashed $clr1;
+    opacity: 0.9;
+    border: none;
+    box-shadow: 2px 2px 10px black;
+    cursor: grabbing;
+}
+
+.sample-drag {
+    transform: scale(2) rotate(2.5deg);
+    box-shadow: 2px 2px 6px black;
+    cursor: grabbing;
+    h3 {
+        display: none;
     
     .sample-drag {
         transform: scale(2) rotate(1deg);
@@ -28,7 +71,8 @@
             display: none;
         }
     }
-    
+}
+}
     .drop-preview-section {
         background-color: rgba(150, 150, 200, 0.1);
         margin: 0;
@@ -43,8 +87,8 @@
         }
     }
     
-    .site-div {
-        z-index: 1;
+    .site-txt{
+        word-break: break-word;
     }
     
     @keyframes nadavdav {
@@ -52,13 +96,14 @@
             opacity: 1;
         }
         50% {
-            opacity: 0.75;
+            opacity: 0.85;
         }
         100% {
             opacity: 1;
         }
     }
     
+
     @media (max-width: 780px) {
         .text-logo-text-section {
             flex-direction: column !important;
