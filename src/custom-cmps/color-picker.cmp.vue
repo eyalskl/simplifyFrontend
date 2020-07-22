@@ -17,7 +17,7 @@ export default {
     data() {
         return {
             startFrom: 0,
-            colors: _.flatten(colors).slice(this.startFrom, 22),
+            colors: _.flatten(colors).slice(this.startFrom, 26),
             pickedColor: '69d2e7'
         }
     },
@@ -28,8 +28,8 @@ export default {
         },
         showMore() {
             if (this.startFrom > 981) this.startFrom = 0;
-            else this.startFrom += 22;
-            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 22)
+            else this.startFrom += 26;
+            this.colors = _.flatten(colors).slice(this.startFrom, this.startFrom + 26)
         }
     },
 }

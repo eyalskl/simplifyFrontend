@@ -1,18 +1,19 @@
 .site-container {
     margin: 0;
     padding: 0;
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 3.5rem);
     overflow-y: auto;
     overflow-x: hidden;
-    @include niceScrollBar(.75rem, #bbb)
+    @include niceScrollBar(.75rem, lighten($clr3, 35%))
 }
 
 .site-workspace {
     width: calc(100vw - 20rem);
     margin-inline-start: 20rem;
-    padding: 1rem;
+    padding: 1.5rem;
     outline: none;
     transition: .8s;
+    background-color: $siteBgc;
     &.minimized {
         width: 100vw;
         margin-inline-start: 0;
